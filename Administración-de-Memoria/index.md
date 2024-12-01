@@ -1,6 +1,9 @@
 <Center>
 <div align="center">
- Probando texto centrado para github
+ <h1>Sistemas Operativos</h1>
+
+# Sistemas operativos
+# probadmo
 </div>
 
 # Sistemas Operativos
