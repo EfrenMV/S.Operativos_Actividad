@@ -3,8 +3,7 @@
 
 # Sistemas Operativos
 
-### Actividad
-### Administración de memoria
+### Actividad<br>Administración de memoria
 
 ### ISC
 
@@ -12,6 +11,13 @@
 
 ### Alumno: Efren Mendez Villanueva
 
+</div>
+
+___
+<!--3.1 Política y filosofía-->
+<div align="center">
+
+## 3.1 Politica y Filsoifa
 </div>
 
 
