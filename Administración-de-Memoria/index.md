@@ -92,12 +92,24 @@ int main(){
 
     do{
         printf("Menu");
-        prinft("Asignar proceso a una partición");
-        prinft("liberar particion")
-        prinft("Mostrar particiones")
-        prinft("Salir");
+        prinft("1.-Asignar proceso a una partición");
+        prinft("2.-liberar particion")
+        prinft("3.-Mostrar particiones")
+        prinft("4.-Salir");
 
-        while ()
+        switch(opcion){
+            case 1:
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                printf("Saliendo..")
+                break;
+            default("Opcion invalida, degite una opcion valida por favor")
+        }
+        while (opc != 4)
     }
 }
 ```
