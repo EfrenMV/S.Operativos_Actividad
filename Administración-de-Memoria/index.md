@@ -20,7 +20,8 @@ ___
 ## 3.1 Politica y Filsoifa
 </div>
 
-**Fragmentación interna:** Como su palabra lo indica **interna** nos da a entender que la particiones ocurren en la memoria, ahora estas particiones estan divididas en bloques con tamaños especificos 
+### Fragmentación interna: ### 
+Como su palabra lo indica **interna** nos da a entender que la particiones ocurren en la memoria, ahora estas particiones estan divididas en bloques con tamaños especificos 
 
 por ejemplo:
 
@@ -36,7 +37,8 @@ Como se puede observar estos al ser colocados generan un desperdicio puesto que 
 ***conclución:***<br>
 La fragmentación interna puede llegar a generar desperdicios de memoria si un proceso no usa lo suficiente asignado puesto que este sobrando no se vuelve usar simplemente queda en nada
 
-**Framgentación externa** Esto pasa cuando tenemos suficiente memoria libre pero esta en pequeños bloques no contigus, esto ipidiendo la asignación de grandes procesos.
+### Framgentación externa ### 
+Esto pasa cuando tenemos suficiente memoria libre pero esta en pequeños bloques no contigus, esto ipidiendo la asignación de grandes procesos.
 
 por ejemplos:
 
