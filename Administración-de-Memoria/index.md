@@ -49,6 +49,7 @@ aqui podemos obersvar una imagen de un disco HDD
 Al llegarse queda algo asi
 
 ![Disco HDD FULL](Imagenes/externo2.png)
+
 Podemos observar que los procesos estan gurdados de forma aleatoria lo cual genera espacios entre ellos
 
 
