@@ -52,5 +52,19 @@ Al llegarse queda algo asi
 
 Podemos observar que los procesos estan gurdados de forma aleatoria lo cual genera espacios entre ellos
 
+visto de otra forma lo tenemos asi
+
+![Disco HDD POV2](Imagenes/externa0.1.png)
+
+Esto tiene una solición donde se le puede aplicar una desfragmentación lo cual lo dejara asi
+
+![Disco HDD POV2 desfragmentado](Imagenes/externa0.2.png)
+
+## Resuen completo
+|  Fragmentación Intera  | Fragmentación Externa  
+|  ------- |:----:
+|  Ocurre dentro de un bloque asignado| Ocurre fuera de bloques asignados
+|  Desperdicio dentro de la memoria asignada| Desperdicio por espacios dispersos 
+| Relacionada con Ram y memoria virtual| Ocurre en RAM,memoria virutal, HDD o SDD
 
 
