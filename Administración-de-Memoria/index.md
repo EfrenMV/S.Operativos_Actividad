@@ -74,6 +74,14 @@ Esto ayuda a optimizar las busquedas muchisimo, aunque los SSD no necesariamente
 
 ### Programa en C de particiones fijas
 ```C
+#include <stdio.h>
+#include <stdlib.h> //Para manejar la memoria
 
+#define particiones 5 // Numero de particiones maximas
 
+typedef struct{
+    int tamaño;
+    int ocupado;
+    int id;
+}Particion;
 ```
