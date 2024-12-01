@@ -89,5 +89,15 @@ typedef struct{
 int main(){
 
     return 0
+
+    do{
+        printf("Menu");
+        prinft("Asignar proceso a una partición");
+        prinft("liberar particion")
+        prinft("Mostrar particiones")
+        prinft("Salir");
+
+        while ()
+    }
 }
 ```
