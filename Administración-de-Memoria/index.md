@@ -25,6 +25,7 @@ ___
 por ejemplo:
 
 podemos observar una Fragmentación interna la cual esta divida en partes iguales donde cada parte sera encargada de manejar los procesos
+
 ![Bloques de memoria ejemplos](Imagenes/memoriaInterna2.png "Bloques de memoria")
 
 Al memento de asignarle estos procesos estos eran acomodados en los bloques que tenemos
