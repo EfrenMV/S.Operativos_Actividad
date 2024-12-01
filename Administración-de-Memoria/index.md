@@ -20,4 +20,12 @@ ___
 ## 3.1 Politica y Filsoifa
 </div>
 
+**Fragmentación interna:** Esto pasa al asignar mas memoria de la utilizable dejando desperdicios
+
+por ejemplo:
+
+**Framgentación externa** Esto pasa cuando tenemos suficiente memoria libre pero esta en pequeños bloques no contigus, esto ipidiendo la asignación de grandes procesos.
+
+por ejemplos:
+
 
