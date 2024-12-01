@@ -1,10 +1,5 @@
-<Center>
+<!--Portada-->
 <div align="center">
- <h1>Sistemas Operativos</h1>
-
-# Sistemas operativos
-# probadmo
-</div>
 
 # Sistemas Operativos
 
@@ -17,4 +12,6 @@
 
 ### Alumno: Efren Mendez Villanueva
 
-</center>
+</div>
+
+
