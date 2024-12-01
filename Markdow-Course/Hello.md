@@ -80,6 +80,6 @@ System.out.printl("hola mundo");
 
 <!--Estos son reglas para Github si lo queremos previsualizar necesitamos subirlo-->
 * [x] Task 1
-* [] Task 2
-* [] Task 3
+* [ ] Task 2
+* [ ] Task 3
 * [x] Task 4
