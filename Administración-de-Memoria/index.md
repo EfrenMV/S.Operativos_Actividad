@@ -117,7 +117,7 @@ int main(){
     inicializar(particiones);
 
     do{
-        printf("---Menu---\n"
+        printf("\n---Menu---\n"
         "1.-Asignar proceso a una partición\n"
         "2.-liberar particion\n"
         "3.-Mostrar particiones\n"
