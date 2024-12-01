@@ -92,17 +92,17 @@ void inicializar(Particion particiones[]) {
         printf("Ingrese el tamaño de la partición %d: ", i + 1);
         scanf("%d", &particiones[i].tamaño);
         particiones[i].ocupado = 0;
-        particiones[i].proceso_id = -1;
+        particiones[i].id = -1;
     }
 }
 
 // Función para mostrar el estado actual de las particiones
 void mostrar(Particion particiones[]) {
     printf("\nEstado actual de las particiones:\n");
-    for (int i = 0; i < NUM_PARTICIONES; i++) {
+    for (int i = 0; i < cantidadParticiones; i++) {
         printf("Partición %d: Tamaño %d, ", i + 1, particiones[i].tamaño);
         if (particiones[i].ocupado == 1) {
-            printf("Ocupado por el proceso %d\n", particiones[i].proceso_id);
+            printf("Ocupado por el proceso %d\n", particiones[i].id);
         } else {
             printf("Libre\n");
         }
@@ -130,9 +130,9 @@ int main(){
             case 2:
                 break;
             case 3:
+                mostrar(particiones);
                 break;
             case 4:
-                mostrar(particiones);
                 printf("Saliendo..");
                 break;
             default:
