@@ -90,11 +90,11 @@ int main(){
     int opc;
 
     do{
-        printf("---Menu---\n");
-        printf("1.-Asignar proceso a una partición\n");
-        printf("2.-liberar particion\n");
-        printf("3.-Mostrar particiones\n");
-        printf("4.-Salir");
+        printf("---Menu---\n"+
+        "1.-Asignar proceso a una partición\n"+
+        "2.-liberar particion\n"+
+        "3.-Mostrar particiones\n"+
+        "4.-Salir ");
         scanf("%d",&opc);
 
         switch(opc){
