@@ -77,7 +77,7 @@ Esto ayuda a optimizar las busquedas muchisimo, aunque los SSD no necesariamente
 #include <stdio.h>
 #include <stdlib.h> //Para manejar la memoria
 
-#define particiones 5 //Numero de particiones maximas
+#define cantidadParticiones 5 //Numero de particiones maximas
 
 //Estructura
 typedef struct{
@@ -86,8 +86,35 @@ typedef struct{
     int id;        // Para el id del proceso
 }Particion;
 
+// Función para inicializar las particiones
+void inicializar(Particion particiones[]) {
+    for (int i = 0; i < cantidadParticiones; i++) {
+        printf("Ingrese el tamaño de la partición %d: ", i + 1);
+        scanf("%d", &particiones[i].tamaño);
+        particiones[i].ocupado = 0;
+        particiones[i].proceso_id = -1;
+    }
+}
+
+// Función para mostrar el estado actual de las particiones
+void mostrar(Particion particiones[]) {
+    printf("\nEstado actual de las particiones:\n");
+    for (int i = 0; i < NUM_PARTICIONES; i++) {
+        printf("Partición %d: Tamaño %d, ", i + 1, particiones[i].tamaño);
+        if (particiones[i].ocupado == 1) {
+            printf("Ocupado por el proceso %d\n", particiones[i].proceso_id);
+        } else {
+            printf("Libre\n");
+        }
+    }
+}
+
 int main(){
+    Particion particiones[cantidadParticiones];
     int opc;
+
+    // Inicializamos las particiones
+    inicializar(particiones);
 
     do{
         printf("---Menu---\n"
@@ -105,6 +132,7 @@ int main(){
             case 3:
                 break;
             case 4:
+                mostrar(particiones);
                 printf("Saliendo..");
                 break;
             default:
