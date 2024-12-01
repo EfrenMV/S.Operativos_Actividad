@@ -84,5 +84,7 @@ System.out.printl("hola mundo");
 * [ ] Task 3
 * [x] Task 4
 
-<!-- Etiquetar un usuario, esto le notificara cuadno se suba -->
+<!-- Etiquetar un usuario, esto le notificara cuadno se suba, tambien agregue emogins -->
 @EfrenMV :blush: :v:
+
+[pagina de emogins Github](https://gist.github.com/rxaviers/7360908 "Aqui podemos encontrar los emogins a usar")
