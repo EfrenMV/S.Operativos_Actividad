@@ -70,4 +70,10 @@ Esto ayuda a optimizar las busquedas muchisimo, aunque los SSD no necesariamente
 | Relacionada con Ram y memoria virtual| Ocurre en RAM,memoria virutal, HDD o SDD
 | No se puede desfragmentar | Se puede desfragmentar|
 
+# 3.2 Memoria real
 
+### Programa en C de particiones fijas
+```C
+
+
+```
