@@ -88,3 +88,5 @@ System.out.printl("hola mundo");
 @EfrenMV :blush: :v:
 
 [pagina de emogins Github](https://gist.github.com/rxaviers/7360908 "Aqui podemos encontrar los emogins a usar")
+
+[Guia completa de lo que podemos hacer con markdown](https://github.com/adam-p/markdown-here/wiki/markdown-cheatsheet "Pagina donde encontraremos mas herramientas")
