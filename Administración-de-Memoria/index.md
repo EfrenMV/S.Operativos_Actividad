@@ -90,11 +90,11 @@ int main(){
     int opc;
 
     do{
-        printf("---Menu---\n"+
-        "1.-Asignar proceso a una partición\n"+
-        "2.-liberar particion\n"+
-        "3.-Mostrar particiones\n"+
-        "4.-Salir ");
+        printf("---Menu---\n"
+        "1.-Asignar proceso a una partición\n"
+        "2.-liberar particion\n"
+        "3.-Mostrar particiones\n"
+        "4.-Salir \n");
         scanf("%d",&opc);
 
         switch(opc){
@@ -108,7 +108,7 @@ int main(){
                 printf("Saliendo..");
                 break;
             default:
-            ("Opcion invalida, degite una opcion valida por favor");
+                printf("Opcion invalida, degite una opcion valida por favor");
         }
     } while (opc != 4);
     return 0;
