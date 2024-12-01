@@ -77,7 +77,7 @@ Esto ayuda a optimizar las busquedas muchisimo, aunque los SSD no necesariamente
 #include <stdio.h>
 #include <stdlib.h> //Para manejar la memoria
 
-#define particiones 5 // Numero de particiones maximas
+#define particiones 5 //Numero de particiones maximas
 
 typedef struct{
     int tamaño;
