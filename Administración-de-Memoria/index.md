@@ -38,10 +38,18 @@ Como se puede observar estos al ser colocados generan un desperdicio puesto que 
 La fragmentación interna puede llegar a generar desperdicios de memoria si un proceso no usa lo suficiente asignado puesto que este sobrando no se vuelve usar simplemente queda en nada
 
 ### Framgentación externa ### 
-Esto pasa cuando tenemos suficiente memoria libre pero esta en pequeños bloques no contigus, esto ipidiendo la asignación de grandes procesos.
+La gragmentación externa como su contraparte tambien puede llegar desperdicios pero por otra razones, puesto que esta es guardada de forma dispersa entonces tenemos desperdicios en espaciso que no estamos usando
 
 por ejemplos:
 
+aqui podemos obersvar una imagen de un disco HDD
+
+![Disco HDD](Imagenes/externa.png "Disco HDD")
+
+Al llegarse queda algo asi
+
+![Disco HDD FULL](Imagenes/externo2.png)
+Podemos observar que los procesos estan gurdados de forma aleatoria lo cual genera espacios entre ellos
 
 
 
