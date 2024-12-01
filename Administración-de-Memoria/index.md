@@ -79,9 +79,15 @@ Esto ayuda a optimizar las busquedas muchisimo, aunque los SSD no necesariamente
 
 #define particiones 5 //Numero de particiones maximas
 
+//Estructura
 typedef struct{
-    int tamaño;
-    int ocupado;
-    int id;
+    int tamaño;    //Para el tamaño de nuestros procesos
+    int ocupado;   // 0 no estara ocupado 1 estara ocupado
+    int id;        // Para el id del proceso
 }Particion;
+
+int main(){
+
+    return 0
+}
 ```
