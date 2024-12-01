@@ -1,4 +1,7 @@
 <Center>
+<div align="center">
+ Probando texto centrado para github
+</div>
 
 # Sistemas Operativos
 
