@@ -60,11 +60,14 @@ Esto tiene una solición donde se le puede aplicar una desfragmentación lo cual
 
 ![Disco HDD POV2 desfragmentado](Imagenes/externa0.2.png)
 
+Esto ayuda a optimizar las busquedas muchisimo, aunque los SSD no necesariamente ocupan esto pero los HDD si
+
 ## Resuen completo
 |  Fragmentación Intera  | Fragmentación Externa  
 |  ------- |:----:
 |  Ocurre dentro de un bloque asignado| Ocurre fuera de bloques asignados
 |  Desperdicio dentro de la memoria asignada| Desperdicio por espacios dispersos 
 | Relacionada con Ram y memoria virtual| Ocurre en RAM,memoria virutal, HDD o SDD
+| No se puede desfragmentar | Se puede desfragmentar|
 
 
