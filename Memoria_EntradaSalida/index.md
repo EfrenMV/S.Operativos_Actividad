@@ -509,6 +509,8 @@ Este llevara los siguientes pasos para manejarlo
 8. El manejador del dispositivo copia el contenido de los registros de datos de la controladora en el esapcio del usuario 
 9. El manejador de dispositivo devuelve el control al planificador para que desbloquee el proceso al usuario 
 
+![Interrupciones](Imagenes/interrupcioens.png)
+
 ## 2.- Programa de interrupciones 
 
 ```C
