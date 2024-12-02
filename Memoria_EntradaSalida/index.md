@@ -507,7 +507,7 @@ Este llevara los siguientes pasos para manejarlo
 6. El manejador de interrupciones determinara qué dispositivo causó la interrupción y le pasa el control a su manejador
 7. El menajador del dispositivo recupera la tabla de estado de los dispositivos la informaciónde la operación de E/S 
 8. El manejador del dispositivo copia el contenido de los registros de datos de la controladora en el esapcio del usuario 
-9. El manejador de dispositivo devuelve el control al planificador para que desbloquee el proceso al usuario 
+9. El manejador de dispositivo devuelve el control al planificador para que desbloque el proceso al usuario 
 
 ![Interrupciones](Imagenes/interrupcioens.png)
 
@@ -521,10 +521,56 @@ Este llevara los siguientes pasos para manejarlo
 
 ## 1.-Que es una cola de E/S y una simulación de una cola con prioridad
 
+Este es una estructura de datos lineal que sigue el principio FIFO (First in, Frist out). Funciona como una fila virtual donde el primer elemento que se añade es el primero en ser eliminado
+
+Su aplicación es esencial para mantener un orden predecible en la ejecución de tareas, ya que las operaciones de encolar(añadir al final) y desencolar 
+(eliminar al frente) se realizan de manera disciplinada
+
+**Operaciones basicas**
+* Encolar: Agregar un elemento al final de la cola.
+* Desencolar: Eliminar el elemento al frente de la cola.
+* Frente: Obtener el elemento al frente de la cola sin eliminarlo
+* Esta vacia: Verificar si la cola esta vacia
+* Tamaño: Optener el numero de elementos en la cola 
+
+La pudieramos resumir en estas
+* Agregar elemento
+* Eliminar elemento
+* Ver elementos
 ## 2.-Programa para manejar las operaciones de dispositivos utilizando una tabla de estructuras
 
 ```C
+#include <stdio.h>
+int opcion;
 
+int main() {
+   
+
+    do {
+        printf("\n--- Menu ---\n");
+        printf("1. Agregar elemento\n");
+        printf("2. Eliminar elemento\n");
+        printf("3. Ver elementos\n");
+        printf("4. Salir\n");
+        printf("Seleccione una opción: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                 break;
+            case 2:
+                 break;
+            case 3:
+                 break;
+            case 4:
+                printf("Saliendo...\n");
+                break;
+            default:
+                printf("Opción inválida, por favor intente de nuevo.\n");
+        }
+    } while (opcion != 4);
+    return 0;
+}
 ```
 
 # 4.4 Operaciones de Entrada y Salda
