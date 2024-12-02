@@ -77,6 +77,7 @@ Esto ayuda a optimizar las busquedas muchisimo, aunque los SSD no necesariamente
 ## Politicas de remplazo 
 
 **Fifo(First In, First Out):** 
+
 Siendo un algoritmo de paginación de baja sobrecarga, para este algoritmo imaginemos que estamos en un supermercado,
 al principio no tendremos ningun producto
 
@@ -177,7 +178,13 @@ a la pagina mas antigua, cuando ocurra un fallo de pagina la manecilla inspeccio
 
 ![reloj](Imagenes/reloj.png)
 
-**LRU (Least Recently Used):**
+**Menus usadas recientemente (LRU):**
+
+En general este algoritmo descarta la pagina que no se a utilizado por mucho tiempo ya que lleva el lema de "si no se a utilizado muy problablemente no se utilizara" 
+
+Aunque este algoritmo no es barato ya que para implementar el LRU por completo es necesario mantener una lista enlazada de todas las paginas en memoria con la pagina de uso más reciente en la parte frontal y la de uso menos reciente en la parte final. La dificultad recae con deber actualizarse en cada referencia de memoria, ya que buscar una pagina en la lista, eliminarla y despues pasarla al frente es una operación que consume mucho tiempo.
+
+*Formas de implementar el LRU:*
 
 **Optimal(OPT)**
 
