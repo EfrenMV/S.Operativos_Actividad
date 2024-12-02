@@ -660,7 +660,7 @@ Estas listas se gestionan usando punterios asociados a cada buffer en vez de uti
 
 ![Estructura de la E/S de linux](Imagenes/ESLinux.png)
 
-Cuadno se hace referencia a un número de bloque físico de un determinado dispositivo, el sistema operativo primero comprueba si el bloque está en la cache
+Cuando se hace referencia a un número de bloque físico de un determinado dispositivo, el sistema operativo primero comprueba si el bloque está en la cache
 de buffers. Para minimizar el tiempo de búsqueda, la lista de dispositivos se organiza como una tabla hash, utilizando una técnica similar al desbordamiento con encadenamiento.
 
 Aqui tenemos un ejemplo de la orgnaización general de la cache de buffers:
