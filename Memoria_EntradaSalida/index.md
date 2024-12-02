@@ -241,20 +241,36 @@ Aunque este algoritmo no es barato ya que para implementar el LRU por completo e
       ![Ejemplo](Imagenes/LRU.png)
 
 
-### Conjunto de trabajo 
-
- En la forma más pura de paginación, los procesos inician sin ninguna de sus páginas en la memo
- ria. Tan pronto como la CPU trata de obtener la primera instrucción, recibe un fallo de página, cau
- sando que el sistema operativo tenga que traer la página que contiene la primera instrucción. Por lo
- general a este fallo le siguen otros fallos de página por las variables globales y la pila. Después de
- cierto tiempo, el proceso tiene la mayoría de las páginas que necesita y se establece para ejecutar
- se con relativamente pocos fallos de página. A esta estrategia se le conoce como **paginación bajo
- demanda**, debido a que las páginas se cargan sólo según la demanda, no por adelantado. 
-
-
 ### WsClock 
 
-Este algoritmo es un reloj pero con esteroides practicamente, pero sienod de trabajo incomodo ya que exige explorar toda la tabla de páginas en cada fallo de página hasta localizar un candidato adecuado
+Este algoritmo es un reloj pero con esteroides practicamente, pero sienod de trabajo incomodo ya que exige explorar toda la tabla de páginas en cada fallo de página hasta localizar un candidato adecuado. Este es muy utilizado puesto que es simple de implementar y genera buen rendimiento.
+
+Este al principio tendra las paginas justo como el del reloj, a medida que se agregan más páginas, pasan a la lista para formar un anillo. Cada entrada contiene el campo *Tiempo de último uso* del algotimo básico del conjunto de trabajo, asi como el bit R y un bit M.
+
+Al igual que el algoritmo de reloj, en cada fallo de página se examina primero la página a la que apunta la manecilla. Si el bit R es 1, la página se ha utilizado durante el pulso acutal lo cual evita que elimine pone el R en 0 y se remite el algoritmo. 
+
+Pero si la edad es mayor que t y la página está limpia, significa que no se encuentra en el conjunto de trabajo y existe una copia válida en el disco, probocando que se reclame el marco y la nueva pagina sea colocada ahi.
+
+Si la manecilla llega a otra vez a su punto inicial y se ha planificado por lo menos una escritura la manecilla sólo sigue moviéndose, buscando una pagina limpia
+
+![WsCloock](Imagenes/WsClockpng.png)
+
+## Pequeño resumen de los algoritmos 
+
+|Algoritmo|  Comentario | 
+|:--------: |   --------       |     
+| óptmio |  No se puede implmentar, pero es útil como punto de comparación              |    
+| NRU(No usadas recientemente) |  Una aproximación muy burda del LRU              |  
+| FIFO(primero en entrar, primero en salir)     |  Podría descartar páginas importantes           |   
+| Segunda oportunidad   |  Gran mejora sobre FIFO              |   
+| Reloj   |  Realista              |
+| LRU(menos usadas recientemente)   |  Exelente, pero dificil de implementar con exactitud              |
+| NFU(no utilizadas frecuentemente)   |  Aproximación a LRU bastante burda              |
+| Envejecimiento   |  Algoritmo eficiente que se aproxima bien a LRU              |
+| Conjunto de trabajo   |  Muy costoso de implementar              |
+| WsClockl   |  Algoritmo eficientemente bueno              |
+
+
 
 
 
