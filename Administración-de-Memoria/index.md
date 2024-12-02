@@ -190,3 +190,17 @@ int main(){
     return 0;
 }
 ```
+
+### Algoritmo para calcular procesos utilizando el algoritmo de "primera cabida"
+
+1. Inicio
+2. Leer el tamaño de cada partición
+3. Leer el tamaño del proceso asignar
+4. Comparar tamaños con los bloques y encontrar el cual puede asignarle el proceso
+5. Si se encuentra verificar si esta ocupado
+6. Si no esta ocupado usarlo y marcarlo como ocupad
+6. Si esta ocupado buscar otro
+7. Si se encuentra otro utilizar ese y marcarlo como cupado
+
+    Si no hay otro que pueda cubrir el espacio imprimir "no se cuenta con suficiente espacio"
+8. Fin
