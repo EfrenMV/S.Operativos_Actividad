@@ -258,7 +258,7 @@ Si la manecilla llega a otra vez a su punto inicial y se ha planificado por lo m
 ## Pequeño resumen de los algoritmos 
 
 |Algoritmo|  Comentario | 
-|:--------: |   --------       |     
+|-------- |   --------       |     
 | óptmio |  No se puede implmentar, pero es útil como punto de comparación              |    
 | NRU(No usadas recientemente) |  Una aproximación muy burda del LRU              |  
 | FIFO(primero en entrar, primero en salir)     |  Podría descartar páginas importantes           |   
