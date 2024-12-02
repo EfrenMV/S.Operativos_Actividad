@@ -431,9 +431,13 @@ int main(){
 ### Paginación de memoria  
 Esta es la divición en pequeñas partes o páginas a un programa 
 
-aqui mismo contamos con los **marcos** estos son la memoria fisica dividida en bloques del mismo tamaño. La memoria lógica tambien se consiera dividada
-en bloques del mismo tamaño que los marcos, denominados páginas. Al cargar un proceso de memoria, sus páginas pueden ser cargadas en cualquier marco
-disponible, no siendo necesario que estos esten contiguos.
+La paginación cuenta con **marcos** y **paginas**
+
+**Marcos:** Estos son memoria fisica dividida en bloques del mismo tamaño.
+
+**Paginas:** Estas son memorias lógicas divididads en bloques del mismo tamaño que los marcos.
+
+Al cargar un proceso en memoria, este debe ser paginado en cualquier marco o marcos, ya que estos marcos no ocupan que estén coniguos
 
 **Que pasos se debe dar el administrador de la memoria para cargar un proceso en un sistema de paginación?**
 
@@ -450,56 +454,162 @@ disponible, no siendo necesario que estos esten contiguos.
     ![paginas](Imagenes/paginas.png)
 
 
+**Tabla de marcos**
 
+El sistema operativo debe tener a su disposición saber cuantos marcos estan y cuantos estan libres u ocupados. Esta estructura tendra una entrada de marco por cada memoria fisica que existe,
+ya que el temaño de los marcos es fijo y sera igual al tamaño de la memoria principal dividido por el tamaño de un marco asi:
+
+> TM = TF/M
+
+TM = Numero de entradas de la tabla de marcos
+TF = Tamaño de la memoria fisica
+M  = Tamaño del marco el cual es igual al de la pagina 
+
+**¿Que debe tener una tabla de marcos?**
+* Información del estado del marco
+    * Libre
+    * Ocupado
+        * Que proceso lo ocupa
+        * Que pagina lo ocupa 
+
+**Tabla de paginas**
+
+Existe una tabla de paginas por cada proceso activo, creandose durante la carga de este en memoria.
+
+Estas **tienen tantas entradas como páginas pueda ocupar el proceso** y **cada una indica el numero de marco donde esta alojada**
+
+aqui un dibujo realizado para ver como funciona la paginación
+
+![Dibujo](Imagenes/paginaciónDibujo.png)
 ## 2.-Programa que simule una tabla de páginas para procesos con acceso aleatorio a memoria virtual
 
 ```C
 #include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
 
-//Agregar el elemento al final de la cola
-void metodoA(){
-    printf("Selecciono metodoA");
+#define marcos 5 // Número de marcos con los que contamos (memoria física)
+#define paginas 10 // Cantidad de páginas
+
+void verMarcos(int tabla_marcos[]) {
+    printf("\n--- Tabla de Marcos (Memoria Fisica) ---\n");
+    for (int i = 0; i < marcos; i++) {
+        if (tabla_marcos[i] != -1) {
+            printf("| Marco %d: Página %d | \n", i, tabla_marcos[i]);
+        } else {
+            printf("| Marco %d: VACÍO | \n", i);
+        }
+    }
 }
 
-//Elimina el elemento del frente de la cola (debe ser el primero que llego)
-void metodoB(){
-    printf("Selecciono metodoB");
+void verPaginas(int tabla_paginas[]) {
+    printf("\n--- Tabla de Páginas (Memoria Virtual) ---\n");
+    for (int i = 0; i < paginas; i++) {
+        if (tabla_paginas[i] == -1) {
+            printf("Página %d: VACÍO\n", i);
+        } else {
+            printf("Página %d: Marco %d\n", i, tabla_paginas[i]);
+        }
+    }
 }
 
-//Muestra cuantos elementos hay y muestra quien esta primero
-void metodoC(){
-    printf("Selecciono metodoC");
+void agregar(int tabla_paginas[], int tabla_marcos[]) {
+    int pagina;
+    printf("Ingrese el número de la página que desea agregar (0-%d): ", paginas-1);
+    scanf("%d", &pagina);
+
+    if (pagina < 0 || pagina >= paginas) {
+        printf("Número de página inválido.\n");
+        return;
+    }
+
+    if (tabla_paginas[pagina] != -1) {
+        printf("La página %d ya está asignada a un marco.\n", pagina);
+        return;
+    }
+
+    int marco_asignado = -1;
+    for (int i = 0; i < marcos; i++) {
+        if (tabla_marcos[i] == -1) {
+            marco_asignado = i;
+            break;
+        }
+    }
+
+    if (marco_asignado == -1) {
+        printf("No hay marcos disponibles para asignar a la página %d.\n", pagina);
+        return;
+    }
+
+    tabla_paginas[pagina] = marco_asignado;
+    tabla_marcos[marco_asignado] = pagina;
+
+    printf("Página %d ha sido asignada al marco %d.\n", pagina, marco_asignado);
+}
+
+void eliminar(int tabla_paginas[], int tabla_marcos[]) {
+    int pagina;
+    printf("Ingrese el número de la página que desea eliminar (0-%d): ", paginas-1);
+    scanf("%d", &pagina);
+
+    if (pagina < 0 || pagina >= paginas) {
+        printf("Número de página inválido.\n");
+        return;
+    }
+
+    if (tabla_paginas[pagina] == -1) {
+        printf("La página %d no está asignada a ningún marco.\n", pagina);
+        return;
+    }
+
+    int marco = tabla_paginas[pagina];
+    tabla_paginas[pagina] = -1;
+    tabla_marcos[marco] = -1;
+
+    printf("Página %d ha sido eliminada del marco %d.\n", pagina, marco);
 }
 
 int main() {
-   int opcion;
+    int opcion;
+    int tabla_marcos[marcos]; 
+    int tabla_paginas[paginas]; 
+
+    for (int i = 0; i < marcos; i++) tabla_marcos[i] = -1;
+    for (int i = 0; i < paginas; i++) tabla_paginas[i] = -1;
+
+    srand(time(NULL));
 
     do {
-        printf("\n--- Menu ---\n");
-        printf("1. metodoA\n");
-        printf("2. metodoB\n");
-        printf("3. metodoC\n");
-        printf("4. Salir\n");
+        printf("\n--- Menú ---\n");
+        printf("1. Agregar una página a la memoria\n");
+        printf("2. Eliminar una página de la memoria\n");
+        printf("3. Ver las páginas (memoria virtual)\n");
+        printf("4. Ver los marcos (memoria física)\n");
+        printf("5. Salir\n");
         printf("Seleccione una opción: ");
         scanf("%d", &opcion);
 
         switch (opcion) {
             case 1:
-                metodoA();
-                 break;
+                agregar(tabla_paginas, tabla_marcos);
+                break;
             case 2:
-                metodoB();
-                 break;
+                eliminar(tabla_paginas, tabla_marcos);
+                break;
             case 3:
-                metodoC();
-                 break;
+                verPaginas(tabla_paginas);
+                break;
             case 4:
+                verMarcos(tabla_marcos);
+                break;
+            case 5:
                 printf("Saliendo...\n");
                 break;
             default:
                 printf("Opción inválida, por favor intente de nuevo.\n");
         }
-    } while (opcion != 4);
+    } while (opcion != 5);
+
     return 0;
 }
 
