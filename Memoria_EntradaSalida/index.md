@@ -537,8 +537,8 @@ La pudieramos resumir en estas
 * Agregar elemento: Agrega un elemento al final de la cola.
 * Eliminar elemento: Elimina el elemento al frente de la cola.
 * Ver elementos: Ver la cantidad de elementos y el elemento de enfrente de la cola
-## 2.-Programa para manejar las operaciones de dispositivos utilizando una tabla de estructuras
 
+### Simulación
 ```C
 #include <stdio.h>
 
@@ -588,6 +588,12 @@ int main() {
     } while (opcion != 4);
     return 0;
 }
+```
+
+## 2.-Programa para manejar las operaciones de dispositivos utilizando una tabla de estructuras
+
+```C
+ 
 ```
 
 # 4.4 Operaciones de Entrada y Salda
