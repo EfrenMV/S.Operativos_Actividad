@@ -541,10 +541,24 @@ La pudieramos resumir en estas
 
 ```C
 #include <stdio.h>
-int opcion;
+
+//Agregar el elemento al final de la cola
+void agregar(){
+    printf("Selecciono agregar elemento");
+}
+
+//Elimina el elemento del frente de la cola (debe ser el primero que llego)
+void eliminar(){
+    printf("Selecciono eliminar elemento");
+}
+
+//Muestra cuantos elementos hay y muestra quien esta primero
+void verElementos(){
+    printf("Selecciono ver elementos");
+}
 
 int main() {
-   
+   int opcion;
 
     do {
         printf("\n--- Menu ---\n");
