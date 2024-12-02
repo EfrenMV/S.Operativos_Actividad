@@ -119,6 +119,29 @@ void asignar(Particion particiones[]) {
         printf("No se pudo asignar el proceso %d debido a falta de espacio.\n", id);
     }
 }
+
+// Función para liberar una partición
+void liberar(Particion particiones[]) {
+    int id;
+    printf("\nIngrese el ID del proceso a liberar: ");
+    scanf("%d", &id);
+
+    int liberado = 0;
+    for (int i = 0; i < cantidadParticiones; i++) {
+        if (particiones[i].ocupado == 1 && particiones[i].id == pid) {
+            particiones[i].ocupado = 0;
+            particiones[i].id = -1;
+            printf("Partición %d liberada.\n", i + 1);
+            liberado = 1;
+            break;
+        }
+    }
+
+    if (!liberado) {
+        printf("No se encontró el proceso %d para liberar.\n", proceso_id);
+    }
+}
+
 // Mostrar el estado actual de las particiones
 void mostrar(Particion particiones[]) {
     printf("\nEstado actual de las particiones:\n");
