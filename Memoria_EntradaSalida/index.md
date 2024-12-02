@@ -17,10 +17,13 @@ ___
 <!--3.1 Política y filosofía-->
 <div align="center">
 
-## 3.1 Politica y Filsoifa
+# Administraciòn de Memoria 
 </div>
 
-### Fragmentación interna: ### 
+# 3.1 Politica y Filsoifa
+ ## Fragmentación Interna vs Externa
+
+### Fragmentación interna:  
 Como su palabra lo indica **interna** nos da a entender que la particiones ocurren en la memoria, ahora estas particiones estan divididas en bloques con tamaños especificos 
 
 por ejemplo:
@@ -204,3 +207,26 @@ int main(){
 
     Si no hay otro que pueda cubrir el espacio imprimir "no se cuenta con suficiente espacio"
 8. Fin
+
+# 3.3 Organización de memoria virtual
+
+## Paginación y segmentación
+
+## Programa que simule una tabal de páginas para procesos con acceso aleatorio a memoria virtual
+
+# 3.4 Administración de memoria virtual
+
+## Codigo con el algoritmo "Least Recently Used (LRU)
+
+## Diagrama para el proceso de traducción de direciones virtuales a fisicas en un sistema con memoria virtual
+
+# Integración
+
+## Analizar un sistema operativo moderno (por ejemplo Linux o Windows) e indentificar como administra la memoria virtual
+
+## Simulacion pdel swapping de procesos en memoria virtual
+
+<div align="center">
+
+# Administración de Entrada/Salida
+</div>
