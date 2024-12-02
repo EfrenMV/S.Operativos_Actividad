@@ -488,7 +488,26 @@ ejemplos de este tipo de dispositivo son las impresoraas, terminales, citnas, et
 
 Esta tecnica fue creada para evitar tener que esperar continuamenete una E/S lo cual nos ahorra recursos, para ello cuando el procesador da una orden de 
 E/S a la controladora puede continuar con otro trabajo, ya que ésta le notificará mediante una interrupción del fin de la operacion de E/S. El procesador
-ejecutará la trasnferencia de datos
+ejecutará la trasnferencia de datos, para esto ocuparemos un gestor de disposititos el cual llamaremos **tabla de estado de los dispositivos**
+
+**tabla de estados de los dispositivos:**<br>
+Este contendra la entrada por cada dispositivo y el manejador de interrupciones, encargado de determinar el tipo de interrupción y efectuar las accionas
+oportunas
+
+Este llevara los siguientes pasos para manejarlo
+
+1. El proceso de usuario pide realizar una operación de lectura a través del servicio correspondiente
+2. El manejador de dispositivo comprueba el registro de estado de la controladora para determinar si el dispositivo esta libre. Si esta ocupado, este 
+   indicara que espere a que termine 
+3. El manejador almacenara una orden de entrada en el registro de órdenes de la controladora y, de esta forma, inicia el dispositivo
+4. El manejador almacena la información de la operación inciada de la tabla de estado de los dispositivos. En la entrada correspondiente se guarda la  
+   dirección de retorno de la llamada original del proceso, asi como párametros especiales para la operación de E/S. En este momento, el proceso pasa a 
+   estado de bloquado y se llama al planificador a corto plazo para continuar con la ejecución de otro proceso
+5. Cuando el dispositivo terminba la operación emite una interrupcion, donde el sistema operativo tomara el control y se lo pasara al manejador de interrupciones
+6. El manejador de interrupciones determinara qué dispositivo causó la interrupción y le pasa el control a su manejador
+7. El menajador del dispositivo recupera la tabla de estado de los dispositivos la informaciónde la operación de E/S 
+8. El manejador del dispositivo copia el contenido de los registros de datos de la controladora en el esapcio del usuario 
+9. El manejador de dispositivo devuelve el control al planificador para que desbloquee el proceso al usuario 
 
 ## 2.- Programa de interrupciones 
 
