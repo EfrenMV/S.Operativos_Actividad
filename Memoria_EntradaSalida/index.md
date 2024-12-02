@@ -187,7 +187,7 @@ Aunque este algoritmo no es barato ya que para implementar el LRU por completo e
 *Formas de implementar el LRU:*
 
 1. Contador de 64 bits
-        Este
+      * Este
 
 **Optimal(OPT)**
 
