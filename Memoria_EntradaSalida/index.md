@@ -397,7 +397,8 @@ int main(){
 
 ##  1.-Paginación y segmentación
 
-### Segmentación  Es la divición de la memoria primeria de un ordenador, esto ayuda para proteger modulos de segmentos contra accesos no autorizados 
+### Segmentación  
+Es la divición de la memoria primeria de un ordenador, esto ayuda para proteger modulos de segmentos contra accesos no autorizados 
 
 ### Paginación de memoria  Esta es la divición en pequeñas partes o páginas a un programa 
 
