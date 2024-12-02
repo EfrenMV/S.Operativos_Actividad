@@ -1152,3 +1152,6 @@ forma de gestionarse
 ### E/S de Windows
 
 ### E/S de Linux
+
+En principío el sistema de E/S del nucleo de Linux es muy similar al de otras implementaciones de UINX, como es el caso de SVR4. El nucle de Linux asocia un fichero
+especial con cada menjador de dispositivo de E/S, distinguiendose entre dispositivos de bloques, de caracteres y de red.
