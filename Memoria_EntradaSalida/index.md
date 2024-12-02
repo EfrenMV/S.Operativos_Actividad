@@ -34,6 +34,7 @@ podemos observar una Fragmentación interna la cual esta divida en partes iguale
 ![Bloques de memoria ejemplos](Imagenes/memoriaInterna2.png "Bloques de memoria")
 
 Al memento de asignarle estos procesos estos eran acomodados en los bloques que tenemos
+
 ![](Imagenes/memoriaInterna.png)
 
 Como se puede observar estos al ser colocados generan un desperdicio puesto que no estan aprovechando el 100% de cada uno.
