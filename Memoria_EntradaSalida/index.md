@@ -666,6 +666,10 @@ de buffers. Para minimizar el tiempo de búsqueda, la lista de dispositivos se o
 Aqui tenemos un ejemplo de la orgnaización general de la cache de buffers:
 
 ![cache de buffers linux](Imagenes/OrganizaciónBuffersLinux.png)
+
+En el ejemplo encontramos una tabla hash de longitud fija que contiene punteros a la cache de buffers. Cada referencia a un (dispositivo#, bloque#) se corresponde con una determinada entrada de la tabla hash. El puntero de dicha entrada apunta al primer buffer de la cadena. Un puntero hash incluido en cada buffer señala al siguiente buffer en la cadena correspondiente a esa entrada de la tabla hash. Por tanto , se cumple que para todas las referencias(dispositivo#, bloque#) que se corresponden con la misma entrada de la tabla hash, si el bloque correspondiente esta en la cache de buffers, ese buffer estará en la cadena vinculada a esa entrada de la tabla hash. por consiguiente la longitud de la búsqueda de la cadena de buffers se reduce por un factor de orden N, siendo N la longitud de la tabla hash. 
+
+Para remplazao del bloque utilizamos el algoritmo del menos reciente usado. Una vez que el buffer s ele ha asignado un bloque de disco, no puede utilizarse para otro bloque hasta que se hayan usado más recientemente los restantes buffers. La lista de libres mantiene el orden requerido por el algoritmos
 ### E/S de Windows
 
 ### E/S de Linux
