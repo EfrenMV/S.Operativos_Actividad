@@ -466,6 +466,14 @@ Realmente no se que pedo :)
 
 ## 1.-Diferencia entre dispositivos de bloque y dispositivos de caracter
 
+### Disposistivos de bloques:<br>
+Estos almacen información en blques de tamaño fijo los cuales cuentan con su propia direccion. Estos pueden leer o escribir bloques de forma independiente.
+ejemplos de estos son los discos, CD-ROM etc.
+
+### Dispositivos de caracteres:<br>
+La diferencia con los bloques es que estos no son direccionables por ende no se puedee acceder directamente a un determinado carácter. 
+ejemplos de este tipo de dispositivo son las impresoraas, terminales, citnas, etc.
+
 ## 2.- Programa manejador de dispositivos para un dispositivo virtual de entrada
 
 ```C
