@@ -175,6 +175,7 @@ int main(){
                 asignar(particiones);
                 break;
             case 2:
+                liberar(particiones);
                 break;
             case 3:
                 mostrar(particiones);
