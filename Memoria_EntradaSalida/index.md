@@ -414,9 +414,22 @@ int main(){
 ##  1.-Paginación y segmentación
 
 ### Segmentación  
-Es la divición de la memoria primeria de un ordenador, esto ayuda para proteger modulos de segmentos contra accesos no autorizados 
+ Cada segmento consiste en una secuencia lineal de direcciones, desde 0 hasta cierto valor máximo. La longitud de cada segmento
+ puede ser cualquier valor desde 0 hasta el máximo permitido. Los distintos segmentos pueden tener distintas longitudes (y por lo general así es). 
+ Además las longitudes de los segmentos pueden cambiar durante la ejecución. La longitud de un segmento de pila puede incrementarse 
+ cada vez que se meta algo a la pila y decrementarse cada vez que se saque algo.
 
-### Paginación de memoria  Esta es la divición en pequeñas partes o páginas a un programa 
+ Devido a que cada segmento constituy eun espacio de direcciones separado, los distintos segmentos pueden crecer o reducirse de manera independiente, sin afectar unos a otros
+
+ ![Segmentos creciendo de manera distinta](Imagenes/Segmentospng.png)
+
+* Ventajas
+    * La vinculación de procedimientos que se compilan por separado se simplifica de manera considerable
+    * Si se llega a modificar un segmento no hay neceisdad de cambiar los demas procedimientos (esto por que no se modificaron direcciones iniciales)
+    * Facilita la compartición de procedimientos o datos entre varios procesos
+    
+### Paginación de memoria  
+Esta es la divición en pequeñas partes o páginas a un programa 
 
 aqui mismo contamos con los **marcos** estos se les denomina como numero de pagina fisica esta pagina fisica es asignada a un proceso de forma exclusiva
 
