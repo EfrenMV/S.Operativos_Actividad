@@ -484,6 +484,12 @@ ejemplos de este tipo de dispositivo son las impresoraas, terminales, citnas, et
 
 ## 1.-Interrupciones por E/S y su administración con el S.O con ejemplo en psudocódigo
 
+### Interrupciones por E/S
+
+Esta tecnica fue creada para evitar tener que esperar continuamenete una E/S lo cual nos ahorra recursos, para ello cuando el procesador da una orden de 
+E/S a la controladora puede continuar con otro trabajo, ya que ésta le notificará mediante una interrupción del fin de la operacion de E/S. El procesador
+ejecutará la trasnferencia de datos
+
 ## 2.- Programa de interrupciones 
 
 ```C
