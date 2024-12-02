@@ -125,8 +125,45 @@ donde el primero en llegar es el primero en salir
  **Segunda Chance**
 
 Este puede ser tomado como una modificación del Fifo, por que lo que hacemos es agregar una nueva variable al juego llamada **el bit R** este lo que hace
-es mostrar si la pagina a sido usada con anterioridad, si es 0 la pagina es antigua y no se a usado entonces se descarta pero si es 1 significa que si se a usado por ende no se descarta
+es mostrar si la pagina a echo referenciada en el un intervalo de reloj reciente, si es 0 la pagina es antigua y no se a usado entonces se descarta pero si es 1 significa que si se a usado por ende no se descarta pero se vuelve un 0 y se reinicia como si acabara de llegar
 
+retomando al ejemplo visto anteriormente, si siguieramos trabajando con Fifo puro entonces se descartaria el pan pero ahora tenemos el bit r por ende se comprueba si este es = 1, como es el caso lo que hacemos es reiniciar el proceso
+
+|Produco|  Tiempo en el supermercado  | bit R   |
+|:--------: |   --------       |  --------  |   
+| pan     |  3           |      1       |
+| leche   |  2              |    0      |
+| frojoles |  1              |      1   |
+| queso |  0              |  1  |
+
+proceso reiniciado
+
+|Produco|  Tiempo en el supermercado  | bit R   |
+|:--------: |   --------       |  --------  |   
+| leche   |  2              |    0      |
+| frojoles |  1              |      1   |
+| queso |  0              |  1  |
+| pan     |  0           |      0       |
+
+como podemos observar ahora se toma el pan como proceso nuevo entonces seguimos trabajando, ahora nos topamos con la leche donde este tiene un 0 en el bit lo cual provocaria que se descartara y añadiendo el nuevo proceso entrante que en este caso son nueces
+
+|Produco|  Tiempo en el supermercado  | bit R   |
+|:--------: |   --------       |  --------  |   
+| frojoles |  1              |      1   |
+| queso |  0              |  1  |
+| pan     |  1           |      0       |
+| nueces   |  0              |    0      |
+
+Si de pura casualidad ya se a echo referencia a todas las paginas y nos topamos un caso como estos
+
+|Produco|  Tiempo en el supermercado  | bit R   |
+|:--------: |   --------       |  --------  |   
+| frojoles |  1              |      1   |
+| queso |  0              |  1  |
+| pan     |  1           |      1       |
+| nueces   |  0              |    1      |
+
+lo que hara el algoritmo es trabajar como un Fifo puro eliminando simplemente el que tenga mas tiempo 
 
 **LRU (Least Recently Used):**
 
