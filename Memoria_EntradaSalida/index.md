@@ -634,3 +634,38 @@ int main() {
 
 
 ## 1.-Explica cómo lo sisstemas operativos modernos optimizan las operaciones de entrada/salida con el uso de memoria caché
+
+### E/S de Unix
+
+Unix maneja ficheros, entonces cada E/S esta asociado con un fichero especial que gestiona el sistema de ficheros, se lee y escribe de la misma manera que 
+los ficheros de datos de usuario. Esto ayuda a proporcionar una interfaz bien definida y uniforme para los usuarios y los procesos.
+
+En Unix contamos con dos tipos de E/S
+1. Con buffer (Este es el que nos interesa y hablaremos)
+2. Sin buffer
+
+### 1.- Cache de Buffers<br>
+Este es esencialmente un cache de disco. Este maneja las operaciones de E/S sobre el disco a través del cache de buffers. estu utilizando DMA para la 
+transferencia de datos entre el cache de buffers y el espacio de procesos de los usuarios. Ya que el cache de buffers como el área de E/S esta en memoria 
+principal, utilizamos el sistema DMA para realizar una copia de memoria a memoria, esto no consumira ningun ciclo del procesador, pero consume ciclos del bus
+
+**Listas para gestionar el cache de buffers**
+* **Lista de libres:** Lista de todos los heucos de la cache (En UNIX a un hueco se le denomina buffer, cada hueco almacena un sector del dispo) que están disponibles para su asignación
+* **Lista de dispositivos:** Lista de todos los buffers que están actualmente asociados con cada disco.
+* **Cola de E/S del manejador:** Lista de los buffers sobre los que se está realmente realizando E/S o esperando por la misma para un determinado dispositivo.
+
+En general todo s los buffers deberian estar en la lista de libres o en la cola de E/S del manejador. Una vez que se asocia un buffer a un dispositivo,
+este permanece asociado al mismo incluso aunque esté en la lista de libres, hasta que se reutilice realmente y pase a esar vinculado con otro dispositivo.
+Estas listas se gestionan usando punterios asociados a cada buffer en vez de utilizar listas fisicamente independientes.
+
+![Estructura de la E/S de linux](Imagenes/ESLinux.png)
+
+Cuadno se hace referencia a un número de bloque físico de un determinado dispositivo, el sistema operativo primero comprueba si el bloque está en la cache
+de buffers. Para minimizar el tiempo de búsqueda, la lista de dispositivos se organiza como una tabla hash, utilizando una técnica similar al desbordamiento con encadenamiento.
+
+Aqui tenemos un ejemplo de la orgnaización general de la cache de buffers:
+
+![cache de buffers linux](Imagenes/OrganizaciónBuffersLinux.png)
+### E/S de Windows
+
+### E/S de Linux
