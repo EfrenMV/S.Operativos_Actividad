@@ -22,7 +22,7 @@ ___
 
 # 3.1 Politica y Filsoifa
 
-## Fragmentación Interna vs Externa
+## 1.-Fragmentación Interna vs Externa
 
 ### Fragmentación interna:  
 Como su palabra lo indica **interna** nos da a entender que la particiones ocurren en la memoria, ahora estas particiones estan divididas en bloques con tamaños especificos 
@@ -75,9 +75,9 @@ Esto ayuda a optimizar las busquedas muchisimo, aunque los SSD no necesariamente
 | Relacionada con Ram y memoria virtual| Ocurre en RAM,memoria virutal, HDD o SDD
 | No se puede desfragmentar | Se puede desfragmentar|
 
-## Politicas de remplazo 
+## 2.-Politicas de remplazo 
 
-**Fifo(First In, First Out):** 
+### Fifo(First In, First Out): 
 
 Siendo un algoritmo de paginación de baja sobrecarga, para este algoritmo imaginemos que estamos en un supermercado,
 al principio no tendremos ningun producto
@@ -124,7 +124,7 @@ entonces si llega otro producto como podremos observar estamos llenos, por ende 
 aqui es donde nuestro algoritmo trabaja, este elige al que lleve mas tiempo en la tiende el cual seria el pan, esto puede entenderse como una pila
 donde el primero en llegar es el primero en salir
 
- **Segunda Chance**
+### Segunda Chance:
 
 Este puede ser tomado como una modificación del Fifo, por que lo que hacemos es agregar una nueva variable al juego llamada **el bit R** este lo que hace
 es mostrar si la pagina a echo referenciada en el un intervalo de reloj reciente, si es 0 la pagina es antigua y no se a usado entonces se descarta pero si es 1 significa que si se a usado por ende no se descarta pero se vuelve un 0 y se reinicia como si acabara de llegar
@@ -167,7 +167,7 @@ Si de pura casualidad ya se a echo referencia a todas las paginas y nos topamos 
 
 lo que hara el algoritmo es trabajar como un Fifo puro eliminando simplemente el que tenga mas tiempo 
 
-**Reloj**
+### Reloj:
 
 Como su nombre lo indica y se podra observar en la imagen hace una simulación a como si fuera un reloj donde la mancilla estara constantemente apuntando
 a la pagina mas antigua, cuando ocurra un fallo de pagina la manecilla inspecciona este proceso donde dependiendo si el bit es o u 1 actuara
@@ -179,7 +179,7 @@ a la pagina mas antigua, cuando ocurra un fallo de pagina la manecilla inspeccio
 
 ![reloj](Imagenes/reloj.png)
 
-**Menus usadas recientemente (LRU):**
+### Menos usadas recientemente (LRU): 
 
 En general este algoritmo descarta la pagina que no se a utilizado por mucho tiempo ya que lleva el lema de "si no se a utilizado muy problablemente no se utilizara" 
 
@@ -241,26 +241,26 @@ Aunque este algoritmo no es barato ya que para implementar el LRU por completo e
       ![Ejemplo](Imagenes/LRU.png)
 
 
-**Conjunto de trabajo**
+### Conjunto de trabajo 
 
  En la forma más pura de paginación, los procesos inician sin ninguna de sus páginas en la memo
  ria. Tan pronto como la CPU trata de obtener la primera instrucción, recibe un fallo de página, cau
  sando que el sistema operativo tenga que traer la página que contiene la primera instrucción. Por lo
  general a este fallo le siguen otros fallos de página por las variables globales y la pila. Después de
  cierto tiempo, el proceso tiene la mayoría de las páginas que necesita y se establece para ejecutar
- se con relativamente pocos fallos de página. A esta estrategia se le conoce como paginación bajo
- demanda, debido a que las páginas se cargan sólo según la demanda, no por adelantado. 
+ se con relativamente pocos fallos de página. A esta estrategia se le conoce como **paginación bajo
+ demanda**, debido a que las páginas se cargan sólo según la demanda, no por adelantado. 
 
 
-**WsClock**
+### WsClock 
 
-
+Este algoritmo es un reloj pero con esteroides practicamente, pero sienod de trabajo incomodo ya que exige explorar toda la tabla de páginas en cada fallo de página hasta localizar un candidato adecuado
 
 
 
 # 3.2 Memoria real
 
-## Programa en C de particiones fijas
+## 1.-Programa en C de particiones fijas
 ```C
 #include <stdio.h>
 #include <stdlib.h> //Para manejar la memoria
@@ -379,7 +379,7 @@ int main(){
 }
 ```
 
-## Algoritmo para calcular procesos utilizando el algoritmo de "primera cabida"
+## 2.-Algoritmo para calcular procesos utilizando el algoritmo de "primera cabida"
 
 1. Inicio
 2. Leer el tamaño de cada partición
@@ -395,15 +395,15 @@ int main(){
 
 # 3.3 Organización de memoria virtual
 
-### Paginación y segmentación
+##  1.-Paginación y segmentación
 
-**Segmentación** Es la divición de la memoria primeria de un ordenador, esto ayuda para proteger modulos de segmentos contra accesos no autorizados 
+### Segmentación  Es la divición de la memoria primeria de un ordenador, esto ayuda para proteger modulos de segmentos contra accesos no autorizados 
 
-**Paginación de memoria** Esta es la divición en pequeñas partes o páginas a un programa 
+### Paginación de memoria  Esta es la divición en pequeñas partes o páginas a un programa 
 
 aqui mismo contamos con los **marcos** estos se les denomina como numero de pagina fisica esta pagina fisica es asignada a un proceso de forma exclusiva
 
-### Programa que simule una tabla de páginas para procesos con acceso aleatorio a memoria virtual
+## 2.-Programa que simule una tabla de páginas para procesos con acceso aleatorio a memoria virtual
 
 ```C
 #include <stdio.h>
@@ -414,15 +414,18 @@ Realmente no se que pedo :)
 ```
 # 3.4 Administración de memoria virtual
 
-### Codigo con el algoritmo "Least Recently Used" (LRU)
+## 1.- Codigo con el algoritmo "Least Recently Used" (LRU)
+```C
 
-### Diagrama para el proceso de traducción de direciones virtuales a fisicas en un sistema con memoria virtual
+```
 
-## Integración
+## 2.-Diagrama para el proceso de traducción de direciones virtuales a fisicas en un sistema con memoria virtual
 
-### Analizar un sistema operativo moderno (por ejemplo Linux o Windows) e indentificar como administra la memoria virtual
+# Integración
 
-### Simulacion del swapping de procesos en memoria virtual
+## 1-Analizar un sistema operativo moderno (por ejemplo Linux o Windows) e indentificar como administra la memoria virtual
+
+## 2-Simulacion del swapping de procesos en memoria virtual
 
 <div align="center">
 
@@ -431,24 +434,69 @@ Realmente no se que pedo :)
 
 # 4.1 Dispositivos y menejadores de dispositivos
 
-### Diferencia entre dispositivos de bloque y dispositivos de caracter
+## 1.-Diferencia entre dispositivos de bloque y dispositivos de caracter
 
-### Programa manejador de dispositivos para un dispositivo virtual de entrada
+## 2.- Programa manejador de dispositivos para un dispositivo virtual de entrada
+
+```C
+
+```
 
 # 4.2 Mecanismos y funciones de los manejadores de dispositivos 
 
-### Interrupciones por E/S y su administración con el S.O
+## 1.-Interrupciones por E/S y su administración con el S.O con ejemplo en psudocódigo
 
-### Programa de interrupciones 
+## 2.- Programa de interrupciones 
+
+```C
+
+```
 
 # 4.3 Estructuras de datos para manejo de dispositivos
 
-### Que es una cola de E/S y una simulación de una cola con prioridad
+## 1.-Que es una cola de E/S y una simulación de una cola con prioridad
 
-### Programa para manejar las operaciones de dispositivos utilizando una tabla de estructuras
+## 2.-Programa para manejar las operaciones de dispositivos utilizando una tabla de estructuras
+
+```C
+
+```
 
 # 4.4 Operaciones de Entrada y Salda
 
-### Diseña un flujo que describa el proceso de lectura de un archivo desde un disco magnético. Acampañado con un programa basico para simular el proceso
+## 1.-Diseña un flujo que describa el proceso de lectura de un archivo desde un disco magnético. Acampañado con un programa basico para simular el proceso
 
-### Programa que realice operaciones de entrada/salida asincronas usando archivos
+```C
+
+```
+
+## 2.- Programa que realice operaciones de entrada/salida asincronas usando archivos
+
+```C
+
+```
+<div align="center">
+
+# **Integración**
+
+</div>
+
+## 1.-Escribe un programa que implemente el algoritmo de planificación de discos "Elevator (SCAN)"
+
+```C
+
+```
+
+## 2.-Diseña un sisetema que maneje múltiples dispositivos simulados(disco duro, impresora, teclado) y muestre cómo se realiza la comunicación entre llos
+
+```C
+
+```
+<div align="center">
+
+# **Avanzados**
+
+</div>
+
+
+## 1.-Explica cómo lo sisstemas operativos modernos optimizan las operaciones de entrada/salida con el uso de memoria caché
