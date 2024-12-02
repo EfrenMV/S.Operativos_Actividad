@@ -21,7 +21,8 @@ ___
 </div>
 
 # 3.1 Politica y Filsoifa
- ## Fragmentación Interna vs Externa
+
+## Fragmentación Interna vs Externa
 
 ### Fragmentación interna:  
 Como su palabra lo indica **interna** nos da a entender que la particiones ocurren en la memoria, ahora estas particiones estan divididas en bloques con tamaños especificos 
@@ -72,6 +73,42 @@ Esto ayuda a optimizar las busquedas muchisimo, aunque los SSD no necesariamente
 |  Desperdicio dentro de la memoria asignada| Desperdicio por espacios dispersos 
 | Relacionada con Ram y memoria virtual| Ocurre en RAM,memoria virutal, HDD o SDD
 | No se puede desfragmentar | Se puede desfragmentar|
+
+## Politicas de remplazo 
+
+**Fifo(First In, First Out):** 
+En este algoritmo se atiende al que llego primero, estos deben esperar una lista/cola donde se estaran esperando cada proceso,<breste>
+proceso en ejecución no puede ser parado hasta que termite
+
+ejemplo:
+|Proceso|  Rafaga de CPU  | Tiempo de llegada  | 
+|:--------: |   --------       |  :----:            | 
+| A     |  8              |     0              | 
+| B     |  6              |     2              |  
+| C |  4              |     4              |    
+| D |  2              |     6              |   
+
+Como se observa en el ejemplo de arriba tenemos diferentes proceos con diferentes tiempos de llegada, estos seran ejecutados de la siguiente forma
+1. Se inicia el proceso A que tiene un tiempo de llegada de 0s y le tomara 8s en acabar
+2. Cuadno el proceso A le falten 6s llega el proceso B pero este entrara en espera de que el proceso A termine
+3. Cuadno el proceso A le falten 2s llega el proceso c pero este entrara en espera de que el proceso B termine
+3. Cuando el proceso B le falten 2s llega el proceso d pero este entrara en espera de que el proceos C termine
+4. Inician los procesos faltantes y terminan en este orden 
+      * B
+      * C
+      * D
+
+**LRU (Least Recently Used):**
+
+**Optimal(OPT)**
+
+**Clock**
+
+**NFU(Not frequently Used)**
+
+**Random**
+
+**Segunda Chance**
 
 # 3.2 Memoria real
 
@@ -220,7 +257,9 @@ aqui mismo contamos con los **marcos** estos se les denomina como numero de pagi
 
 ### Programa que simule una tabla de páginas para procesos con acceso aleatorio a memoria virtual
 
-```
+```C
+#include <stdio.h>
+#include <stdlib.h>
 
 Realmente no se que pedo :)
 
@@ -235,7 +274,7 @@ Realmente no se que pedo :)
 
 ### Analizar un sistema operativo moderno (por ejemplo Linux o Windows) e indentificar como administra la memoria virtual
 
-### Simulacion pdel swapping de procesos en memoria virtual
+### Simulacion del swapping de procesos en memoria virtual
 
 <div align="center">
 
