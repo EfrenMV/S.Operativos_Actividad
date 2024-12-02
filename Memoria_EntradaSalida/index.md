@@ -75,7 +75,7 @@ Esto ayuda a optimizar las busquedas muchisimo, aunque los SSD no necesariamente
 
 # 3.2 Memoria real
 
-### Programa en C de particiones fijas
+## Programa en C de particiones fijas
 ```C
 #include <stdio.h>
 #include <stdlib.h> //Para manejar la memoria
@@ -194,7 +194,7 @@ int main(){
 }
 ```
 
-### Algoritmo para calcular procesos utilizando el algoritmo de "primera cabida"
+## Algoritmo para calcular procesos utilizando el algoritmo de "primera cabida"
 
 1. Inicio
 2. Leer el tamaño de cada partición
@@ -212,11 +212,22 @@ int main(){
 
 ### Paginación y segmentación
 
-### Programa que simule una tabal de páginas para procesos con acceso aleatorio a memoria virtual
+**Segmentación** Es la divición de la memoria primeria de un ordenador, esto ayuda para proteger modulos de segmentos contra accesos no autorizados 
 
+**Paginación de memoria** Esta es la divición en pequeñas partes o páginas a un programa 
+
+aqui mismo contamos con los **marcos** estos se les denomina como numero de pagina fisica esta pagina fisica es asignada a un proceso de forma exclusiva
+
+### Programa que simule una tabla de páginas para procesos con acceso aleatorio a memoria virtual
+
+```
+
+Realmente no se que pedo :)
+
+```
 # 3.4 Administración de memoria virtual
 
-### Codigo con el algoritmo "Least Recently Used (LRU)
+### Codigo con el algoritmo "Least Recently Used" (LRU)
 
 ### Diagrama para el proceso de traducción de direciones virtuales a fisicas en un sistema con memoria virtual
 
