@@ -128,7 +128,7 @@ void liberar(Particion particiones[]) {
 
     int liberado = 0;
     for (int i = 0; i < cantidadParticiones; i++) {
-        if (particiones[i].ocupado == 1 && particiones[i].id == pid) {
+        if (particiones[i].ocupado == 1 && particiones[i].id == id) {
             particiones[i].ocupado = 0;
             particiones[i].id = -1;
             printf("Partición %d liberada.\n", i + 1);
@@ -138,7 +138,7 @@ void liberar(Particion particiones[]) {
     }
 
     if (!liberado) {
-        printf("No se encontró el proceso %d para liberar.\n", proceso_id);
+        printf("No se encontró el proceso %d para liberar.\n", id);
     }
 }
 
