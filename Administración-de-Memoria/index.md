@@ -86,7 +86,7 @@ typedef struct{
     int id;        // Para el id del proceso
 }Particion;
 
-// Función para inicializar las particiones
+// inicializar las particiones
 void inicializar(Particion particiones[]) {
     for (int i = 0; i < cantidadParticiones; i++) {
         printf("Ingrese el tamaño de la partición %d: ", i + 1);
@@ -96,7 +96,30 @@ void inicializar(Particion particiones[]) {
     }
 }
 
-// Función para mostrar el estado actual de las particiones
+// Asignar procesos
+void asignar(Particion particiones[]) {
+    int id, tamaño;
+    printf("\nIngrese el ID del proceso: ");
+    scanf("%d", &proceso_id);
+    printf("Ingrese el tamaño del proceso: ");
+    scanf("%d", &tamaño_proceso);
+
+    int asignado = 0;
+    for (int i = 0; i < cantidadParticiones; i++) {
+        if (particiones[i].ocupado == 0 && particiones[i].tamaño >= tamaño_proceso) {
+            particiones[i].ocupado = 1;
+            particiones[i].proceso_id = id;
+            printf("Proceso %d asignado a la partición %d\n",  id, i + 1);
+            asignado = 1;
+            break;
+        }
+    }
+
+    if (!asignado) {
+        printf("No se pudo asignar el proceso %d debido a falta de espacio.\n", id);
+    }
+}
+// Mostrar el estado actual de las particiones
 void mostrar(Particion particiones[]) {
     printf("\nEstado actual de las particiones:\n");
     for (int i = 0; i < cantidadParticiones; i++) {
@@ -126,6 +149,7 @@ int main(){
 
         switch(opc){
             case 1:
+                asignar(particiones);
                 break;
             case 2:
                 break;
