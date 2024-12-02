@@ -547,6 +547,56 @@ int main() {
 ## 1-Analizar un sistema operativo moderno (por ejemplo Linux o Windows) e indentificar como administra la memoria virtual
 
 ## 2-Simulacion del swapping de procesos en memoria virtual
+```C
+#include <stdio.h>
+
+//Agregar el elemento al final de la cola
+void metodoA(){
+    printf("Selecciono metodoA");
+}
+
+//Elimina el elemento del frente de la cola (debe ser el primero que llego)
+void metodoB(){
+    printf("Selecciono metodoB");
+}
+
+//Muestra cuantos elementos hay y muestra quien esta primero
+void metodoC(){
+    printf("Selecciono metodoC");
+}
+
+int main() {
+   int opcion;
+
+    do {
+        printf("\n--- Menu ---\n");
+        printf("1. metodoA\n");
+        printf("2. metodoB\n");
+        printf("3. metodoC\n");
+        printf("4. Salir\n");
+        printf("Seleccione una opción: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                metodoA();
+                 break;
+            case 2:
+                metodoB();
+                 break;
+            case 3:
+                metodoC();
+                 break;
+            case 4:
+                printf("Saliendo...\n");
+                break;
+            default:
+                printf("Opción inválida, por favor intente de nuevo.\n");
+        }
+    } while (opcion != 4);
+    return 0;
+}
+```
 
 <div align="center">
 
