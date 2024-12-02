@@ -811,30 +811,30 @@ int main() {
 ### Administración de la memoria virtual en Linux
 Linux utiliza varios conceptos y mecanismos avanzados para gestionar la memoria virtual. A continuación, se describen los aspectos clave:
 
-1. Memoria virtual y paginación
+1. **Memoria virtual y paginación**<br>
 Linux utiliza la paginación como técnica principal para gestionar la memoria virtual. La memoria virtual está dividida en páginas, y la memoria física está dividida en marcos de página (marcos de memoria). Cada proceso tiene su propio espacio de direcciones virtuales, que se mapea a direcciones físicas mediante un mecanismo de paginación.
 
-Direcciones virtuales: Los procesos acceden a direcciones virtuales, que luego son mapeadas a direcciones físicas en la memoria RAM.
+    Direcciones virtuales: Los procesos acceden a direcciones virtuales, que luego son mapeadas a direcciones físicas en la memoria RAM.
 Páginas y marcos: La memoria se divide en páginas de un tamaño fijo (por lo general, 4 KB), y la memoria física se divide en marcos de página de igual tamaño.
 b. Tabla de páginas
 Linux mantiene una tabla de páginas para cada proceso, que mapea las direcciones virtuales a las direcciones físicas. Cada entrada en la tabla de páginas contiene:
 
-La dirección física a la que se mapea una página virtual.
+    La dirección física a la que se mapea una página virtual.
 Indicadores como el estado de la página (si está presente en la memoria RAM o si necesita ser cargada desde el disco).
 Indicadores de protección (lectura, escritura, ejecución).
 
-2. Swapping y paginación (Swap Space)
+2. **Swapping y paginación (Swap Space)**<br>
 Cuando la memoria física se llena, el sistema puede usar una parte del disco duro como espacio de intercambio (swap space) para almacenar temporalmente páginas de memoria que no se están utilizando activamente. Esto permite al sistema liberar memoria para los procesos en ejecución, pero el acceso a los datos en el disco es mucho más lento que el acceso a la RAM.
 
-Swapping: Si el sistema se queda sin memoria RAM, puede mover páginas de procesos inactivos al disco (swap). Esto es transparente para el proceso, pero puede afectar el rendimiento.
+    Swapping: Si el sistema se queda sin memoria RAM, puede mover páginas de procesos inactivos al disco (swap). Esto es transparente para el proceso, pero puede afectar el rendimiento.
 
-3. Administración de la memoria por demanda
+3. **Administración de la memoria por demanda**<br>
 Linux implementa carga de páginas por demanda (demand paging), lo que significa que las páginas no se cargan en memoria hasta que se necesitan. El sistema operativo solo carga páginas cuando un proceso intenta acceder a ellas. Si una página no está en la memoria, se genera un fallo de página (page fault) y se carga desde el disco.
 
-4. Memoria compartida
+4. **Memoria compartida**<br>
 Linux permite la memoria compartida entre procesos a través de mecanismos como Shared Memory y Memory-Mapped Files. Esto facilita la comunicación eficiente entre procesos, ya que varios procesos pueden acceder a las mismas áreas de memoria.
 
-5. Protección de memoria
+5. **Protección de memoria**<br>
 El sistema operativo asegura la protección de la memoria para evitar que un proceso acceda a la memoria de otro. Cada proceso tiene su propio espacio de direcciones virtuales, y Linux usa protecciones de acceso (lectura, escritura, ejecución) para asegurarse de que los procesos no interfieran entre sí.
 
 
