@@ -534,9 +534,9 @@ Su aplicación es esencial para mantener un orden predecible en la ejecución de
 * Tamaño: Optener el numero de elementos en la cola 
 
 La pudieramos resumir en estas
-* Agregar elemento
-* Eliminar elemento
-* Ver elementos
+* Agregar elemento: Agrega un elemento al final de la cola.
+* Eliminar elemento: Elimina el elemento al frente de la cola.
+* Ver elementos: Ver la cantidad de elementos y el elemento de enfrente de la cola
 ## 2.-Programa para manejar las operaciones de dispositivos utilizando una tabla de estructuras
 
 ```C
