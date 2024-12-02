@@ -17,7 +17,7 @@ ___
 <!--3.1 Política y filosofía-->
 <div align="center">
 
-# Administraciòn de Memoria 
+# **3.Administraciòn de Memoria** 
 </div>
 
 # 3.1 Politica y Filsoifa
@@ -228,5 +228,29 @@ int main(){
 
 <div align="center">
 
-# Administración de Entrada/Salida
+# **4.Administración de Entrada/Salida**
 </div>
+
+# 4.1 Dispositivos y menejadores de dispositivos
+
+### Diferencia entre dispositivos de bloque y dispositivos de caracter
+
+### Programa manejador de dispositivos para un dispositivo virtual de entrada
+
+# 4.2 Mecanismos y funciones de los manejadores de dispositivos 
+
+### Interrupciones por E/S y su administración con el S.O
+
+### Programa de interrupciones 
+
+# 4.3 Estructuras de datos para manejo de dispositivos
+
+### Que es una cola de E/S y una simulación de una cola con prioridad
+
+### Programa para manejar las operaciones de dispositivos utilizando una tabla de estructuras
+
+# 4.4 Operaciones de Entrada y Salda
+
+### Diseña un flujo que describa el proceso de lectura de un archivo desde un disco magnético. Acampañado con un programa basico para simular el proceso
+
+### Programa que realice operaciones de entrada/salida asincronas usando archivos
