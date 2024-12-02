@@ -187,7 +187,37 @@ Aunque este algoritmo no es barato ya que para implementar el LRU por completo e
 *Formas de implementar el LRU:*
 
 1. Contador de 64 bits
-      * Este
+      * Este como bien dice funciona con un contador de 64 bits llado C, este se incrementa de manera automatica despues de cada instrucción. Ademas cada entrada en la tabla de páginas debe tener también un campo lo bastante grande como para poder guardar el contador. Despues de cada referencia de memoraia, el valor acutal de C se almacena en la entrada en la tabla de páginas para la pagina que se acaba de referenciar. Cuando ocurre un fallo de pagina, el sistema operativo examina todos los contadores en la tabla de páginas para encontrar el menor, este seria la menos usada
+
+        Para lo siguiente volveremos al ejemplo de la tienda, digamos que tenemos los siguientes productos en el dia 0
+      
+
+        |Paginas|  C  |  
+        |:--------:|   --------      |   
+        | frojoles |  0              |
+        | queso    |  0              |  
+        | pan      |  0              |   
+        | nueces   |  0              |   
+
+        
+        Al momento que un producto sea vendido el contador C incrementara uno
+        |Paginas|  C  |  
+        |:--------:|   --------      |   
+        | frojoles |  1              |
+        | queso    |  0              |  
+        | pan      |  1              |   
+        | nueces   |  1              |
+        
+        Al llegar el dia del corte (Un fallo de pagina en nuestro caso) lo que hara el algoritmo es comparar contadores (c) en busca del menor y descartandolo
+        
+        |Paginas|  C  |  
+        |:--------:|   --------      |   
+        | frojoles |  10              |
+        | ~~queso~~    |  ~~7~~             |  
+        | pan      |  9              |   
+        | nueces   |  12              |
+2. Manejo mediante Hardware
+
 
 **Optimal(OPT)**
 
