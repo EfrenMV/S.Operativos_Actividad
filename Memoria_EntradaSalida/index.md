@@ -122,16 +122,11 @@ entonces si llega otro producto como podremos observar estamos llenos, por ende 
 aqui es donde nuestro algoritmo trabaja, este elige al que lleve mas tiempo en la tiende el cual seria el pan, esto puede entenderse como una pila
 donde el primero en llegar es el primero en salir
 
+ **Segunda Chance**
 
-Como se observa en el ejemplo de arriba tenemos diferentes proceos con diferentes tiempos de llegada, estos seran ejecutados de la siguiente forma
-1. Se inicia el proceso A que tiene un tiempo de llegada de 0s y le tomara 8s en acabar
-2. Cuadno el proceso A le falten 6s llega el proceso B pero este entrara en espera de que el proceso A termine
-3. Cuadno el proceso A le falten 2s llega el proceso c pero este entrara en espera de que el proceso B termine
-3. Cuando el proceso B le falten 2s llega el proceso d pero este entrara en espera de que el proceos C termine
-4. Inician los procesos faltantes y terminan en este orden 
-      * B
-      * C
-      * D
+Este puede ser tomado como una modificación del Fifo, por que lo que hacemos es agregar una nueva variable al juego llamada **el bit R** este lo que hace
+es mostrar si la pagina a sido usada con anterioridad, si es 0 la pagina es antigua y no se a usado entonces se descarta pero si es 1 significa que si se a usado por ende no se descarta
+
 
 **LRU (Least Recently Used):**
 
@@ -143,7 +138,7 @@ Como se observa en el ejemplo de arriba tenemos diferentes proceos con diferente
 
 **Random**
 
-**Segunda Chance**
+
 
 # 3.2 Memoria real
 
