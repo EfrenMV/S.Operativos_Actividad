@@ -77,16 +77,51 @@ Esto ayuda a optimizar las busquedas muchisimo, aunque los SSD no necesariamente
 ## Politicas de remplazo 
 
 **Fifo(First In, First Out):** 
-En este algoritmo se atiende al que llego primero, estos deben esperar una lista/cola donde se estaran esperando cada proceso,<breste>
-proceso en ejecución no puede ser parado hasta que termite
+Siendo un algoritmo de paginación de baja sobrecarga, para este algoritmo imaginemos que estamos en un supermercado,
+al principio no tendremos ningun producto
 
-ejemplo:
-|Proceso|  Rafaga de CPU  | Tiempo de llegada  | 
-|:--------: |   --------       |  :----:            | 
-| A     |  8              |     0              | 
-| B     |  6              |     2              |  
-| C |  4              |     4              |    
-| D |  2              |     6              |   
+|Produco|  Tiempo en el supermercado  | 
+|:--------: |   --------       |   
+| Null     |  Null           |      
+|   Null   |  Null              |       
+|  Null|  Null           |         
+| Null |  Null              |       
+
+pero despues empezaran a llegar productos, estos seran guardados de forma en el que el primero en llegar es el primero en la fila por ejemplo
+nos llega pan
+
+|Produco|  Tiempo en el supermercado  | 
+|:--------: |   --------       |   
+| pan     |  0           |      
+
+luego leche
+
+|Produco|  Tiempo en el supermercado  | 
+|:--------: |   --------       |   
+| pan     |  1           |      
+| leche   |  0              |   
+
+luego frijoles
+
+|Produco|  Tiempo en el supermercado  | 
+|:--------: |   --------       |   
+| pan     |  2           |      
+| leche   |  1              |       
+| frojoles |  0           |
+
+al final queso
+
+|Produco|  Tiempo en el supermercado  | 
+|:--------: |   --------       |   
+| pan     |  3           |      
+| leche   |  2              |       
+| frojoles |  1                    
+| queso |  0              |       
+
+entonces si llega otro producto como podremos observar estamos llenos, por ende debemos desacernos de algun producto
+aqui es donde nuestro algoritmo trabaja, este elige al que lleve mas tiempo en la tiende el cual seria el pan, esto puede entenderse como una pila
+donde el primero en llegar es el primero en salir
+
 
 Como se observa en el ejemplo de arriba tenemos diferentes proceos con diferentes tiempos de llegada, estos seran ejecutados de la siguiente forma
 1. Se inicia el proceso A que tiene un tiempo de llegada de 0s y le tomara 8s en acabar
