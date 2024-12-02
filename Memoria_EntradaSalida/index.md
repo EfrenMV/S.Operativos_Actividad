@@ -210,21 +210,21 @@ int main(){
 
 # 3.3 Organización de memoria virtual
 
-## Paginación y segmentación
+### Paginación y segmentación
 
-## Programa que simule una tabal de páginas para procesos con acceso aleatorio a memoria virtual
+### Programa que simule una tabal de páginas para procesos con acceso aleatorio a memoria virtual
 
 # 3.4 Administración de memoria virtual
 
-## Codigo con el algoritmo "Least Recently Used (LRU)
+### Codigo con el algoritmo "Least Recently Used (LRU)
 
-## Diagrama para el proceso de traducción de direciones virtuales a fisicas en un sistema con memoria virtual
+### Diagrama para el proceso de traducción de direciones virtuales a fisicas en un sistema con memoria virtual
 
-# Integración
+## Integración
 
-## Analizar un sistema operativo moderno (por ejemplo Linux o Windows) e indentificar como administra la memoria virtual
+### Analizar un sistema operativo moderno (por ejemplo Linux o Windows) e indentificar como administra la memoria virtual
 
-## Simulacion pdel swapping de procesos en memoria virtual
+### Simulacion pdel swapping de procesos en memoria virtual
 
 <div align="center">
 
