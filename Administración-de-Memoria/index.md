@@ -100,15 +100,15 @@ void inicializar(Particion particiones[]) {
 void asignar(Particion particiones[]) {
     int id, tamaño;
     printf("\nIngrese el ID del proceso: ");
-    scanf("%d", &proceso_id);
+    scanf("%d", &id);
     printf("Ingrese el tamaño del proceso: ");
-    scanf("%d", &tamaño_proceso);
+    scanf("%d", &tamaño);
 
     int asignado = 0;
     for (int i = 0; i < cantidadParticiones; i++) {
-        if (particiones[i].ocupado == 0 && particiones[i].tamaño >= tamaño_proceso) {
+        if (particiones[i].ocupado == 0 && particiones[i].tamaño >= tamaño) {
             particiones[i].ocupado = 1;
-            particiones[i].proceso_id = id;
+            particiones[i].id = id;
             printf("Proceso %d asignado a la partición %d\n",  id, i + 1);
             asignado = 1;
             break;
