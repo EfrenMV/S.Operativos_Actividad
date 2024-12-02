@@ -446,7 +446,54 @@ Realmente no se que pedo :)
 
 ## 1.- Codigo con el algoritmo "Least Recently Used" (LRU)
 ```C
+#include <stdio.h>
 
+//Agregar el elemento al final de la cola
+void metodoA(){
+    printf("Selecciono metodoA");
+}
+
+//Elimina el elemento del frente de la cola (debe ser el primero que llego)
+void metodoB(){
+    printf("Selecciono metodoB");
+}
+
+//Muestra cuantos elementos hay y muestra quien esta primero
+void metodoC(){
+    printf("Selecciono metodoC");
+}
+
+int main() {
+   int opcion;
+
+    do {
+        printf("\n--- Menu ---\n");
+        printf("1. metodoA\n");
+        printf("2. metodoB\n");
+        printf("3. metodoC\n");
+        printf("4. Salir\n");
+        printf("Seleccione una opción: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                metodoA();
+                 break;
+            case 2:
+                metodoB();
+                 break;
+            case 3:
+                metodoC();
+                 break;
+            case 4:
+                printf("Saliendo...\n");
+                break;
+            default:
+                printf("Opción inválida, por favor intente de nuevo.\n");
+        }
+    } while (opcion != 4);
+    return 0;
+}
 ```
 
 ## 2.-Diagrama para el proceso de traducción de direciones virtuales a fisicas en un sistema con memoria virtual
@@ -477,7 +524,54 @@ ejemplos de este tipo de dispositivo son las impresoraas, terminales, citnas, et
 ## 2.- Programa manejador de dispositivos para un dispositivo virtual de entrada
 
 ```C
+#include <stdio.h>
 
+//Agregar el elemento al final de la cola
+void metodoA(){
+    printf("Selecciono metodoA");
+}
+
+//Elimina el elemento del frente de la cola (debe ser el primero que llego)
+void metodoB(){
+    printf("Selecciono metodoB");
+}
+
+//Muestra cuantos elementos hay y muestra quien esta primero
+void metodoC(){
+    printf("Selecciono metodoC");
+}
+
+int main() {
+   int opcion;
+
+    do {
+        printf("\n--- Menu ---\n");
+        printf("1. metodoA\n");
+        printf("2. metodoB\n");
+        printf("3. metodoC\n");
+        printf("4. Salir\n");
+        printf("Seleccione una opción: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                metodoA();
+                 break;
+            case 2:
+                metodoB();
+                 break;
+            case 3:
+                metodoC();
+                 break;
+            case 4:
+                printf("Saliendo...\n");
+                break;
+            default:
+                printf("Opción inválida, por favor intente de nuevo.\n");
+        }
+    } while (opcion != 4);
+    return 0;
+}
 ```
 
 # 4.2 Mecanismos y funciones de los manejadores de dispositivos 
@@ -514,7 +608,54 @@ Este llevara los siguientes pasos para manejarlo
 ## 2.- Programa de interrupciones 
 
 ```C
+#include <stdio.h>
 
+//Agregar el elemento al final de la cola
+void metodoA(){
+    printf("Selecciono metodoA");
+}
+
+//Elimina el elemento del frente de la cola (debe ser el primero que llego)
+void metodoB(){
+    printf("Selecciono metodoB");
+}
+
+//Muestra cuantos elementos hay y muestra quien esta primero
+void metodoC(){
+    printf("Selecciono metodoC");
+}
+
+int main() {
+   int opcion;
+
+    do {
+        printf("\n--- Menu ---\n");
+        printf("1. metodoA\n");
+        printf("2. metodoB\n");
+        printf("3. metodoC\n");
+        printf("4. Salir\n");
+        printf("Seleccione una opción: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                metodoA();
+                 break;
+            case 2:
+                metodoB();
+                 break;
+            case 3:
+                metodoC();
+                 break;
+            case 4:
+                printf("Saliendo...\n");
+                break;
+            default:
+                printf("Opción inválida, por favor intente de nuevo.\n");
+        }
+    } while (opcion != 4);
+    return 0;
+}
 ```
 
 # 4.3 Estructuras de datos para manejo de dispositivos
@@ -593,7 +734,54 @@ int main() {
 ## 2.-Programa para manejar las operaciones de dispositivos utilizando una tabla de estructuras
 
 ```C
- 
+ #include <stdio.h>
+
+//Agregar el elemento al final de la cola
+void metodoA(){
+    printf("Selecciono metodoA");
+}
+
+//Elimina el elemento del frente de la cola (debe ser el primero que llego)
+void metodoB(){
+    printf("Selecciono metodoB");
+}
+
+//Muestra cuantos elementos hay y muestra quien esta primero
+void metodoC(){
+    printf("Selecciono metodoC");
+}
+
+int main() {
+   int opcion;
+
+    do {
+        printf("\n--- Menu ---\n");
+        printf("1. metodoA\n");
+        printf("2. metodoB\n");
+        printf("3. metodoC\n");
+        printf("4. Salir\n");
+        printf("Seleccione una opción: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                metodoA();
+                 break;
+            case 2:
+                metodoB();
+                 break;
+            case 3:
+                metodoC();
+                 break;
+            case 4:
+                printf("Saliendo...\n");
+                break;
+            default:
+                printf("Opción inválida, por favor intente de nuevo.\n");
+        }
+    } while (opcion != 4);
+    return 0;
+}
 ```
 
 # 4.4 Operaciones de Entrada y Salda
@@ -601,13 +789,107 @@ int main() {
 ## 1.-Diseña un flujo que describa el proceso de lectura de un archivo desde un disco magnético. Acampañado con un programa basico para simular el proceso
 
 ```C
+#include <stdio.h>
 
+//Agregar el elemento al final de la cola
+void metodoA(){
+    printf("Selecciono metodoA");
+}
+
+//Elimina el elemento del frente de la cola (debe ser el primero que llego)
+void metodoB(){
+    printf("Selecciono metodoB");
+}
+
+//Muestra cuantos elementos hay y muestra quien esta primero
+void metodoC(){
+    printf("Selecciono metodoC");
+}
+
+int main() {
+   int opcion;
+
+    do {
+        printf("\n--- Menu ---\n");
+        printf("1. metodoA\n");
+        printf("2. metodoB\n");
+        printf("3. metodoC\n");
+        printf("4. Salir\n");
+        printf("Seleccione una opción: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                metodoA();
+                 break;
+            case 2:
+                metodoB();
+                 break;
+            case 3:
+                metodoC();
+                 break;
+            case 4:
+                printf("Saliendo...\n");
+                break;
+            default:
+                printf("Opción inválida, por favor intente de nuevo.\n");
+        }
+    } while (opcion != 4);
+    return 0;
+}
 ```
 
 ## 2.- Programa que realice operaciones de entrada/salida asincronas usando archivos
 
 ```C
+#include <stdio.h>
 
+//Agregar el elemento al final de la cola
+void metodoA(){
+    printf("Selecciono metodoA");
+}
+
+//Elimina el elemento del frente de la cola (debe ser el primero que llego)
+void metodoB(){
+    printf("Selecciono metodoB");
+}
+
+//Muestra cuantos elementos hay y muestra quien esta primero
+void metodoC(){
+    printf("Selecciono metodoC");
+}
+
+int main() {
+   int opcion;
+
+    do {
+        printf("\n--- Menu ---\n");
+        printf("1. metodoA\n");
+        printf("2. metodoB\n");
+        printf("3. metodoC\n");
+        printf("4. Salir\n");
+        printf("Seleccione una opción: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                metodoA();
+                 break;
+            case 2:
+                metodoB();
+                 break;
+            case 3:
+                metodoC();
+                 break;
+            case 4:
+                printf("Saliendo...\n");
+                break;
+            default:
+                printf("Opción inválida, por favor intente de nuevo.\n");
+        }
+    } while (opcion != 4);
+    return 0;
+}
 ```
 <div align="center">
 
@@ -618,13 +900,107 @@ int main() {
 ## 1.-Escribe un programa que implemente el algoritmo de planificación de discos "Elevator (SCAN)"
 
 ```C
+#include <stdio.h>
 
+//Agregar el elemento al final de la cola
+void metodoA(){
+    printf("Selecciono metodoA");
+}
+
+//Elimina el elemento del frente de la cola (debe ser el primero que llego)
+void metodoB(){
+    printf("Selecciono metodoB");
+}
+
+//Muestra cuantos elementos hay y muestra quien esta primero
+void metodoC(){
+    printf("Selecciono metodoC");
+}
+
+int main() {
+   int opcion;
+
+    do {
+        printf("\n--- Menu ---\n");
+        printf("1. metodoA\n");
+        printf("2. metodoB\n");
+        printf("3. metodoC\n");
+        printf("4. Salir\n");
+        printf("Seleccione una opción: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                metodoA();
+                 break;
+            case 2:
+                metodoB();
+                 break;
+            case 3:
+                metodoC();
+                 break;
+            case 4:
+                printf("Saliendo...\n");
+                break;
+            default:
+                printf("Opción inválida, por favor intente de nuevo.\n");
+        }
+    } while (opcion != 4);
+    return 0;
+}
 ```
 
 ## 2.-Diseña un sisetema que maneje múltiples dispositivos simulados(disco duro, impresora, teclado) y muestre cómo se realiza la comunicación entre llos
 
 ```C
+#include <stdio.h>
 
+//Agregar el elemento al final de la cola
+void metodoA(){
+    printf("Selecciono metodoA");
+}
+
+//Elimina el elemento del frente de la cola (debe ser el primero que llego)
+void metodoB(){
+    printf("Selecciono metodoB");
+}
+
+//Muestra cuantos elementos hay y muestra quien esta primero
+void metodoC(){
+    printf("Selecciono metodoC");
+}
+
+int main() {
+   int opcion;
+
+    do {
+        printf("\n--- Menu ---\n");
+        printf("1. metodoA\n");
+        printf("2. metodoB\n");
+        printf("3. metodoC\n");
+        printf("4. Salir\n");
+        printf("Seleccione una opción: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                metodoA();
+                 break;
+            case 2:
+                metodoB();
+                 break;
+            case 3:
+                metodoC();
+                 break;
+            case 4:
+                printf("Saliendo...\n");
+                break;
+            default:
+                printf("Opción inválida, por favor intente de nuevo.\n");
+        }
+    } while (opcion != 4);
+    return 0;
+}
 ```
 <div align="center">
 
