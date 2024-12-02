@@ -571,10 +571,13 @@ int main() {
 
         switch (opcion) {
             case 1:
+                agregar();
                  break;
             case 2:
+                eliminar();
                  break;
             case 3:
+                verElementos();
                  break;
             case 4:
                 printf("Saliendo...\n");
