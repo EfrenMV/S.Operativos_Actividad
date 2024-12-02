@@ -165,11 +165,23 @@ Si de pura casualidad ya se a echo referencia a todas las paginas y nos topamos 
 
 lo que hara el algoritmo es trabajar como un Fifo puro eliminando simplemente el que tenga mas tiempo 
 
+**Reloj**
+
+Como su nombre lo indica y se podra observar en la imagen hace una simulación a como si fuera un reloj donde la mancilla estara constantemente apuntando
+a la pagina mas antigua, cuando ocurra un fallo de pagina la manecilla inspecciona este proceso donde dependiendo si el bit es o u 1 actuara
+
+|Bit R |  Acción  | 
+|:--------: |   -------- |   
+| R = 0     |  Desaloja la página           |      
+| R = 1     |  Desactiva R y avanza la manecilla              |     
+
+![reloj](Imagenes/reloj.png)
+
 **LRU (Least Recently Used):**
 
 **Optimal(OPT)**
 
-**Clock**
+
 
 **NFU(Not frequently Used)**
 
