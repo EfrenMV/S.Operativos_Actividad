@@ -431,7 +431,25 @@ int main(){
 ### Paginación de memoria  
 Esta es la divición en pequeñas partes o páginas a un programa 
 
-aqui mismo contamos con los **marcos** estos se les denomina como numero de pagina fisica esta pagina fisica es asignada a un proceso de forma exclusiva
+aqui mismo contamos con los **marcos** estos son la memoria fisica dividida en bloques del mismo tamaño. La memoria lógica tambien se consiera dividada
+en bloques del mismo tamaño que los marcos, denominados páginas. Al cargar un proceso de memoria, sus páginas pueden ser cargadas en cualquier marco
+disponible, no siendo necesario que estos esten contiguos.
+
+**Que pasos se debe dar el administrador de la memoria para cargar un proceso en un sistema de paginación?**
+
+1. **Se calcula el numero de paginas que ocuapara el proceso:**  Esto divideiendo el espacio de direcciones logicas de este por el tamaño de una pagina, si el numero no es entero se redondea
+    por exceso
+
+2. Como cada pagina **necesita un marco de memoria fisica**, habra que comprobar si estan disponibles. Dado que las paginas no necesitan estar contiguas, los marcos pueden estar en cualquier lugar.
+
+3. Si hay memoria libre suficiente, cada pagina se va cargando en un marco. Para saber posteriormente donde esta cargada cada pagina de un proceso, el sistema mantiene para cada de ellos una estructura
+    conocida como **tabla de paginas**
+
+
+
+    ![paginas](Imagenes/paginas.png)
+
+
 
 ## 2.-Programa que simule una tabla de páginas para procesos con acceso aleatorio a memoria virtual
 
