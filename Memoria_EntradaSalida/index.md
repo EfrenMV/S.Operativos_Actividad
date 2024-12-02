@@ -217,15 +217,43 @@ Aunque este algoritmo no es barato ya que para implementar el LRU por completo e
         | pan      |  9              |   
         | nueces   |  12              |
 2. Manejo mediante Hardware
+      * Para una máquina con n marcos de oágina, el hardware del LRU puede mantener una matriz de n x n bits (Inicialmente todos estaran en 0), cada ves que se hace referencia a la pagina k, el hardware primero establece todos los bits de la fila k en 1 y despues todos los bits de la columna k en 0. En cualquier instante, la fila cuyo valor binario sea menor es la de uso menos reciente, la fila cuyo valor sea el siguiente más bajo es la del siguiente uso menos reciente y asi en lo sucesivo.
+
+      por si no recordamos que es una fila y columna son estos:
+
+      **Fila:** esta se pondra en 1 con cada consulta<br>
+      //////////
+
+      **Columna:** esta se pondra en 0 con cada consulta<br>
+        //<br>
+        //<br>
+        //<br>
+        //<br>
+     
+     **Ejemplo**
+     Entonces nuestro orden de referencia sera este<br>
+     0 1 2 3 2 1 0 3 2 3
+
+     Como podemos observar cuando es 0 toda la columna se vuelven 0 y la Fila de 0 se vuelve 1<br>
+     asi sucesivamente cuando es cualquier numero de los siguientes (cabe recalcar que no mas tenemos 1 matriz, b,c,d,e son la misma matriz pero con los cambias sufridos por las consultas)
+
+      ![Ejemplo](Imagenes/LRU.png)
 
 
-**Optimal(OPT)**
+**Conjunto de trabajo**
+
+ En la forma más pura de paginación, los procesos inician sin ninguna de sus páginas en la memo
+ ria. Tan pronto como la CPU trata de obtener la primera instrucción, recibe un fallo de página, cau
+ sando que el sistema operativo tenga que traer la página que contiene la primera instrucción. Por lo
+ general a este fallo le siguen otros fallos de página por las variables globales y la pila. Después de
+ cierto tiempo, el proceso tiene la mayoría de las páginas que necesita y se establece para ejecutar
+ se con relativamente pocos fallos de página. A esta estrategia se le conoce como paginación bajo
+ demanda, debido a que las páginas se cargan sólo según la demanda, no por adelantado. 
 
 
+**WsClock**
 
-**NFU(Not frequently Used)**
 
-**Random**
 
 
 
