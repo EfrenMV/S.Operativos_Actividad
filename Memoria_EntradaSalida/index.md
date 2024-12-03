@@ -1136,10 +1136,10 @@ Este llevara los siguientes pasos para manejarlo
 ```C
 #include <stdio.h>
 #include <pthread.h>
-#include <unistd.h>  // Para usar sleep()
+#include <unistd.h>  
 
 
-void* count(void* arg) {
+void*contar(void* arg) {
     for (int i = 1; i <= 20; i++) {
         printf("%d\n", i);  
         sleep(1);  
@@ -1150,13 +1150,41 @@ void* count(void* arg) {
 int main() {
     pthread_t thread;  
 
-    pthread_create(&thread, NULL, count, NULL);
+    pthread_create(&thread, NULL, contar, NULL);
 
     pthread_join(thread, NULL);
+ int opcion;
 
+    do {
+        printf("\n--- Menu ---\n");
+        printf("1. Iniciar Proceos\n");
+        printf("2. Generar InterrupcionB\n");
+        printf("3. Salir\n");
+        printf("Seleccione una opción: ");
+        scanf("%d", &opcion);
+
+        switch (opcion) {
+            case 1:
+                metodoA();
+                 break;
+            case 2:
+                metodoB();
+                 break;
+            case 3:
+                metodoC();
+                 break;
+            case 4:
+                printf("Saliendo...\n");
+                break;
+            default:
+                printf("Opción inválida, por favor intente de nuevo.\n");
+        }
+    } while (opcion != 4);
     printf("Conteo completo.\n");
 
     return 0;
+}
+```
 
 # 4.3 Estructuras de datos para manejo de dispositivos
 
