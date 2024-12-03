@@ -1136,10 +1136,13 @@ Este llevara los siguientes pasos para manejarlo
 ```C
 #include <stdio.h>
 #include <pthread.h>
-#include <unistd.h>  
+#include <unistd.h>
+#include <stdlib.h>
 
+pthread_t thread;  // Definimos el hilo global
 
-void*contar(void* arg) {
+// Función que realiza el conteo
+void* contar(void* arg) {
     for (int i = 1; i <= 20; i++) {
         printf("%d\n", i);  
         sleep(1);  
@@ -1147,43 +1150,44 @@ void*contar(void* arg) {
     return NULL;
 }
 
+// Inicia el proceso de conteo en un hilo nuevo
+void IniciarHilo() {
+    printf("Iniciando proceso de conteo...\n");
+    pthread_create(&thread, NULL, contar, NULL);  // Crea el hilo
+}
+ 
+
+// Finaliza el programa
+void Salir() {
+    printf("Se genero una interrupcion OMG...\n");
+    pthread_cancel(thread);   // Cancela el hilo si está en ejecución
+
+}
+
 int main() {
-    pthread_t thread;  
-
-    pthread_create(&thread, NULL, contar, NULL);
-
-    pthread_join(thread, NULL);
- int opcion;
-
+    int opcion;
     do {
         printf("\n--- Menu ---\n");
-        printf("1. Iniciar Proceos\n");
-        printf("2. Generar InterrupcionB\n");
-        printf("3. Salir\n");
-        printf("Seleccione una opción: ");
+        printf("1. Iniciar Proceso\n");
+        printf("2. Generar interrupcióon\n");
+        printf("Seleccione una opcion: ");
         scanf("%d", &opcion);
 
         switch (opcion) {
             case 1:
-                metodoA();
-                 break;
+                IniciarHilo();
+                break;
             case 2:
-                metodoB();
-                 break;
-            case 3:
-                metodoC();
-                 break;
-            case 4:
-                printf("Saliendo...\n");
+                Salir();  // Detiene el hilo
                 break;
             default:
                 printf("Opción inválida, por favor intente de nuevo.\n");
         }
-    } while (opcion != 4);
-    printf("Conteo completo.\n");
+    } while (opcion != 2);  // El ciclo termina cuando se selecciona la opción 3
 
     return 0;
 }
+
 ```
 
 # 4.3 Estructuras de datos para manejo de dispositivos
