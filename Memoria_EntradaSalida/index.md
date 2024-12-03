@@ -815,6 +815,7 @@ int main() {
 
 ## 2.-Diagrama para el proceso de traducción de direciones virtuales a fisicas en un sistema con memoria virtual
 
+El proceos de traduccion de direcciones virtuales a fisicas en un sistema con memoria virtual es fundamental en los sistemas operativos modernos. Este es trabajado con mecanismos conocidos como **mapeo o traducción de direcciones**
 # Integración
 
 ## 1-Analizar un sistema operativo moderno (por ejemplo Linux o Windows) e indentificar como administra la memoria virtual
