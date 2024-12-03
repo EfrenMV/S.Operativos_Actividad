@@ -635,7 +635,7 @@ void verMarcos(Manejo tabla_marcos[]) {
     printf("\n--- Tabla de Marcos (Memoria Fisica) ---\n");
     for (int i = 0; i < marcos; i++) {
         if (tabla_marcos[i].marco != -1) {
-            printf("| Marco %d: Pagina %d, Contador: %d | \n", i, tabla_marcos[i].marco, tabla_marcos[i].contador);
+            printf("| Marco %d: Pagina %d | \n", i, tabla_marcos[i].marco);
         } else {
             printf("| Marco %d: VACIO | \n", i);
         }
@@ -650,37 +650,38 @@ void verPaginas(Manejo tabla_paginas[]) {
         if (tabla_paginas[i].marco == -1) {
             printf("Pagina %d: vacia\n", i);
         } else {
-			bandera = 1;
+            bandera = 1;
             printf("Pagina %d: Marco %d, Contador: %d\n", i, tabla_paginas[i].marco, tabla_paginas[i].contador);
         }
     }
-    if(bandera == 1){
-		printf("Desea acceder a alguna pagina?\n1= Si\n2= No\n2");
-		scanf("%d", &acceder);
-	if(acceder == 1){
-    //Agregado pal algoritmo LRU
-     int pagina;
-    printf("\nIngrese el numero de la pagina que desea acceder (0-%d): ", paginas - 1);
-    scanf("%d", &pagina);
+    if (bandera == 1) {
+        printf("Desea acceder a alguna pagina?\n1= Si\n2= No\n");
+        scanf("%d", &acceder);
+        if (acceder == 1) {
+            // Agregado para el algoritmo LRU
+            int pagina;
+            printf("\nIngrese el numero de la pagina que desea acceder (0-%d): ", paginas - 1);
+            scanf("%d", &pagina);
 
-    if (pagina < 0 || pagina >= paginas) {
-        printf("Numero de pagina invalido.\n");
-        return;
+            if (pagina < 0 || pagina >= paginas) {
+                printf("Numero de pagina invalido.\n");
+                return;
+            }
+
+            if (tabla_paginas[pagina].marco != -1) {
+                tabla_paginas[pagina].contador++;  
+                printf("Accediste a la Pagina %d que esta en el Marco %d. Contador de accesos: %d\n", pagina, tabla_paginas[pagina].marco, tabla_paginas[pagina].contador);
+            } else {
+                printf("La Pagina %d no esta asignada\n", pagina);
+            }
+        }
     }
-
-    if (tabla_paginas[pagina].marco != -1) {
-        tabla_paginas[pagina].contador++;  
-        printf("Accediste a la Pagina %d que esta en el Marco %d. Contador de accesos: %d\n", pagina, tabla_paginas[pagina].marco, tabla_paginas[pagina].contador);
-    } else {
-        printf("La Pagina %d no esta asignada\n", pagina);}
-  }
 }
-  }
 
 void agregar(Manejo tabla_paginas[], Manejo tabla_marcos[]) {
     int pagina;
     int eliminar;
-    printf("\nIngrese el numero de la pagina que desea agregar (0-%d): ", paginas-1);
+    printf("\nIngrese el numero de la pagina que desea agregar (0-%d): ", paginas - 1);
     scanf("%d", &pagina);
 
     if (pagina < 0 || pagina >= paginas) {
@@ -694,6 +695,7 @@ void agregar(Manejo tabla_paginas[], Manejo tabla_marcos[]) {
     }
 
     int marco_asignado = -1;
+    // Buscando un marco libre
     for (int i = 0; i < marcos; i++) {
         if (tabla_marcos[i].marco == -1) {
             marco_asignado = i;
@@ -701,63 +703,73 @@ void agregar(Manejo tabla_paginas[], Manejo tabla_marcos[]) {
         }
     }
 
+    // Si no hay marcos libres, se debe eliminar la página menos usada
     if (marco_asignado == -1) {
         printf("No hay marcos disponibles para asignar a la pagina %d.\n", pagina);
         
-        do{
-        printf("¿Desea eliminar alguno?\n1=Si \n2=No\n2");
-        scanf("%d", &eliminar);
-        
-        if(eliminar == 1){
-		printf("Ustede ingreso eliminar");
-		 
-	     if (marco_asignado == -1) {
-            int min_contador = tabla_paginas[tabla_marcos[0].marco].contador;
-            int pagina_a_reemplazar = tabla_marcos[0].marco;
+        do {
+            printf("¿Desea eliminar alguno?\n1=Si \n2=No\n");
+            scanf("%d", &eliminar);
 
-            for (int i = 1; i < marcos; i++) {
-                int marco = tabla_marcos[i].marco;
-                if (tabla_paginas[marco].contador < min_contador) {
-                    min_contador = tabla_paginas[marco].contador;
-                    pagina_a_reemplazar = marco;
+            if (eliminar == 1) {
+                // Buscar el marco menos utilizado
+                int min_contador = tabla_paginas[tabla_marcos[0].marco].contador;
+                int pagina_a_reemplazar = tabla_marcos[0].marco;
+
+                for (int i = 1; i < marcos; i++) {
+                    int marco = tabla_marcos[i].marco;
+                    if (tabla_paginas[marco].contador < min_contador) {
+                        min_contador = tabla_paginas[marco].contador;
+                        pagina_a_reemplazar = marco;
+                    }
                 }
+
+                printf("Eliminando la Pagina %d del Marco %d. (Contador: %d)\n", 
+                        pagina_a_reemplazar, 
+                        tabla_paginas[pagina_a_reemplazar].marco, 
+                        tabla_paginas[pagina_a_reemplazar].contador);
+
+                
+                int marco_libre = tabla_paginas[pagina_a_reemplazar].marco;
+                tabla_paginas[pagina_a_reemplazar].marco = -1; 
+                tabla_marcos[marco_libre].marco = -1;  
+
+                 tabla_paginas[pagina].marco = marco_libre;
+                tabla_paginas[pagina].contador = 0;  
+                tabla_marcos[marco_libre].marco = pagina;
+
+                printf("Pagina %d ha sido asignada correctamente (Contador: %d)\n", 
+                        pagina, 
+                        tabla_paginas[pagina].contador);
+
+                break;  
             }
-
-            printf("Eliminando la Pagina %d del Marco %d. (Contador: %d)\n", pagina_a_reemplazar, tabla_paginas[pagina_a_reemplazar].marco, tabla_paginas[pagina_a_reemplazar].contador);
-
-            tabla_paginas[pagina_a_reemplazar].marco = -1; 
-            tabla_marcos[tabla_paginas[pagina_a_reemplazar].marco].marco = -1;
-
-            tabla_paginas[pagina].marco = tabla_marcos[tabla_paginas[pagina_a_reemplazar].marco].marco;
-            tabla_paginas[pagina].contador = 1;
-            tabla_marcos[tabla_paginas[pagina_a_reemplazar].marco].marco = pagina;
-            printf("Pagina %d ha sido asignada al Marco %d. (Contador: %d)\n", pagina, tabla_marcos[tabla_paginas[pagina_a_reemplazar].marco].marco, tabla_paginas[pagina].contador);
-        } 
-	}
+            else if (eliminar == 2) {
+                printf("Regresando al menu...\n");
+                break;
+            } 
+            else {
+                printf("Digite una opcion valida\n");
+            }
+        } while (eliminar != 2);
         
-        else if(eliminar == 2){
-		printf("Regresando al menu..");}
-		
-		else if(eliminar != 1 && eliminar != 2){
-		printf("Digite una opcion valida");
-		}
-	}while(eliminar !=2);
-        
-        return;
+        return;  
     }
 
+    // Si hay un marco libre, asignamos la página a ese marco
     tabla_paginas[pagina].marco = marco_asignado;
+    tabla_paginas[pagina].contador = 0;  
     tabla_marcos[marco_asignado].marco = pagina;
 
     printf("Pagina %d ha sido asignada al marco %d.\n", pagina, marco_asignado);
 }
-
 
 int main() {
     int opcion;
     Manejo tabla_marcos[marcos]; 
     Manejo tabla_paginas[paginas]; 
 
+    // Inicializando las tablas
     for (int i = 0; i < marcos; i++) {
         tabla_marcos[i].marco = -1;
         tabla_marcos[i].contador = 0;
@@ -773,7 +785,7 @@ int main() {
     do {
         printf("\n--- Menu ---\n");
         printf("1. Agregar una pagina a la memoria\n");
-        printf("2. Verpaginas y Acceder a pagina(necesita tener alguna pagina en exitencia)\n");
+        printf("2. Ver paginas y Acceder a una pagina\n");
         printf("3. Ver los marcos (memoria fisica)\n");
         printf("4. Salir\n");
         printf("Seleccione una opcion: ");
@@ -799,7 +811,6 @@ int main() {
 
     return 0;
 }
-
 ```
 
 ## 2.-Diagrama para el proceso de traducción de direciones virtuales a fisicas en un sistema con memoria virtual
