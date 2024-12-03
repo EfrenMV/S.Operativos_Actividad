@@ -1139,9 +1139,8 @@ Este llevara los siguientes pasos para manejarlo
 #include <unistd.h>
 #include <stdlib.h>
 
-pthread_t thread;  // Definimos el hilo global
-
-// Función que realiza el conteo
+pthread_t thread;  
+ 
 void* contar(void* arg) {
     for (int i = 1; i <= 20; i++) {
         printf("%d\n", i);  
@@ -1150,17 +1149,17 @@ void* contar(void* arg) {
     return NULL;
 }
 
-// Inicia el proceso de conteo en un hilo nuevo
+ 
 void IniciarHilo() {
     printf("Iniciando proceso de conteo...\n");
-    pthread_create(&thread, NULL, contar, NULL);  // Crea el hilo
+    pthread_create(&thread, NULL, contar, NULL);  
 }
  
 
-// Finaliza el programa
+ 
 void Salir() {
     printf("Se genero una interrupcion OMG...\n");
-    pthread_cancel(thread);   // Cancela el hilo si está en ejecución
+    pthread_cancel(thread);  
 
 }
 
@@ -1178,12 +1177,12 @@ int main() {
                 IniciarHilo();
                 break;
             case 2:
-                Salir();  // Detiene el hilo
+                Salir();  
                 break;
             default:
                 printf("Opción inválida, por favor intente de nuevo.\n");
         }
-    } while (opcion != 2);  // El ciclo termina cuando se selecciona la opción 3
+    } while (opcion != 2);  
 
     return 0;
 }
