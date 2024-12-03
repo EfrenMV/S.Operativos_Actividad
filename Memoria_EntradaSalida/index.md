@@ -1035,53 +1035,69 @@ ejemplos de este tipo de dispositivo son las impresoraas, terminales, citnas, et
 
 ```C
 #include <stdio.h>
+#include <stdlib.h>
+#include <stdbool.h>
 
-//Agregar el elemento al final de la cola
-void metodoA(){
-    printf("Selecciono metodoA");
+typedef struct {
+    bool conectado;
+} USB16GB;
+
+void initUSB(USB16GB *usb) {
+    usb->conectado = false;
+    printf("Dispositivo USB simulado creado.\n");
 }
 
-//Elimina el elemento del frente de la cola (debe ser el primero que llego)
-void metodoB(){
-    printf("Selecciono metodoB");
+void connectUSB(USB16GB *usb) {
+    if (usb->conectado) {
+        printf("El dispositivo USB ya esta conectado.\n");
+    } else {
+        usb->conectado = true;
+        printf("Dispositivo USB conectado exitosamente.\n");
+    }
 }
 
-//Muestra cuantos elementos hay y muestra quien esta primero
-void metodoC(){
-    printf("Selecciono metodoC");
+void disconnectUSB(USB16GB *usb) {
+    if (!usb->conectado) {
+        printf("El dispositivo USB ya esta desconectado.\n");
+    } else {
+        usb->conectado = false;
+        printf("Dispositivo USB desconectado.\n");
+    }
 }
 
 int main() {
-   int opcion;
+    USB16GB USBEFREN;
+    initUSB(&USBEFREN);
 
-    do {
-        printf("\n--- Menu ---\n");
-        printf("1. metodoA\n");
-        printf("2. metodoB\n");
-        printf("3. metodoC\n");
-        printf("4. Salir\n");
-        printf("Seleccione una opción: ");
-        scanf("%d", &opcion);
+    int option;
+    while (1) {
+        printf("\nSeleccione una opcion:\n");
+        printf("1. Conectar dispositivo USB\n");
+        printf("2. Desconectar dispositivo USB\n");
+        printf("3. Salir\n");
+        printf("Opcion: ");
+        scanf("%d", &option);
+        getchar();
 
-        switch (opcion) {
+        switch (option) {
             case 1:
-                metodoA();
-                 break;
-            case 2:
-                metodoB();
-                 break;
-            case 3:
-                metodoC();
-                 break;
-            case 4:
-                printf("Saliendo...\n");
+                connectUSB(&USBEFREN);
                 break;
+            case 2:
+                disconnectUSB(&USBEFREN);
+                break;
+            case 3:
+                printf("Saliendo del programa...\n");
+                exit(0);
             default:
-                printf("Opción inválida, por favor intente de nuevo.\n");
+                printf("Opcion no valida. Intenta nuevamente.\n");
         }
-    } while (opcion != 4);
+    }
+
     return 0;
 }
+
+
 ```
 
 # 4.2 Mecanismos y funciones de los manejadores de dispositivos 
