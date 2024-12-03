@@ -901,53 +901,117 @@ El sistema operativo asegura la protección de la memoria para evitar que un pro
 ## 2-Simulacion del swapping de procesos en memoria virtual
 ```C
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
 
-//Agregar el elemento al final de la cola
-void metodoA(){
-    printf("Selecciono metodoA");
+ #define RAM_SIZE 3  // Cantidad de bloques de memoria en RAM
+#define DISK_SIZE 5  // Cantidad de procesos en disco
+
+ typedef struct {
+    int id;       // ID del proceso
+    char nombre[20];  // Nombre del proceso
+} Proceso;
+
+ Proceso RAM[RAM_SIZE];
+
+ Proceso DISK[DISK_SIZE];
+
+ void inicializarMemorias() {
+    for (int i = 0; i < RAM_SIZE; i++) {
+        RAM[i].id = -1;  
+        strcpy(RAM[i].nombre, "VACIO");
+    }
+
+    for (int i = 0; i < DISK_SIZE; i++) {
+        DISK[i].id = i + 1; 
+        sprintf(DISK[i].nombre, "Proceso %d", i + 1);
+    }
 }
 
-//Elimina el elemento del frente de la cola (debe ser el primero que llego)
-void metodoB(){
-    printf("Selecciono metodoB");
+ void verRAM() {
+    printf("\n--- Estado de la Memoria RAM ---\n");
+    for (int i = 0; i < RAM_SIZE; i++) {
+        if (RAM[i].id == -1) {
+            printf("Bloque %d: VACIO\n", i);
+        } else {
+            printf("Bloque %d: %s (ID: %d)\n", i, RAM[i].nombre, RAM[i].id);
+        }
+    }
 }
 
-//Muestra cuantos elementos hay y muestra quien esta primero
-void metodoC(){
-    printf("Selecciono metodoC");
+ void realizarSwap() {
+ 
+    for (int i = 0; i < RAM_SIZE; i++) {
+        if (RAM[i].id == -1) {
+         
+            for (int j = 0; j < DISK_SIZE; j++) {
+                if (DISK[j].id != -1) {  
+                    printf("\nCargando el %s (ID: %d) en la RAM en el bloque %d.\n", DISK[j].nombre, DISK[j].id, i);
+                    RAM[i] = DISK[j];  
+                    DISK[j].id = -1;  
+                    strcpy(DISK[j].nombre, "VACIO");
+                    return;
+                }
+            }
+        }
+    }
+
+     printf("\nLa RAM está llena, realizando un swap...\n");
+    
+     for (int i = 0; i < RAM_SIZE; i++) {
+        if (RAM[i].id != -1) {   
+            printf("Expulsando el %s (ID: %d) de la RAM al disco.\n", RAM[i].nombre, RAM[i].id);
+            
+            for (int j = 0; j < DISK_SIZE; j++) {
+                if (DISK[j].id == -1) {
+                    DISK[j] = RAM[i];  
+                    RAM[i].id = -1;  
+                    strcpy(RAM[i].nombre, "VACIO");
+                    break;
+                }
+            }
+            break;   
+        }
+    }
+}
+
+ void cargarProcesoEnRAM() {
+    realizarSwap();
+    verRAM();
 }
 
 int main() {
-   int opcion;
+    int opcion;
 
-    do {
-        printf("\n--- Menu ---\n");
-        printf("1. metodoA\n");
-        printf("2. metodoB\n");
-        printf("3. metodoC\n");
-        printf("4. Salir\n");
+     inicializarMemorias();
+
+     do {
+        printf("\n--- Simulacion de Swapping ---\n");
+        printf("1. Cargar un proceso en RAM\n");
+        printf("2. Ver el estado de la RAM\n");
+        printf("3. Salir\n");
         printf("Seleccione una opción: ");
         scanf("%d", &opcion);
 
         switch (opcion) {
             case 1:
-                metodoA();
-                 break;
+                cargarProcesoEnRAM();
+                break;
             case 2:
-                metodoB();
-                 break;
+                verRAM();
+                break;
             case 3:
-                metodoC();
-                 break;
-            case 4:
                 printf("Saliendo...\n");
                 break;
             default:
-                printf("Opción inválida, por favor intente de nuevo.\n");
+                printf("Opción inválida. Por favor intente nuevamente.\n");
         }
-    } while (opcion != 4);
+    } while (opcion != 3);
+
     return 0;
 }
+
+
 ```
 
 <div align="center">
