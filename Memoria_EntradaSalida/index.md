@@ -817,9 +817,53 @@ int main() {
 
 El proceos de traduccion de direcciones virtuales a fisicas en un sistema con memoria virtual es fundamental en los sistemas operativos modernos. Este es trabajado con mecanismos conocidos como **mapeo o traducción de direcciones**
 
+todo esto es manejado con los siguientes pasos
+
+**Espacio de direcciones virtuales:**<br>
+El sistema operativo y la unidad de gestión de memoria (MMU, por sus siglas en inglés) dividen la memoria virtual en bloques de tamaño fijo, llamados páginas. La memoria física, por su parte, también se organiza en bloques de tamaño fijo llamados marcos.
+
+**Partes de la dirección virtual:**<br>
+Una dirección virtual se divide en dos partes principales:
+
+**Número de página virtual (VPN, Virtual Page Number):**<br> 
+Identifica la página específica dentro del espacio de direcciones virtuales.
+Desplazamiento dentro de la página (offset): Es la parte de la dirección que se refiere a la posición dentro de la página, es decir, el desplazamiento dentro del marco de memoria física.
+Ejemplo: Si tienes una dirección virtual de 32 bits y un tamaño de página de 4 KB (2^12 bytes), puedes dividir los 32 bits de la siguiente forma:
+
+Los primeros **20 bits** corresponden al VPN.
+Los últimos **12 bits** corresponden al offset dentro de la página.
+Tabla de páginas (Page Table): Para realizar la traducción de direcciones virtuales a físicas, el sistema utiliza una tabla de páginas. Esta tabla mantiene el mapeo entre las páginas virtuales y los marcos de memoria física.
+
+***Cada entrada en la tabla de páginas contiene:***
+
+El número de marco de página **física (PFN, Physical Frame Number)** donde se encuentra la página virtual.
+Información adicional como bits de control (por ejemplo, si la página está en memoria física o en el disco).
+Proceso de traducción de una dirección virtual a física:
+
+La traducción de una dirección virtual a física se realiza en varios pasos, dependiendo de la configuración del sistema:
+
+ 1. Determinar el número de página virtual (VPN): La dirección virtual se divide en dos partes: el número de página virtual (VPN) y el desplazamiento. El VPN se usa como un índice en la tabla de páginas para encontrar el marco de memoria física correspondiente.
+
+ 2. Buscar en la tabla de páginas: Usando el VPN, el sistema consulta la tabla de páginas para encontrar el número de marco físico correspondiente. Si la entrada de la tabla de páginas está marcada como "no válida" (por ejemplo, si la página no está en memoria), se produce una falta de página (page fault), y el sistema operativo debe cargar la página desde el almacenamiento secundario (generalmente, el disco duro) a un marco de memoria física.
+
+ 3. Concatenar la dirección física: Una vez que el sistema obtiene el número de marco físico de la tabla de páginas, se concatena con el desplazamiento original de la dirección virtual para obtener la dirección física.
+
+**Manejo de las faltas de página:**<br> 
+Si el marco correspondiente a la página no está en memoria (por ejemplo, si se ha intercambiado a disco debido a la gestión de la memoria virtual), se produce una falta de página. En este caso, el sistema operativo realiza una serie de acciones:
+
+**Intercambio (swapping):**<br> 
+El sistema puede elegir una página en memoria que no se esté utilizando activamente (basado en alguna política de reemplazo como LRU, FIFO, etc.) y moverla al disco.
+Carga desde el disco: La página solicitada se carga desde el disco a un marco de memoria libre o previamente liberado.
+Actualización de la tabla de páginas: Una vez que la página se ha cargado en memoria, la tabla de páginas se actualiza para reflejar la nueva asignación.
+
 ![Tradicción de direcciones](Imagenes/T.direcciones.png)
 
 ![Tradiccón de direcciones](Imagenes/T.direcciones2.png)
+
+Ejemplo mucho mas simple:
+
+![Diseño de direcciones](Imagenes/Diseño.png)
+
 # Integración
 
 ## 1-Analizar un sistema operativo moderno (por ejemplo Linux o Windows) e indentificar como administra la memoria virtual
