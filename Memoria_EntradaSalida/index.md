@@ -1136,54 +1136,27 @@ Este llevara los siguientes pasos para manejarlo
 ```C
 #include <stdio.h>
 #include <pthread.h>
+#include <unistd.h>  // Para usar sleep()
 
-//Agregar el elemento al final de la cola
-void metodoA(){
-    printf("Selecciono metodoA");
-}
 
-//Elimina el elemento del frente de la cola (debe ser el primero que llego)
-void metodoB(){
-    printf("Selecciono metodoB");
-}
-
-//Muestra cuantos elementos hay y muestra quien esta primero
-void metodoC(){
-    printf("Selecciono metodoC");
+void* count(void* arg) {
+    for (int i = 1; i <= 20; i++) {
+        printf("%d\n", i);  
+        sleep(1);  
+    }
+    return NULL;
 }
 
 int main() {
-   int opcion;
+    pthread_t thread;  
 
-    do {
-        printf("\n--- Menu ---\n");
-        printf("1. metodoA\n");
-        printf("2. metodoB\n");
-        printf("3. metodoC\n");
-        printf("4. Salir\n");
-        printf("Seleccione una opción: ");
-        scanf("%d", &opcion);
+    pthread_create(&thread, NULL, count, NULL);
 
-        switch (opcion) {
-            case 1:
-                metodoA();
-                 break;
-            case 2:
-                metodoB();
-                 break;
-            case 3:
-                metodoC();
-                 break;
-            case 4:
-                printf("Saliendo...\n");
-                break;
-            default:
-                printf("Opción inválida, por favor intente de nuevo.\n");
-        }
-    } while (opcion != 4);
+    pthread_join(thread, NULL);
+
+    printf("Conteo completo.\n");
+
     return 0;
-}
-```
 
 # 4.3 Estructuras de datos para manejo de dispositivos
 
