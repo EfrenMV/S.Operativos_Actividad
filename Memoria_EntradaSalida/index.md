@@ -858,7 +858,7 @@ Actualización de la tabla de páginas: Una vez que la página se ha cargado en 
 
 ![Tradicción de direcciones](Imagenes/T.direcciones.png)
 
-![Tradiccón de direcciones](Imagenes/T.direcciones2.png)
+![Tradiccón de direcciones](Imagenes/T.direcciones%20(2).png)
 
 Ejemplo mucho mas simple:
 
