@@ -1135,6 +1135,7 @@ Este llevara los siguientes pasos para manejarlo
 
 ```C
 #include <stdio.h>
+#include <pthread.h>
 
 //Agregar el elemento al final de la cola
 void metodoA(){
