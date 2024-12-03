@@ -1213,53 +1213,105 @@ La pudieramos resumir en estas
 ### Simulación
 ```C
 #include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <unistd.h>  
 
-//Agregar el elemento al final de la cola
-void agregar(){
-    printf("Selecciono agregar elemento");
+#define MAX_ES 9  
+
+typedef struct Proceso {
+    char nombre[50];
+    int prioridad;
+} Proceso;
+
+Proceso cola[MAX_ES];   
+int totalProcesos = 0;  
+
+ void agregarES() {
+    if (totalProcesos >= MAX_ES) {
+        printf("No se pueden agregar más E/S, la cola está llena.\n");
+        return;
+    }
+
+    Proceso nuevoProceso;
+    printf("Ingrese el nombre de la E/S: ");
+    scanf(" %49[^\n]", nuevoProceso.nombre);   
+    printf("Ingrese la prioridad de la E/S (1, 2, 3, 4, 5, etc.): ");
+    scanf("%d", &nuevoProceso.prioridad);  
+
+   
+    int i = totalProcesos - 1;
+    while (i >= 0 && cola[i].prioridad > nuevoProceso.prioridad) {
+        cola[i + 1] = cola[i]; 
+        i--;
+    }
+    cola[i + 1] = nuevoProceso;  
+    totalProcesos++;  
+
+    printf("E/S agregado con exito.\n");
 }
 
-//Elimina el elemento del frente de la cola (debe ser el primero que llego)
-void eliminar(){
-    printf("Selecciono eliminar elemento");
+ 
+void mostrarES() {
+    if (totalProcesos == 0) {
+        printf("No hay E/S en la cola.\n");
+        return;
+    }
+
+    printf("\n--- E/S en la cola ---\n");
+    for (int i = 0; i < totalProcesos; i++) {
+        printf("Nombre: %s, Prioridad: %d\n", cola[i].nombre, cola[i].prioridad);
+    }
 }
 
-//Muestra cuantos elementos hay y muestra quien esta primero
-void verElementos(){
-    printf("Selecciono ver elementos");
+ 
+void atenderES() {
+    if (totalProcesos == 0) {
+        printf("No hay E/S para atender.\n");
+        return;
+    }
+
+    for (int i = 0; i < totalProcesos; i++) {
+        printf("Atendiendo E/S: %s (Prioridad: %d)\n", cola[i].nombre, cola[i].prioridad);
+        sleep(3);   
+        printf("E/S atendido.\n");
+    }
+
+    totalProcesos = 0;   
 }
 
 int main() {
-   int opcion;
-
+    int opcion;
     do {
         printf("\n--- Menu ---\n");
-        printf("1. Agregar elemento\n");
-        printf("2. Eliminar elemento\n");
-        printf("3. Ver elementos\n");
+        printf("1. Agregar E/S\n");
+        printf("2. Ver E/S\n");
+        printf("3. Atender E/S\n");
         printf("4. Salir\n");
         printf("Seleccione una opción: ");
         scanf("%d", &opcion);
 
         switch (opcion) {
             case 1:
-                agregar();
-                 break;
+                agregarES();
+                break;
             case 2:
-                eliminar();
-                 break;
+                mostrarES();
+                break;
             case 3:
-                verElementos();
-                 break;
+                atenderES();
+                break;
             case 4:
-                printf("Saliendo...\n");
+                printf("Saliendo del programa...\n");
                 break;
             default:
-                printf("Opción inválida, por favor intente de nuevo.\n");
+                printf("Opción invalida, por favor intente de nuevo.\n");
         }
-    } while (opcion != 4);
+    } while (opcion != 4);   
+
     return 0;
 }
+
 ```
 
 ## 2.-Programa para manejar las operaciones de dispositivos utilizando una tabla de estructuras
