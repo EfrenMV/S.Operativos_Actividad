@@ -46,3 +46,15 @@ ___
 ### Explica el concepto de protección basado en el lenguaje.
 ### Proporciona un ejemplo de cómo un lenguaje como Java o Rust asegura la memoria y evita de acceso no autorizados.
 ### Compara este enfoque con otros mecanismos de protección en sistemas operativos
+
+# Ejercicio 6: Validación y amenazas al sitema 
+## Tareas: 
+### Investiga y describe al menos tres tipos de amenazas comunes ( por ejemplo, malware, ataques de fuerza bruta, inyección de código).
+### Explica los mecanismos de validación como autenticación multifacor y control de integridad.
+### Diseña un esquema de validación para un sistema operativo con múltiples usuarios.
+
+# Ejericico 7: Cifrado
+## Tareas:
+### Define los conceptos de cifrado simétrico y asimétrico.
+### Proporciona un ejemplo práctico de cada tipo de cifrado aplicado en sistemas operativos.
+### Simula el proceso de cifrado y descifrado de un archivo con una clave dada.
