@@ -48,4 +48,7 @@ ___
 3. Un archivo utilizando un índice
 ### Compara las ventajas de cada mecanismo dependiendo del caso de uso.
 
-# Ejercicio 5
+# Ejercicio 5: Modelo jerárquico y mecanismos de recuperación en caso de falla
+### Diseña  un modelo jerárquico para un sistema de archivos con al menos tres niveles de directorios
+### Simula una falla en un directorio específico y describe los pasos necesarios para recuperarlo.
+### Explica qué herramientas o técnicas de respaldo (backup) utilizarías para evitar pérdida de datos
