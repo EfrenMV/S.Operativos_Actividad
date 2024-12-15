@@ -36,3 +36,13 @@ ___
 #### Auditoría:
 
 # Ejercicio 4: Implantación de matrices de acceso
+## Tareas:
+### Diseña una matriz de acceso para un sistema con al menos 3 usuarios y 4 recursos.
+### Explica cómo esta matriz se utiliza para controlar el acceso en un sistema operativo.
+### Simula un escenario donde un usuario intena acceder a un recurso no permitido y cómo la matriz lo bloquea.
+
+# Ejericio 5: Protección basada en el lenguaje
+## Tareas:
+### Explica el concepto de protección basado en el lenguaje.
+### Proporciona un ejemplo de cómo un lenguaje como Java o Rust asegura la memoria y evita de acceso no autorizados.
+### Compara este enfoque con otros mecanismos de protección en sistemas operativos
