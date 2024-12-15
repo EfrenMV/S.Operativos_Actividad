@@ -29,3 +29,10 @@ ___
 
 # Ejercicio 3: Funciones del sistema de protección
 ## Tareas:
+### Describe cómo un sistema de protección controla el acceso a los recursos
+### Explica las funciones principales como autenticación, autorización y auditoría.
+#### Autenticación:
+#### Autorización:
+#### Auditoría:
+
+# Ejercicio 4: Implantación de matrices de acceso
