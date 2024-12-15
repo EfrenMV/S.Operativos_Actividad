@@ -15,7 +15,28 @@
 
 ___
  
- 
+# Índice
+- [Ejercicio 1](#ejercicio-1-concepto-y-noción-de-archivo-real-y-virtual)
+  - [Define el concepto de archivo real y archivo virtual:](#define-el-concepto-de-archivo-real-y-archivo-virtual)
+  - [Proporciona ejemplo de como los sistemas operativos manejan archivos reales y virtuales:](#proporciona-ejemplo-de-cómo-los-sistemas-operativos-manejan-archivos-reales-y-virtuales)
+  - [Explica un caso practico donde un archivo virtual sea mas útil que un archivo real:](#explica-un-caso-practico-donde-un-archivo-virtual-sea-mas-útil-que-un-archivo-real)
+- [Ejercicio 2](#ejercicio-2-componentes-de-un-sistema-de-archivos)
+  - [Sub-sección 2.1](#sub-sección-21)
+  - [Sub-sección 2.1](#sub-sección-21)
+  - [Sub-sección 2.1](#sub-sección-21)
+- [Ejercicio 3](#ejercicio-3-organización-lógica-y-física-de-archivos)
+  - [Sub-sección 2.1](#sub-sección-21)
+  - [Sub-sección 2.1](#sub-sección-21)
+  - [Sub-sección 2.1](#sub-sección-21)
+- [Ejercicio 4](#ejercicio-4-mecanismo-de-acceso-a-los-archivos)
+  - [Sub-sección 2.1](#sub-sección-21)
+  - [Sub-sección 2.1](#sub-sección-21)
+  - [Sub-sección 2.1](#sub-sección-21)
+- [Ejercicio 5](#ejercicio-5-modelo-jerárquico-y-mecanismos-de-recuperación-en-caso-de-falla)
+  - [Sub-sección 2.1](#sub-sección-21)
+  - [Sub-sección 2.1](#sub-sección-21)
+  - [Sub-sección 2.1](#sub-sección-21)
+
 # Ejercicio 1: Concepto y noción de archivo real y virtual
 ## Tareas
 ### Define el concepto de archivo real y archivo virtual
