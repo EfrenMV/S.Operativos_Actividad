@@ -33,5 +33,15 @@ ___
 ### Crea un cuadro comparativo de como estos componentes funcionan en sistemas como EXT4 y NTFS.
 ### Describe las ventajas y desventajas de cada sistema basado en sus componentes
 
-# Ejercicio 3: Organización lógica y fisica de archivos
-### 
+# Ejercicio 3:
+
+# Ejercicio 4: Mecanismo de acceso a los archivos
+## Tarea
+### Define los diferentes mecanismos de acceso
+### escribe un pseudocódigo que muestre cómo acceder a:
+1. Un archivo secuencialmente
+2. Un archivo directamente mediante su posición
+3. Un archivo utilizando un índice
+### Compara las ventajas de cada mecanismo dependiendo del caso de uso.
+
+# Ejercicio 5
