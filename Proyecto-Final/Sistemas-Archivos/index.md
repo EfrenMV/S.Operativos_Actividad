@@ -60,7 +60,36 @@ En el caso de tener que trabajar de forma lejana, donde las personas que trabaja
 
 # Ejercicio 2: Componentes de un sistema de archivos
 ## Tareas
+
 ### Identifica los componentes clave de un sistema de archivos ( por ejemplo, metadatos, tablas de asignación, etc.)
+
+1. Metadatos: La información de los archivos pero sin tener el archivo perse
+    * Nombre del archivo
+    * Tamaño del archivo
+    * Tipo de archivo
+    * Fecha de creación
+    * Fecha de ultima modificación
+    * Fecha de último acceso
+    * Permiso de acceso
+    * Propietario del archivo
+    * Estado de los bloques de datos
+
+2. Tablas de asignación (o estructuras de asignación de espacio): Responsables de gestionar el espacio de almacenamiento físico en el dispositivo
+    * Tabla de asignación de archivos (FAT)
+    * Inodo (Inode)
+    * Manejo de bloques
+
+3. Directorios: Estructuras que organizan los archivos en un sistema de archivos
+    * Nombre del archivo
+    * Enlaces al inodo o tabla de asignación
+
+4. Indice de archivo(o indice de ubicación): Usados para ubicar     rapidamente los archivos, estos son indices que pueden ser tanto como una tabla o una lista que almacena información sobre la ubicacion de los archivos
+    * NTFS
+
+5. Bloques de datos: Siendo las unidades mas pequeñas de almacenamiento en el disco estos contienen la información real del archivo 
+
+6. Journaling (registro de transacciones): Utilizado en sistemas de archivos como ext3/ext4 o NTFS, este garantiza la integridad de los datos
+
 ### Crea un cuadro comparativo de como estos componentes funcionan en sistemas como EXT4 y NTFS.
 ### Describe las ventajas y desventajas de cada sistema basado en sus componentes
 
