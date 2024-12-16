@@ -21,21 +21,21 @@ ___
   - [Proporciona ejemplo de como los sistemas operativos manejan archivos reales y virtuales:](#proporciona-ejemplo-de-cómo-los-sistemas-operativos-manejan-archivos-reales-y-virtuales)
   - [Explica un caso practico donde un archivo virtual sea mas útil que un archivo real:](#explica-un-caso-practico-donde-un-archivo-virtual-sea-mas-útil-que-un-archivo-real)
 - [Ejercicio 2](#ejercicio-2-componentes-de-un-sistema-de-archivos)
-  - [Sub-sección 2.1](#sub-sección-21)
-  - [Sub-sección 2.1](#sub-sección-21)
-  - [Sub-sección 2.1](#sub-sección-21)
+  - [Identifica los componentes clave de un sistema de archivos ( por ejemplo, metadatos, tablas de asignación, etc.)](#identifica-los-componentes-clave-de-un-sistema-de-archivos--por-ejemplo-metadatos-tablas-de-asignación-etc)
+  - [Crea un cuadro comparativo de como estos componentes funcionan en sistemas como EXT4 y NTFS.](#crea-un-cuadro-comparativo-de-como-estos-componentes-funcionan-en-sistemas-como-ext4-y-ntfs)
+  - [Describe las ventajas y desventajas de cada sistema basado en sus componentes](#describe-las-ventajas-y-desventajas-de-cada-sistema-basado-en-sus-componentes)
 - [Ejercicio 3](#ejercicio-3-organización-lógica-y-física-de-archivos)
-  - [Sub-sección 2.1](#sub-sección-21)
-  - [Sub-sección 2.1](#sub-sección-21)
-  - [Sub-sección 2.1](#sub-sección-21)
+  - [Diseña  un árbol jerárquico que represente la organización lógica de directorios y subdirectorios](#Diseña -un-árbol-jerárquico-que-represente-la-organización-lógica-de-directorios-y-subdirectorios)
+  - [Explica cómo se traduce la dirección lógica a la dirección fisica en el disco](#explica-cómo-se-traduce-la-dirección-lógica-a-la-dirección-fisica-en-el-disco)
+  - [Proporciona un ejemplo práctico de cómo un archivo se almacena fisicamente](#proporciona-un-ejemplo-práctico-de-cómo-un-archivo-se-almacena-fisicamente)
 - [Ejercicio 4](#ejercicio-4-mecanismo-de-acceso-a-los-archivos)
-  - [Sub-sección 2.1](#sub-sección-21)
-  - [Sub-sección 2.1](#sub-sección-21)
-  - [Sub-sección 2.1](#sub-sección-21)
+  - [Define los diferentes mecanismos de acceso](#define-los-diferentes-mecanismos-de-acceso)
+  - [Escribe un pseudocódigo que muestre cómo acceder a:](#Escribe-un-pseudocódigo-que-muestre-cómo-acceder-a)
+  - [Compara las ventajas de cada mecanismo dependiendo del caso de uso.](#compara-las-ventajas-de-cada-mecanismo-dependiendo-del-caso-de-uso)
 - [Ejercicio 5](#ejercicio-5-modelo-jerárquico-y-mecanismos-de-recuperación-en-caso-de-falla)
-  - [Sub-sección 2.1](#sub-sección-21)
-  - [Sub-sección 2.1](#sub-sección-21)
-  - [Sub-sección 2.1](#sub-sección-21)
+  - [Diseña  un modelo jerárquico para un sistema de archivos con al menos tres niveles de directorios](#diseña--un-modelo-jerárquico-para-un-sistema-de-archivos-con-al-menos-tres-niveles-de-directorios)
+  - [Simula una falla en un directorio específico y describe los pasos necesarios para recuperarlo.](#simula-una-falla-en-un-directorio-específico-y-describe-los-pasos-necesarios-para-recuperarlo)
+  - [Explica qué herramientas o técnicas de respaldo (backup) utilizarías para evitar pérdida de datos](#explica-qué-herramientas-o-técnicas-de-respaldo-backup-utilizarías-para-evitar-pérdida-de-datos)
 
 # Ejercicio 1: Concepto y noción de archivo real y virtual
 ## Tareas
@@ -114,14 +114,17 @@ En el caso de tener que trabajar de forma lejana, donde las personas que trabaja
 
 # Ejercicio 3: Organización lógica y física de archivos 
 ## Tareas
-### Disela un árbol jerárquico que represente la organización lógica de directorios y subdirectorios
+### Diseña un árbol jerárquico que represente la organización lógica de directorios y subdirectorios
+
 ### Explica cómo se traduce la dirección lógica a la dirección fisica en el disco
+
 ### Proporciona un ejemplo práctico de cómo un archivo se almacena fisicamente
+
 
 # Ejercicio 4: Mecanismo de acceso a los archivos
 ## Tareas
 ### Define los diferentes mecanismos de acceso
-### escribe un pseudocódigo que muestre cómo acceder a:
+### Escribe un pseudocódigo que muestre cómo acceder a:
 1. Un archivo secuencialmente
 2. Un archivo directamente mediante su posición
 3. Un archivo utilizando un índice
