@@ -42,11 +42,21 @@ ___
 ### Define el concepto de archivo real y archivo virtual
 
 #### Archivo Real:
+Aquel archvio fisico el cual existe en un soporte tangible, como papel, discos curos, cintas magnéticas etc..
+
 #### Archivo Virtual:
+Archivos los cuales simplemente existen en el entorno digital/virtual como su nombre lo indica, por ejemplo redes o en la nube
 
 ### Proporciona ejemplo de cómo los sistemas operativos manejan archivos reales y virtuales
 
+En el caso de los archivos reales tenemos el echo de las copias de seguridad las cuales mayormente estan echas en el disco duro, ssd etc
+
+Mientras que los digitales podrian ser archivos almacenados en la lube por ejemplo teniendo el uso de google drive, dropbox etc. Tambien tenemos los archivos virtuales que no se crean en el disco si no en la ram, estos siendo temporales. 
+
 ### Explica un caso practico donde un archivo virtual sea mas útil que un archivo real
+
+En el caso de tener que trabajar de forma lejana, donde las personas que trabajan estan muy lejos del area, en estos momentos manejar archivos virtuales donde se manejen las cosas en la nube es una mejor opción
+
 
 # Ejercicio 2: Componentes de un sistema de archivos
 ## Tareas
