@@ -106,6 +106,11 @@ En el caso de tener que trabajar de forma lejana, donde las personas que trabaja
 
 
 ### Describe las ventajas y desventajas de cada sistema basado en sus componentes
+| **Aspecto**              | **EXT4 (Linux)**                                               | **NTFS (Windows)**                                             |
+|--------------------------|---------------------------------------------------------------|---------------------------------------------------------------|
+| **Ventajas**              | - **Journaling** para evitar la corrupción de datos. <br> - Menos susceptible a la fragmentación. <br> - Eficiente con grandes volúmenes de datos y menos fragmentación. <br> - Menor sobrecarga en comparación con NTFS. <br> - Soporta enlaces simbólicos y duros. <br> - Compatible con herramientas de recuperación en Linux. <br> - Soporta volúmenes de hasta 1 exabyte y archivos de hasta 16 terabytes. | - **Journaling** asegura recuperación de datos tras fallos. <br> - Soporta **ACLs (Access Control Lists)** para un control detallado de permisos. <br> - Soporta **encriptación de archivos (EFS)**. <br> - **Compresión** de archivos y directorios. <br> - Soporta volúmenes de hasta 16 exabytes y archivos de hasta 16 terabytes. <br> - Compatible con la mayoría de herramientas en Windows. <br> - Buen soporte para recuperación avanzada de archivos y sistema. |
+| **Desventajas**           | - No es compatible de manera nativa con Windows. <br> - No tiene soporte para **ACLs** avanzadas. <br> - La recuperación avanzada puede ser más difícil comparado con NTFS. <br> - La gestión de permisos es más simple que NTFS. | - Puede sufrir fragmentación, aunque tiene algunas optimizaciones. <br> - Mayor sobrecarga de rendimiento debido a su complejidad (por ejemplo, ACLs y compresión). <br> - Compatible con Linux a través de **ntfs-3g**, pero la integración no es tan robusta. |
+
 
 # Ejercicio 3: Organización lógica y física de archivos 
 ## Tareas
