@@ -25,7 +25,7 @@ ___
   - [Crea un cuadro comparativo de como estos componentes funcionan en sistemas como EXT4 y NTFS.](#crea-un-cuadro-comparativo-de-como-estos-componentes-funcionan-en-sistemas-como-ext4-y-ntfs)
   - [Describe las ventajas y desventajas de cada sistema basado en sus componentes](#describe-las-ventajas-y-desventajas-de-cada-sistema-basado-en-sus-componentes)
 - [Ejercicio 3](#ejercicio-3-organización-lógica-y-física-de-archivos)
-  - [Diseña  un árbol jerárquico que represente la organización lógica de directorios y subdirectorios](#Diseña -un-árbol-jerárquico-que-represente-la-organización-lógica-de-directorios-y-subdirectorios)
+  - [Diseña un árbol jerárquico que represente la organización lógica de directorios y subdirectorios](#diseña-un-árbol-jerárquico-que-represente-la-organización-lógica-de-directorios-y-subdirectorios)
   - [Explica cómo se traduce la dirección lógica a la dirección fisica en el disco](#explica-cómo-se-traduce-la-dirección-lógica-a-la-dirección-fisica-en-el-disco)
   - [Proporciona un ejemplo práctico de cómo un archivo se almacena fisicamente](#proporciona-un-ejemplo-práctico-de-cómo-un-archivo-se-almacena-fisicamente)
 - [Ejercicio 4](#ejercicio-4-mecanismo-de-acceso-a-los-archivos)
