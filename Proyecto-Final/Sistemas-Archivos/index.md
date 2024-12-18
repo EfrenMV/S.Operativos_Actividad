@@ -118,6 +118,11 @@ En el caso de tener que trabajar de forma lejana, donde las personas que trabaja
 
 ### Explica cómo se traduce la dirección lógica a la dirección fisica en el disco
 
+1. El sistema operativo recibe una solicitud de acceso a un archivo, usando una dirección lógica.
+2. El sistema de archivos consulta su tabla de asignación para traducir esta dirección lógica a una dirección física.
+3. El sistema operativo usa esta dirección física para localizar los datos en el disco.
+4. El controlador de disco accede a los sectores físicos del disco para leer o escribir los datos.
+
 ### Proporciona un ejemplo práctico de cómo un archivo se almacena fisicamente
 
 
