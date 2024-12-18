@@ -225,6 +225,49 @@ Java no permite a los desarrolladores manejar directamente la memoria (por ejemp
 | **Inyección de Código**     | Inserción de código malicioso en aplicaciones o bases de datos con el fin de ejecutar comandos no autorizados.                                                           | Acceso a bases de datos, ejecución remota de código, robo de información.        | Validación y escape de entradas, uso de consultas preparadas (SQL), restricciones de permisos en sistemas. |
 
 ### Explica los mecanismos de validación como autenticación multifacor y control de integridad.
+
+1. **Autenticación Multifactor (MFA)**
+    
+    La autenticación multifactor (MFA) es un mecanismo de seguridad que requiere que los usuarios proporcionen dos o más factores de verificación antes de acceder a un sistema o recurso. El objetivo de MFA es agregar capas adicionales de protección para reducir el riesgo de que un atacante obtenga acceso a una cuenta o sistema, incluso si conoce la contraseña.
+
+Factores de Autenticación
+Los factores de autenticación generalmente se dividen en tres categorías principales:
+
+  * **Conocimiento:** Algo que sabes. 
+  * **Posesión:** Este es el factor más común y generalmente es una contraseña o un PIN. Es algo que solo el usuario debe conocer.
+    Algo que tienes.
+  * **Biometria:** Un dispositivo o medio físico que el usuario posee. Ejemplos comunes incluyen tarjetas de seguridad, tokens de hardware (como llaves USB), o un teléfono móvil que recibe un código a       travé  de SMS o aplicaciones de autenticación.
+    Algo que eres 
+ 
+2. **Control de Integridad**
+
+El control de integridad es un mecanismo que asegura que los datos no sean alterados, manipulados o corrompidos, ya sea de manera intencional o accidental. En el contexto de la seguridad informática, la integridad se refiere a la exactitud, consistencia y confiabilidad de los datos.
+
+**Checksums:** Mecanismos Comunes de Control de Integridad
+Sumas de Verificación 
+
+Las **sumas de verificación** son valores calculados a partir de un conjunto de datos. Si los datos se alteran, la suma de verificación cambiará. Este método se usa para verificar que los datos no han sido modificados.
+
+**Firmas Digitales**
+
+Las firmas digitales son una forma avanzada de control de integridad que utiliza criptografía para asegurar que los datos no hayan sido modificados y provienen de una fuente autenticada. Una firma digital es creada usando una clave privada y puede ser verificada con una clave pública.
+
+
+**Hashing Criptográfico**
+
+El hashing es un proceso que toma un bloque de datos de cualquier tamaño y lo convierte en un valor de tamaño fijo (el hash). Si los datos son modificados, el hash resultante cambiará, lo que indica que la integridad de los datos ha sido comprometida.
+
+**Detección de manipulaciones:** 
+
+Permite identificar si los datos han sido modificados, ya sea de manera accidental o maliciosa.
+Seguridad en la transmisión de datos: Protege la integridad de los datos durante la transmisión a través de redes no confiables, como internet.
+Protección contra ataques: Previene ataques como la modificación de datos en tránsito o la suplantación de mensajes.
+
+**Dependencia de claves secretas:**
+
+En algunos métodos de control de integridad, como el uso de MACs o firmas digitales, la seguridad depende de mantener las claves privadas de manera segura.
+Sobrecarga de procesamiento: Los procesos de hashing y verificación de integridad pueden agregar una carga computacional adicional, especialmente en sistemas con grandes volúmenes de datos.
+
 ### Diseña un esquema de validación para un sistema operativo con múltiples usuarios.
 
 # Ejercicio 7: Cifrado
