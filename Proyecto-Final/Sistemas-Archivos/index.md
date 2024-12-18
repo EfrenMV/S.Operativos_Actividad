@@ -197,4 +197,19 @@ Cerrar archivo de índice
 # Ejercicio 5: Modelo jerárquico y mecanismos de recuperación en caso de falla
 ### Diseña  un modelo jerárquico para un sistema de archivos con al menos tres niveles de directorios
 ### Simula una falla en un directorio específico y describe los pasos necesarios para recuperarlo.
+
 ### Explica qué herramientas o técnicas de respaldo (backup) utilizarías para evitar pérdida de datos
+
+1. Copia de seguridad completa: Se realiza una copia de todos los archivos importantes. Es simple pero consume más espacio y tiempo.
+
+2. Copia de seguridad incremental: Solo se respaldan los archivos que han cambiado desde el último respaldo, lo que ahorra espacio y tiempo.
+
+3. Copia de seguridad diferencial: Respalda los archivos que han cambiado desde el último respaldo completo, proporcionando un equilibrio entre la rapidez y la capacidad de recuperación.
+
+4. Almacenamiento en la nube: Servicios como Google Drive, Dropbox o Amazon S3 permiten guardar datos de manera remota y accesible desde cualquier lugar.
+
+5. Dispositivos externos: Discos duros o unidades SSD externas para copias locales.
+
+6. RAID (Redundant Array of Independent Disks): Técnica que combina varios discos para mejorar la fiabilidad y la redundancia de los datos, protegiendo contra fallos de discos individuales.
+
+7. Automatización de respaldos: Uso de software que automatiza el proceso de copia de seguridad en intervalos regulares para evitar olvidos o errores humanos.
