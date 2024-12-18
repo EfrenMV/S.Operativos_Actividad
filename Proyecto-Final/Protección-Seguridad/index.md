@@ -273,5 +273,15 @@ Sobrecarga de procesamiento: Los procesos de hashing y verificación de integrid
 # Ejercicio 7: Cifrado
 ## Tareas:
 ### Define los conceptos de cifrado simétrico y asimétrico.
+
+**Cigrado Simétrico:**
+
+ Se utiliza la misma clave tanto para cifrar como para descifrar los datos. Es rápido y eficiente, pero requiere que ambas partes (quien cifra y quien descifra) compartan la misma clave secreta de manera segura.
+
 ### Proporciona un ejemplo práctico de cada tipo de cifrado aplicado en sistemas operativos.
+
+Supongamos que en un sistema operativo, un usuario quiere cifrar un archivo de texto para almacenarlo de forma segura. El sistema utilizaría una clave secreta para cifrar el archivo con AES, y solo alguien que tenga esa misma clave secreta podría descifrarlo.
+
+
 ### Simula el proceso de cifrado y descifrado de un archivo con una clave dada.
+
