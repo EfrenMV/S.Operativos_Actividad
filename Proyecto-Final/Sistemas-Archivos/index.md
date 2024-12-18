@@ -179,7 +179,20 @@ Cerrar archivo de datos
 Cerrar archivo de índice
 
 ```
-### Compara las ventajas de cada mecanismo dependiendo del caso de uso.
+### Comparar las ventajas de cada mecanismo dependiendo del caso de uso.
+
+| Mecanismo de Acceso        | Caso de Uso                                        | Ventajas                                                 |
+|----------------------------|----------------------------------------------------|----------------------------------------------------------|
+| **Acceso Secuencial**       | Archivos de registro, archivos de log, o bases de datos con consultas en orden secuencial. | - Fácil de implementar.                                  |
+|                            |                                                    | - Eficiente para procesar grandes volúmenes de datos de forma lineal. |
+|                            |                                                    | - Bajo consumo de recursos.                             |
+| **Acceso Directo (Aleatorio)** | Archivos grandes, bases de datos, sistemas de gestión de archivos, o cuando se requiere acceso rápido a datos específicos. | - Acceso rápido a cualquier parte del archivo.          |
+|                            |                                                    | - Ideal para operaciones de lectura/escritura rápidas.   |
+|                            |                                                    | - Menor tiempo de espera, no es necesario leer toda la información. |
+| **Acceso por Índice**       | Bases de datos, sistemas de gestión de archivos con búsquedas frecuentes o consultas por claves específicas. | - Búsqueda rápida mediante índices.                     |
+|                            |                                                    | - Eficiente para búsquedas y modificaciones rápidas.     |
+|                            |                                                    | - Ideal para acceder a datos sin necesidad de leer secuencialmente. |
+
 
 # Ejercicio 5: Modelo jerárquico y mecanismos de recuperación en caso de falla
 ### Diseña  un modelo jerárquico para un sistema de archivos con al menos tres niveles de directorios
