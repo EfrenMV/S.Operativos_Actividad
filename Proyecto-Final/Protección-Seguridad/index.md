@@ -49,7 +49,14 @@ ___
 ## Tareas:
 ### Define los conceptos de protección y seguridad en el contexto de sistemas operativos
 
-Conceptos de protección:
+Conceptos de protección: Son las medidas y mecanismos que garantizan que los recursos del sistema (como la memoria, los procesos y los arhcivos) sean accedidos solo por aquellos
+usuarios o proceso que tengan permisos edecudados. Esta proteccion busca evitar que los procesos o usaurios accedan o modifiquen datos o recursos que no les corresponden. Está relacionada
+con el control de acceso dentro de un sistema operativos
+
+* **Control de acceso:** Permite que solo los usuarios o procesos autorizados puedan acceder a los recursos del sistema.
+* **Aislamiento de procesos:** Los procesos deben ejecutarse en un espacio de memoria aislado para que no puedan interferir o acceder a la memoria de otros proceos sin permiso.
+* **Gestión de privilegios:** Controlar qué acciones pueden realizar los usuarios o procesos (lectura, escritura, ejecución) sobre los recursos del sistema.
+
 
 Seguridad en sisteams Operativos:
 
