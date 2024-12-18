@@ -53,3 +53,41 @@ ___
   ```C
 
   ```
+
+  # Librerias para camara,impresora y escaner
+
+  **Buscar que librerias usar para mi camara, impresora, escaner**
+
+    * Java
+
+        *Camaras:*
+        1. OpenIMAJ
+            * GitHub OpenIMAJ
+        2. JavaCV(Wrapped de OpenCV para Java)<br> 
+           * JavaCV
+        3. JWF(Java Media Framework)
+
+
+        *Impresoras*
+        1. Java Print Service Api
+
+        *Escaneres:*
+        1. Twain4j
+
+
+    * C
+
+        *OpenCV(C/C++)*
+        1. OpenCV
+
+        *Impresoras*
+        1. WinAPI(Windows)
+
+        *Escáneres*
+        1. SANE(Scanner Access Now Easy)
+        2. Twain(Twain Toolkit)
+
+* Info extra
+<br> *TWAIN*: Usado principalmente en Windwos para escáneres.
+<br> *SANE*: Más común en Linux escáneres.
+<br> OpenCV*: Funciona en Windows, Linux y macOS para cámaras.
