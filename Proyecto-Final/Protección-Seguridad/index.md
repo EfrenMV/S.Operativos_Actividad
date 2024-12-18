@@ -145,6 +145,39 @@ Refiere a la proteccion de los sistemas y dispositivos interconectados a través
 # Ejercicio 3: Funciones del sistema de protección
 ## Tareas:
 ### Describe cómo un sistema de protección controla el acceso a los recursos
+
+1. Mecanismos de Control de Acceso
+Los mecanismos de control de acceso son las herramientas y técnicas utilizadas para implementar las políticas de seguridad que dictan quién puede acceder a qué recursos y bajo qué condiciones. Los principales mecanismos incluyen:
+
+  * a) Autenticación 
+      La autenticación es el proceso de verificar la identidad de un usuario o proceso que solicita acceso a un recurso del sistema. El objetivo es asegurarse de que el solicitante es quien dice ser.
+
+  * b) Autorización
+      Una vez que un usuario o proceso ha sido autenticado, el sistema verifica si tiene permiso para acceder al recurso solicitado. La autorización determina qué acciones pueden realizar los usuarios autenticados en función de sus privilegios.
+
+ 
+    * c) Acceso a Recursos Físicos y Lógicos
+      Un sistema de protección también puede restringir el acceso a recursos físicos (hardware) y lógicos (software), mediante mecanismos adicionales.
+
+2. Políticas de Protección
+Las políticas de protección definen las reglas que gobiernan cómo se conceden y gestionan los permisos de acceso a los recursos. Estas políticas aseguran que el acceso a los recursos se realice de manera controlada y conforme a las necesidades de seguridad del sistema.
+
+  * a) Política de Menor Privilegio
+      La política de menor privilegio establece que los usuarios y procesos deben tener solo los permisos estrictamente necesarios para realizar sus tareas, evitando que tengan acceso innecesario a otros recursos que no sean relevantes para su funcionamiento. Esto reduce la superficie de ataque y mitiga los daños en caso de que un proceso sea comprometido.
+
+  * b) Política de Necesidad de Saber
+      Relacionado con la política de menor privilegio, la política de necesidad de saber restringe el acceso a información confidencial o sensible solo a aquellos usuarios o procesos que realmente necesiten acceder a esa información para realizar su trabajo. Por ejemplo, un empleado de ventas no debería tener acceso a la base de datos de finanzas.
+
+  * c) Política de Control de Acceso Condicional
+      En algunos casos, el acceso a recursos puede estar condicionado por ciertas circunstancias, como el tiempo del día, la ubicación, o el tipo de dispositivo desde el que se accede. Esto se puede implementar mediante sistemas de autenticación multifactor o gestión de acceso basada en contexto.
+
+3. Manejo de Roles y Permisos
+El sistema de protección también gestiona los roles de los usuarios y los permisos asociados a esos roles. Los permisos son asignados a los roles, y luego los usuarios se agrupan en roles que tienen ciertos derechos sobre los recursos. Esto simplifica la administración de acceso.
+
+
+4. Auditoría y Monitoreo de Acceso
+La auditoría y el monitoreo son funciones clave de un sistema de protección para asegurar que los recursos sean utilizados de acuerdo con las políticas de acceso. Permiten detectar y registrar cualquier intento de acceso no autorizado o actividad sospechosa.
+
 ### Explica las funciones principales como autenticación, autorización y auditoría.
 #### Autenticación:
 #### Autorización:
