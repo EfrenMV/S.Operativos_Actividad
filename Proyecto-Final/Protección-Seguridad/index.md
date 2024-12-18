@@ -179,10 +179,17 @@ El sistema de protección también gestiona los roles de los usuarios y los perm
 La auditoría y el monitoreo son funciones clave de un sistema de protección para asegurar que los recursos sean utilizados de acuerdo con las políticas de acceso. Permiten detectar y registrar cualquier intento de acceso no autorizado o actividad sospechosa.
 
 ### Explica las funciones principales como autenticación, autorización y auditoría.
-#### Autenticación:
-#### Autorización:
-#### Auditoría:
+**Autenticación:**
 
+Proceos mediante el cual un sistema verifica la identidad de un usuario o proceso que intenta aceder a un recurso o servicio.
+
+**Autorización:**
+
+Proceso que ocurre después de la autentificación. Una vez que se ha verificado la indentidad de un usuario
+
+**Auditoría:**
+
+Proceso que registra y analiza las actividades que ocurren dentro de un sistema para poder realizar un seguimiento a las acciones de los usuarios.
 # Ejercicio 4: Implantación de matrices de acceso
 ## Tareas:
 ### Diseña una matriz de acceso para un sistema con al menos 3 usuarios y 4 recursos.
