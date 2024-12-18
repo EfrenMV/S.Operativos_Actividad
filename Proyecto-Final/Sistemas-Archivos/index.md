@@ -133,10 +133,52 @@ Un archivo se almacena físicamente en un dispositivo de almacenamiento, como un
 # Ejercicio 4: Mecanismo de acceso a los archivos
 ## Tareas
 ### Define los diferentes mecanismos de acceso
+
+1. **Acceso Secuencial:** Los datos se leen o escriben de manera continua, uno después del otro, sin saltarse ninguna parte. Este mecanismo es común en cintas magnéticas o archivos de texto, donde los datos se procesan en el mismo orden en que se almacenan.
+
+2. **Acceso Directo (Aleatorio):** Permite leer o escribir en cualquier parte del archivo directamente, sin necesidad de recorrer los datos en secuencia. Es utilizado en discos duros y SSDs, donde se puede acceder rápidamente a cualquier bloque de información.
+
+3. **Acceso por Índice:** Se utiliza una estructura de índice para localizar rápidamente los datos. El índice almacena las direcciones de los bloques de datos, lo que permite un acceso más rápido que el secuencial. Es común en bases de datos y sistemas de archivos como NTFS.
+
+4. **Acceso por Clúster:** En lugar de acceder a bloques individuales, los datos se organizan en grupos (clústeres) de bloques, lo que mejora la eficiencia de almacenamiento y recuperación. Es utilizado en sistemas de archivos como FAT.
+
 ### Escribe un pseudocódigo que muestre cómo acceder a:
+
 1. Un archivo secuencialmente
+
+```C
+Abrir archivo en modo lectura
+Mientras no sea fin de archivo:
+    Leer siguiente registro
+    Procesar registro
+Cerrar archivo
+
+```
 2. Un archivo directamente mediante su posición
+
+```C
+Abrir archivo en modo lectura y escritura
+Posición = 10  # Ejemplo: acceder al registro en la posición 10
+Ir a posición (Posición)
+Leer datos en la posición
+Procesar datos
+Cerrar archivo
+
+```
 3. Un archivo utilizando un índice
+
+```C
+Abrir archivo de datos en modo lectura
+Abrir archivo de índice en modo lectura
+Índice = Buscar en índice la clave deseada
+Posición = Obtener posición del índice para la clave
+Ir a posición (Posición) en archivo de datos
+Leer datos en la posición
+Procesar datos
+Cerrar archivo de datos
+Cerrar archivo de índice
+
+```
 ### Compara las ventajas de cada mecanismo dependiendo del caso de uso.
 
 # Ejercicio 5: Modelo jerárquico y mecanismos de recuperación en caso de falla
