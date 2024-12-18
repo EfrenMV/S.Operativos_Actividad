@@ -49,7 +49,9 @@ ___
 ## Tareas:
 ### Define los conceptos de protección y seguridad en el contexto de sistemas operativos
 
-Conceptos de protección: Son las medidas y mecanismos que garantizan que los recursos del sistema (como la memoria, los procesos y los arhcivos) sean accedidos solo por aquellos
+**Protección:** 
+
+Son las medidas y mecanismos que garantizan que los recursos del sistema (como la memoria, los procesos y los arhcivos) sean accedidos solo por aquellos
 usuarios o proceso que tengan permisos edecudados. Esta proteccion busca evitar que los procesos o usaurios accedan o modifiquen datos o recursos que no les corresponden. Está relacionada
 con el control de acceso dentro de un sistema operativos
 
@@ -58,17 +60,38 @@ con el control de acceso dentro de un sistema operativos
 * **Gestión de privilegios:** Controlar qué acciones pueden realizar los usuarios o procesos (lectura, escritura, ejecución) sobre los recursos del sistema.
 
 
-Seguridad en sisteams Operativos:
+**Seguridad en sisteams Operativos:**
+
+Son las medidas y mecanismos implementados para proteger un sistema contra amenazas externas e internas, como ataques maliciosos, acceso no autorizados o destrucción de datos. En este contexto, la seguirdad no solo ocupa de control el acceso, sino también de proteger el sistema frente a actividades malicioso que pueden comprometer su funcionamiento. 
+
+Algunos aspectos clave de la seguridad incluyen:
+
+* Autenticación  
+* Autorización 
+* Confidencialidad 
+* Integridad 
+* Auditoría y monitoreo 
 
 ### Indentifica los objetivos principales de un sistema de protección y seguridad, como confidencialidad, integridad y disponibilidad.
 
 Objetivos principales en un sistemas de protección y seguridad 
 
-Confidencialidad
-integridad
-Disponibilidad 
+**Confidencialidad:** 
+
+Este se refiere a la protección de la información contra acceso no autorizados. EL objetivo es asegurarse de que solo las personas o entidades que tienen los primisos adecuados pueden acceder a la información, Si la confidencialidad no se garantiza, los datos sensibles pueden ser expuestos a usuarios no autorizados, lo que podría resultar en violaciones de privacidad o el robo de información crítica. 
+
+
+**Integridad**
+
+Esto asegura que la información no sea alterada de manera no autorizada, ya sea de forma accidental o maliciosa. Esto implica que los datos deben permanecer completos, precisos y confiables a lo largo del tiempo. Un sistema con buena integridad detecta y previene la modificación no autorizada de los datos y asegura que los datos sean correctos en todo momento. 
+
+**Disponibilidad**
+
+EGarantiza que los recursos del sistema (como datos, aplicaciones y servicios ) estén accesibles y funcionado cuando los usuarios autorizados lo necesiten. Un sistema con alta diponibilidad es capaz de mantener sus operaciones a pesar de fallos del sistema, ataques o problemas de infraestructura. La disponibilidad es crucial para asegurar que los usuarios puedan acceder a los recursos en tiempo real sin interrupciones. 
 
 ### Da un ejemplo práctico de cómo se aplican estos objetivos en un sistema operativo
+
+Nada
 
 # Ejercicio 2: Clasificación aplicada a la seguridad
 ## Tareas:
@@ -76,9 +99,18 @@ Disponibilidad
 
 Clasificacion comunes de la seguridad 
 
-Fisica:
-Logica:
-Red:
+**Fisica:**
+
+Este se refiere a las medidas de protección que s eimplementan para salvaguardar el hardware y los recursos fisicos de una organización frente a ccesos no autorizados, daños, robo o destrucción.
+
+**Logica:**
+
+Son las medidas que se toman para proteger los sistemas de información a nivel de software y procesos informáticos
+
+
+**Red:**
+
+Refiere a la proteccion de los sistemas y dispositivos interconectados a través de una red de comunicaciones, con el objetivo de garantizar que los datos que circulan por ella sean confidenciales, integros y estén disponibles cuando se necesiten,. Esta seguridad incluye medidas para proteger tanto la infraestructura de red como el trafico de datos que fluye a través de ella.
 
 ### Explica el papel de cada clasificación en la protección de un sistema operativo
 
