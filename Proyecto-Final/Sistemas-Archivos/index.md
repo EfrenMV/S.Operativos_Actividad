@@ -158,7 +158,7 @@ Cerrar archivo
 
 ```C
 Abrir archivo en modo lectura y escritura
-Posición = 10  # Ejemplo: acceder al registro en la posición 10
+Posición = 2   
 Ir a posición (Posición)
 Leer datos en la posición
 Procesar datos
