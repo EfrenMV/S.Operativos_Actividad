@@ -195,6 +195,7 @@ Cerrar archivo de índice
 
 
 # Ejercicio 5: Modelo jerárquico y mecanismos de recuperación en caso de falla
+
 ### Diseña  un modelo jerárquico para un sistema de archivos con al menos tres niveles de directorios
 
 ```C
