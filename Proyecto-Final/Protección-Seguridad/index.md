@@ -114,7 +114,31 @@ Refiere a la proteccion de los sistemas y dispositivos interconectados a través
 
 ### Explica el papel de cada clasificación en la protección de un sistema operativo
 
-Papel de cada clasificación:
+**Papel de la seguridad Fisica**
+
+* **Proteger al servidor y sus dispositivos:** discos y otros componentes de hardware deben estar protegidos fisicamente para evitar daños.
+
+* **Prevención de desastres:** Estar preparados para desastres como incendios, inundaciones etc.
+
+* **Accesp controlado a centros de datos:** Los servidores deben de tener controles de acceso físico (Cerraduras, sistemas biométricos, cámaras de vigilancia etc..).
+
+**Seguridad Lógica**
+
+* **Control de acceso a recursos:** Para garantizar que los usuarios o proceos autorizados puedan aceder a modificar recursos del sistema.
+
+* **Aislamiento de proceso:** Hacer que los procesos no interfieran entre ellos, teniendolos aislados.
+
+* **Prevención de modificaciones no autorizadas:** Para evitar la alteración del sistema operativo o de sus archivos criticos. Esto mediante medidas como el uso de firmas digitales.
+
+* **Auditoría y monitereo:** Poder realizar auditoría de las actividades de los usuarios y los procesos. 
+
+**Papel de la seguridad de red**
+
+* **Protección del tráfico de datos:** Garantizar que los datos que se transmiten no puedan ser interceptados, modificados o robados.
+
+* **Defensa contra ataques externos:** Poder resistir a ataques provenientes de redes externas, como DDos.
+
+* **Aislamiento de redes y segmentación:** El S.O debe ser capaz de controlar el acceso a redes internas y externas.
 
 ### Proporciona ejemplos prácticos de herramientas o técnicas utilizadas en cada clasificación
 
