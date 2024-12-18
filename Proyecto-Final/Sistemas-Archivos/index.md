@@ -125,42 +125,11 @@ En el caso de tener que trabajar de forma lejana, donde las personas que trabaja
 
 ### Proporciona un ejemplo práctico de cómo un archivo se almacena fisicamente
 
-1. Creación del archivo
-Supongamos que un usuario crea un archivo de texto llamado documento.txt en su computadora. El sistema operativo le asigna una dirección lógica para este archivo. El archivo contiene el siguiente texto:
+Un archivo se almacena físicamente en un dispositivo de almacenamiento, como un disco duro o una unidad SSD. Cuando guardas un archivo en tu computadora,
+ el sistema operativo lo divide en bloques de datos y los escribe en ubicaciones específicas del dispositivo. Cada bloque tiene una dirección única, y el sistema mantiene una 
+ abla de asignación que indica dónde se encuentra cada parte del archivo. Cuando abres el archivo, el sistema operativo localiza estos bloques y los reagrupa para presentarlos 
+ como un archivo completo.
 
-Copiar código
-Hola, este es un archivo de ejemplo.
-Este archivo es inicialmente solo un conjunto de datos que se gestionan lógicamente por el sistema operativo.
-
-2. Estructura del sistema de archivos
-El sistema de archivos (por ejemplo, NTFS, FAT32 o ext4) organiza el almacenamiento en bloques. Un bloque es la unidad mínima de almacenamiento de datos en un disco. En el caso de un archivo de texto, el sistema de archivos dividirá el contenido en varios bloques si el archivo es grande, o puede caber en uno solo si es pequeño.
-
-Tamaño de bloque: Los bloques pueden tener tamaños típicos de 4 KB, 8 KB o 16 KB, dependiendo del sistema de archivos y la configuración del disco.
-3. Asignación de bloques lógicos
-El sistema de archivos asigna bloques lógicos a documento.txt. Supongamos que el archivo tiene 500 bytes de tamaño. Esto podría ocupar un solo bloque de 4 KB en el disco, porque cada bloque tiene un tamaño mayor que el archivo en sí. En este caso, la dirección lógica del archivo puede corresponder al bloque 10 del sistema de archivos, lo que significa que el archivo está contenido en el bloque 10 de la tabla de asignación.
-
-4. Conversión de dirección lógica a dirección física
-Una vez que el sistema de archivos ha asignado un bloque lógico para el archivo, el siguiente paso es convertir esa dirección lógica en una dirección física. El sistema de archivos necesita saber en qué parte del disco duro se encuentra ese bloque lógico (por ejemplo, bloque 10) y traducirlo a su ubicación física real.
-
-Un disco duro tiene una estructura jerárquica con pistas y sectores. Supongamos que el bloque lógico 10 corresponde al sector 512 de la pista 3 en el cilindro 5 del disco. Esta es la dirección física donde los datos del archivo se almacenarán.
-5. Almacenamiento físico en el disco
-El sistema operativo, al hacer la conversión de la dirección lógica a la física, envía la solicitud al controlador de disco para escribir los datos del archivo en el sector 512 de la pista 3, cilindro 5 del disco.
-
-Sector 512 de la pista 3, cilindro 5: Esta es la ubicación física específica en el disco donde los datos de documento.txt se almacenarán. El controlador de disco accede a la ubicación exacta de la superficie del disco y escribe los datos allí.
-En este caso, el archivo documento.txt podría ocupar un solo bloque (o varias partes si fuera más grande) y se almacenaría en el disco de manera física en ese sector específico.
-6. Lectura del archivo
-Cuando un usuario o una aplicación quiere acceder al archivo documento.txt, el proceso es el siguiente:
-
-Solicitud del archivo: El sistema operativo recibe una solicitud para leer documento.txt.
-Dirección lógica: El sistema de archivos consulta la tabla de asignación y encuentra que el archivo está almacenado en el bloque lógico 10.
-Conversión a dirección física: El sistema de archivos traduce el bloque lógico 10 a la dirección física real: sector 512 de la pista 3, cilindro 5.
-Acceso físico al disco: El controlador de disco accede a esa ubicación física, lee los datos y los devuelve al sistema operativo.
-Devolución de los datos: El sistema operativo devuelve los datos del archivo a la aplicación solicitante (en este caso, el texto que contiene el archivo).
-7. Resumen visual de la ubicación:
-Dirección lógica: Bloque 10
-Dirección física: Sector 512, Pista 3, Cilindro 5 (en el disco)
-8. Fragmentación de archivos
-Si el archivo fuera más grande y no pudiera almacenarse en un solo bloque, el sistema de archivos podría fragmentarlo y almacenar partes del archivo en bloques no contiguos. En este caso, la tabla de asignación de archivos gestionaría estos bloques dispersos, y el sistema operativo realizaría múltiples traducciones de direcciones lógicas a físicas para acceder a todos los fragmentos del archivo.
 # Ejercicio 4: Mecanismo de acceso a los archivos
 ## Tareas
 ### Define los diferentes mecanismos de acceso
