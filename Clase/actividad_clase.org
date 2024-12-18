@@ -1,0 +1,91 @@
+* Actividad 1
+
+    Abra una terminal en su entorno Linux.
+    Ejecute los siguientes comandos y anote sus observaciones
+    :
+  *lsblk*: Enumera los dispositivos de bloque.
+  *lsusb*: Lista los dispositivos conectados a los puertos USB.
+  *lspci*: Muestra los dispositivos conectados al bus PCI.
+  *dmesg | grep usb*: Muestra los mensajes del kernel relacionados con dispositivos USB.
+    Conteste:
+    
+*** ¿Qué tipos de dispositivos se muestran en la salida de `lsblk`?
+Nos aparecen lo siguiente
+- *Particiones*
+  Estas son identificables con el -nvme0n1p1 el cual indica que es una
+  partición pero si no sale nvme0n1 indica que es el disco o SSD
+  *Aplicaciones*
+  Nos aparecen cmo loop y con ello tambien el tamaño de su uso
+  
+*** ¿Cuál es la diferencia entre `lsusb` y `lspci`?
+- *lsusb*
+  Muestra los dispositivos conectados mediante USB.
+  *lspci*
+  Muestra todos los dispositivos conectados al bus PCI, como
+  componentes internos ya sean controladores SATA, tarjetas graficas,
+  tarjetas de red, controladores USB.
+*** ¿Qué información adicional proporciona `dmesg | grep usb`?
+
+
+
+
+* Actividad 2
+
+
+
+    Use el comando `fdisk -l` para listar todos los discos y particiones.
+    Utilice `blkid` para ver los identificadores UUID y los tipos de sistema de archivos.
+    Use `df -h` para listar los dispositivos montados y su espacio disponible.
+    Conteste:
+        ¿Qué dispositivos de almacenamiento están conectados a su sistema?
+        ¿Qué particiones están montadas actualmente?
+        ¿Qué tipo de sistemas de archivos se usan en las particiones?
+
+
+* Actividad 3
+
+
+
+    Ejecute `cat /proc/bus/input/devices` para listar los dispositivos de entrada.
+    Use `evtest` para monitorear eventos de dispositivos de entrada (requiere permisos de superusuario).
+    Investigue los siguientes dispositivos:
+        Teclado
+        Mouse
+        Controladores USB adicionales
+    Conteste:
+        ¿Qué eventos genera cada dispositivo al interactuar con ellos?
+        ¿Cómo se identifican los dispositivos en `/proc/bus/input/devices`?
+
+
+* Actividad 4
+
+
+
+    Use `xrandr` para listar las pantallas conectadas y sus resoluciones.
+    Ejecute `aplay -l` para listar las tarjetas de sonido disponibles.
+    Use `lsof /dev/snd/*` para ver qué procesos están utilizando la tarjeta de sonido.
+    Conteste:
+        ¿Qué salidas de video están disponibles en su sistema?
+        ¿Qué dispositivos de sonido se detectaron?
+        ¿Qué procesos están usando la tarjeta de sonido?
+
+
+* Actividad 5
+
+
+    Cree un archivo llamado `dispositivos.sh` y agregue el siguiente contenido: ```bash #!/bin/bash echo "Dispositivos de bloque:" lsblk echo "Dispositivos USB:" lsusb echo "Dispositivos PCI:" lspci echo "Dispositivos de entrada:" cat /proc/bus/input/devices echo "Salidas de video:" xrandr echo "Tarjetas de sonido:" aplay -l ```
+    Ejecute el script usando `bash dispositivos.sh`.
+    Modifique el script para guardar la salida en un archivo llamado `resumendispositivos.txt`.
+    Conteste:
+        ¿Qué ventajas tiene usar un script para recopilar esta información?
+        ¿Qué cambios realizaría para personalizar el script?
+
+
+* Actividad 6
+
+
+Reflexione sobre lo aprendido y discuta en equipo:
+
+    ¿Qué comando encontró más útil y por qué?
+    ¿Qué tan importante es conocer los dispositivos conectados al sistema?
+    ¿Cómo podrían estos conocimientos aplicarse en la administración de sistemas?

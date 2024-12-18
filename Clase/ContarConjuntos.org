@@ -1,0 +1,29 @@
+#+BEGIN_SRC C
+	#include <stdio.h>
+
+       contarConjuntos(){
+
+       }
+
+    /*
+      llenado(){
+	  //Imprimir
+	  for(int i = 0; i<j; i++){
+	    for(int n = 0; n<k; n++){
+	      printf("%d"+matriz[i][k])
+		}
+	    }
+	  }
+    ,*/
+	int main(){
+	  printf(l);
+	 int matriz[8][6]; //Creación de la matriz
+	 int l = 4;
+  //	llenado()
+	  return 0;
+	  }
+
+#+END_SRC
+
+#+RESULTS:
+
