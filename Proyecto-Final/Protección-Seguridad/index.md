@@ -204,6 +204,14 @@ Proceso que registra y analiza las actividades que ocurren dentro de un sistema 
 Se refiere al uso de lenguajes de programación y sus características para proporcionar mecanismos de seguridad y control de acceso en un sistema operativo o aplicación. Esta forma de protección está diseñada para garantizar que los programas y los usuarios solo puedan realizar las acciones para las cuales están autorizados, reduciendo así el riesgo de errores o de actividades maliciosas que comprometan la integridad, confidencialidad o disponibilidad de los recursos del sistema.
 
 ### Proporciona un ejemplo de cómo un lenguaje como Java o Rust asegura la memoria y evita de acceso no autorizados.
+
+**Ejemplo de Protección de Memoria en Java**
+
+Java utiliza la máquina virtual de Java (JVM) para ejecutar aplicaciones, lo que permite un aislamiento de memoria entre los programas y el sistema operativo. A través de su diseño y de las características del lenguaje, Java puede permitir por ejemplo la siguiente manera de protección de memoria:
+
+* **Gestión Automática de Memoria (Garbage Collection):**
+Java no permite a los desarrolladores manejar directamente la memoria (por ejemplo, mediante punteros), lo que reduce significativamente los riesgos de errores de memoria como los desbordamientos de búfer o el acceso a memoria no válida. La recolección de basura (garbage collection) se encarga de liberar la memoria ocupada por objetos que ya no son accesibles, lo que previene fugas de memoria y errores de acceso a memoria.
+
 ### Compara este enfoque con otros mecanismos de protección en sistemas operativos
 
 # Ejercicio 6: Validación y amenazas al sitema 
