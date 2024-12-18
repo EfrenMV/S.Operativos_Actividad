@@ -198,6 +198,49 @@ Cerrar archivo de índice
 ### Diseña  un modelo jerárquico para un sistema de archivos con al menos tres niveles de directorios
 ### Simula una falla en un directorio específico y describe los pasos necesarios para recuperarlo.
 
+**Falla de simulación:**
+
+Un dia asi muy de malas se pierde el directorio /home/usuario/documentos/, que contiene archivos importantes, debido a una falla en el sistema de archivos o un error humano.
+
+**Pasos para evitar que me despidan (Recuperar el Directorio):** Verificar el Tipo de Falla:
+
+**Falla de sistema de archivos:** 
+
+Ejecutar una herramienta de diagnóstico del sistema de archivos, como fsck en Linux, para comprobar la integridad del disco y ver si el directorio puede ser recuperado.
+Eliminación accidental: Verificar si los archivos fueron eliminados accidentalmente. Si es así, proceder con la recuperación.
+Comprobar el Respaldo Más Reciente:
+
+Si se tiene un respaldo completo o incremental reciente, verificar que esté disponible en el medio de almacenamiento, como un disco externo o la nube.
+Si el respaldo está en la nube o en un disco duro externo, conectarlo al sistema.
+
+**Recuperación desde el Respaldo:**
+
+**Copia Completa:** 
+
+Si el respaldo es completo, simplemente restaurar todo el directorio perdido desde la copia de seguridad.
+cp -r /backup/documentos /home/usuario/
+
+**Copia Incremental o Diferencial:**
+
+Restaurar los archivos modificados desde el último respaldo incremental/diferencial.
+Verificar las fechas y restaurar solo los archivos más recientes.
+Utilizar Herramientas de Recuperación de Archivos.
+
+**Si se nos olvido hacer un respaldo:**
+
+Si no se tiene un respaldo, usar herramientas como TestDisk o PhotoRec para intentar recuperar archivos borrados.
+Realizar un escaneo del sistema de archivos para encontrar fragmentos del directorio perdido.
+
+**Validación de los Archivos Recuperados:**
+
+Después de la restauración o recuperación, comprobar la integridad de los archivos para asegurarse de que todos los datos están presentes y sin corrupción.
+Verificar que los archivos sean accesibles y estén en su formato original.
+
+**Implementar Medidas Preventivas:**
+
+Configurar un sistema de respaldos automáticos para evitar futuros riesgos de pérdida de datos.
+Considerar el uso de sistemas RAID o almacenamiento en la nube para mayor redundancia.
+
 ### Explica qué herramientas o técnicas de respaldo (backup) utilizarías para evitar pérdida de datos
 
 1. Copia de seguridad completa: Se realiza una copia de todos los archivos importantes. Es simple pero consume más espacio y tiempo.
