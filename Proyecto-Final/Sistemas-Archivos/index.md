@@ -196,6 +196,36 @@ Cerrar archivo de índice
 
 # Ejercicio 5: Modelo jerárquico y mecanismos de recuperación en caso de falla
 ### Diseña  un modelo jerárquico para un sistema de archivos con al menos tres niveles de directorios
+
+1. / (Raíz)<br>
+2. /home<br>
+   3. /usuario<br>
+       4. /documentos<br>
+           5. /proyectos<br>
+           6. /reportes<br>
+       7. /fotos<br>
+           8. /vacaciones<br>
+           9. /familia<br>
+       10. /música<br>
+           11. /rock<br>
+           12. /clasica<br>
+   13. /admin<br>
+       14. /configuraciones<br>
+       15. /logs<br>
+2. /var<br>
+   17. /log<br>
+       18. /apache<br>
+       19. /syslog<br>
+   20. /backup<br>
+       21. /full<br>
+       22. /incremental<br>
+2. /etc<br>
+   24. /nginx<br>
+   25. /mysql<br>
+2. /tmp<br>
+
+
+
 ### Simula una falla en un directorio específico y describe los pasos necesarios para recuperarlo.
 
 **Falla de simulación:**
