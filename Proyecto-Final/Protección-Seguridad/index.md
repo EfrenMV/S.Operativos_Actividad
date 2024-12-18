@@ -190,6 +190,7 @@ Proceso que ocurre después de la autentificación. Una vez que se ha verificado
 **Auditoría:**
 
 Proceso que registra y analiza las actividades que ocurren dentro de un sistema para poder realizar un seguimiento a las acciones de los usuarios.
+
 # Ejercicio 4: Implantación de matrices de acceso
 ## Tareas:
 ### Diseña una matriz de acceso para un sistema con al menos 3 usuarios y 4 recursos.
@@ -199,6 +200,9 @@ Proceso que registra y analiza las actividades que ocurren dentro de un sistema 
 # Ejercicio 5: Protección basada en el lenguaje
 ## Tareas:
 ### Explica el concepto de protección basado en el lenguaje.
+
+Se refiere al uso de lenguajes de programación y sus características para proporcionar mecanismos de seguridad y control de acceso en un sistema operativo o aplicación. Esta forma de protección está diseñada para garantizar que los programas y los usuarios solo puedan realizar las acciones para las cuales están autorizados, reduciendo así el riesgo de errores o de actividades maliciosas que comprometan la integridad, confidencialidad o disponibilidad de los recursos del sistema.
+
 ### Proporciona un ejemplo de cómo un lenguaje como Java o Rust asegura la memoria y evita de acceso no autorizados.
 ### Compara este enfoque con otros mecanismos de protección en sistemas operativos
 
