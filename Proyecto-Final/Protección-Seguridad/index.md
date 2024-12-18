@@ -217,6 +217,13 @@ Java no permite a los desarrolladores manejar directamente la memoria (por ejemp
 # Ejercicio 6: Validación y amenazas al sitema 
 ## Tareas: 
 ### Investiga y describe al menos tres tipos de amenazas comunes ( por ejemplo, malware, ataques de fuerza bruta, inyección de código).
+
+| **Amenaza**                | **Descripción**                                                                                                                                                        | **Impacto en el sistema**                                                         | **Medidas de protección**                                                                                   |
+|----------------------------|------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-----------------------------------------------------------------------------------|-----------------------------------------------------------------------------------------------------------|
+| **Malware**                 | Software malicioso que daña, roba o compromete sistemas. Incluye virus, troyanos, ransomware, spyware, etc.                                                             | Puede destruir datos, robar información, controlar sistemas remotamente.         | Uso de antivirus, actualización constante de software, técnicas de detección proactiva de malware.           |
+| **Ataques de Fuerza Bruta** | Intentos automatizados de adivinar contraseñas probando todas las combinaciones posibles.                                                                             | Compromiso de contraseñas y acceso a cuentas de usuario.                         | Uso de contraseñas fuertes, autenticación multifactor, limitación de intentos de inicio de sesión.           |
+| **Inyección de Código**     | Inserción de código malicioso en aplicaciones o bases de datos con el fin de ejecutar comandos no autorizados.                                                           | Acceso a bases de datos, ejecución remota de código, robo de información.        | Validación y escape de entradas, uso de consultas preparadas (SQL), restricciones de permisos en sistemas. |
+
 ### Explica los mecanismos de validación como autenticación multifacor y control de integridad.
 ### Diseña un esquema de validación para un sistema operativo con múltiples usuarios.
 
