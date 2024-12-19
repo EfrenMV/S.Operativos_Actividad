@@ -194,8 +194,78 @@ Proceso que registra y analiza las actividades que ocurren dentro de un sistema 
 # Ejercicio 4: Implantación de matrices de acceso
 ## Tareas:
 ### Diseña una matriz de acceso para un sistema con al menos 3 usuarios y 4 recursos.
+# Matriz de Acceso para un Sistema con 3 Usuarios y 4 Recursos
+
+La **matriz de acceso** es una estructura que se utiliza para controlar y gestionar el acceso a recursos por parte de los usuarios en un sistema operativo. En esta matriz, cada fila representa un **usuario**, cada columna representa un **recurso**, y las celdas indican los **permisos** que cada usuario tiene sobre cada recurso.
+
+Imaginemos un sistema con 3 usuarios y 4 recursos. Los recursos pueden ser archivos, dispositivos o cualquier otro objeto gestionado por el sistema operativo. A continuación se muestra un ejemplo de la matriz de acceso:
+
+|           | Recurso 1 | Recurso 2 | Recurso 3 | Recurso 4 |
+|-----------|-----------|-----------|-----------|-----------|
+| **Usuario 1** | Lectura, Escritura | Lectura | Ningún acceso | Lectura, Escritura |
+| **Usuario 2** | Ningún acceso | Lectura | Lectura, Escritura | Ningún acceso |
+| **Usuario 3** | Lectura | Ningún acceso | Lectura | Lectura |
+
+---
+ 
 ### Explica cómo esta matriz se utiliza para controlar el acceso en un sistema operativo.
+
+
+**Explicación de la Matriz de Acceso**
+
+- **Usuarios**: Las filas de la matriz representan a los usuarios del sistema.
+  - **Usuario 1, Usuario 2, Usuario 3**: Son los diferentes usuarios del sistema.
+- **Recursos**: Las columnas representan los recursos disponibles en el sistema.
+  - **Recurso 1, Recurso 2, Recurso 3, Recurso 4**: Estos son los recursos a los que los usuarios intentan acceder, como archivos, impresoras, o dispositivos.
+- **Permisos**: Los permisos que los usuarios tienen sobre cada recurso están definidos en las celdas. Los permisos más comunes son:
+  - **Lectura**: El usuario puede ver el contenido del recurso.
+  - **Escritura**: El usuario puede modificar el contenido del recurso.
+  - **Ningún acceso**: El usuario no tiene permisos para interactuar con el recurso.
+
+**Utilización de la Matriz para Controlar el Acceso**
+
+El sistema operativo utiliza la matriz de acceso para verificar si un usuario tiene permisos para acceder a un recurso específico. Cada vez que un usuario solicita acceder a un recurso, el sistema operativo consulta la matriz para verificar si el usuario tiene los permisos adecuados para realizar la operación solicitada.
+
+**Pasos del proceso:**
+
+1. **Petición de acceso**: Un usuario solicita acceso a un recurso, especificando la operación que desea realizar (lectura, escritura, etc.).
+2. **Verificación en la matriz**: El sistema operativo verifica en la matriz de acceso si el usuario tiene el permiso correspondiente sobre el recurso solicitado.
+3. **Decisión del sistema**:
+   - Si el permiso está presente, se permite la operación.
+   - Si el permiso no está presente, se bloquea la operación y se genera un mensaje de error o una acción de denegación.
+
+
 ### Simula un escenario donde un usuario intena acceder a un recurso no permitido y cómo la matriz lo bloquea.
+
+
+ **Escenario de Simulación: Usuario Intentando Acceder a un Recurso No Permitido**
+
+
+**Escenario**: Imaginemos que el **Usuario 2** intenta escribir en el **Recurso 1**. Según la matriz, el **Usuario 2** no tiene permiso de escritura en el **Recurso 1**; solo tiene acceso de lectura.
+
+|           | Recurso 1 | Recurso 2 | Recurso 3 | Recurso 4 |
+|-----------|-----------|-----------|-----------|-----------|
+| **Usuario 1** | Lectura, Escritura | Lectura | Ningún acceso | Lectura, Escritura |
+| **Usuario 2** | Ningún acceso | Lectura | Lectura, Escritura | Ningún acceso |
+| **Usuario 3** | Lectura | Ningún acceso | Lectura | Lectura |
+
+**Paso 1: Usuario 2 solicita acceso a Recurso 1**
+
+Usuario 2 intenta realizar una operación de **escritura** en el **Recurso 1**.
+
+**Paso 2: Verificación en la Matriz**
+
+El sistema operativo consulta la matriz para verificar los permisos de **Usuario 2** sobre **Recurso 1**. En la matriz, se observa que en la intersección de **Usuario 2** y **Recurso 1**, no hay ningún acceso (la celda está vacía, lo que indica que no tiene permisos).
+
+**Paso 3: Denegación del acceso**
+
+Como el **Usuario 2** no tiene permiso de **escritura** en el **Recurso 1**, el sistema operativo bloquea la operación y genera un mensaje de error, por ejemplo: 
+- "Acceso denegado: El usuario no tiene permisos para escribir en este recurso."
+
+**Paso 4: Mensaje de Error**
+
+El usuario recibe un mensaje de error que le informa sobre la falta de permisos para realizar la operación solicitada.
+
 
 # Ejercicio 5: Protección basada en el lenguaje
 ## Tareas:
