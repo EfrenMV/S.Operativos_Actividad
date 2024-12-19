@@ -19,8 +19,8 @@ ___
 - [Potencia_Suma](#potencia_suma)
 - [Divición_Resta](#divición_resta)
 - [Dispositivos](#dispositivos)
-   
-
+- [Prueba de escritorio Deker](#prueba-de-escritorio-dekker)   
+- [Prueba de escritorio Peterson](#prueba-de-escritorio-peterson)
 
   # Figonachi
   
