@@ -687,8 +687,7 @@ int main() {
 
 # Prueba de escritorio Dekker
 
-# Algoritmo de Dekker - Prueba de escritorio
-
+ 
 | C | Hilo      | Acción                               | Interesado  | Turno | Cabeza   | Output                            |
 |---|-----------|--------------------------------------|-------------|-------|----------|-----------------------------------|
 | 0 | Productor | Interesado[0] = 1                   | [1, 0]      | 0     | NULL     |                                   |
@@ -719,6 +718,36 @@ int main() {
 |   |           | Interesado[0] = 1                   | [1, 1]      | 0     | NULL     |                                   |
 |   |           | Interesado[1] = 1                   | [1, 1]      | 0     | NULL     |                                   |
  
-# Prueba de escritorio Panaderia
-
 # Prueba de escritorio Peterson
+
+ 
+| C | Hilo      | Acción                                  | Interesado | Turno | Cabeza   | Output                             |
+|---|-----------|-----------------------------------------|------------|-------|----------|------------------------------------|
+| 0 | Productor | Interesado[0] = 1                      | [1, 0]     | 0     | NULL     |                                    |
+|   | Consumidor| Interesado[1] = 1                      | [1, 1]     | 0     | NULL     |                                    |
+|   | Productor | Turno = 1                              | [1, 1]     | 1     | NULL     |                                    |
+|   | Consumidor| Turno = 0                              | [1, 1]     | 0     | NULL     |                                    |
+|   |           | While (Interesado[0] and Turno == 0)   | [1, 1]     | 0     | NULL     |                                    |
+| P |           | While (Interesado[0] and Turno == 0)   | [1, 1]     | 0     | NULL     |                                    |
+| P |           | GeneraProceso(i+1)                    | [1, 1]     | 0     | [1] -> NULL | Productor generó 1                 |
+|   |           | Espera                                 | [1, 1]     | 0     | [1] -> NULL |                                    |
+|   |           | Interesado[0] = 0                      | [0, 1]     | 0     | [1] -> NULL |                                    |
+| C |           | AtiendeProceso(Free(temp))             | [0, 1]     | 0     | NULL     | Consumidor atendió 1               |
+|   |           | Sleep(1)                               | [0, 1]     | 0     | NULL     |                                    |
+| 2 | Productor | Interesado[0] = 1                      | [1, 1]     | 0     | NULL     |                                    |
+|   |           | Espera (while)                         | [1, 1]     | 0     | NULL     |                                    |
+|   |           | Turno = 0                              | [1, 1]     | 0     | NULL     |                                    |
+|   |           | GeneraProceso(i+1)                    | [1, 1]     | 0     | [2] -> NULL | Productor generó 2                 |
+|   |           | Espera                                 | [1, 1]     | 0     | [2] -> NULL |                                    |
+|   |           | Interesado[0] = 0                      | [0, 1]     | 0     | [2] -> NULL |                                    |
+| C |           | AtiendeProceso(Free(temp))             | [0, 1]     | 0     | NULL     | Consumidor atendió 2               |
+|   |           | Sleep(1)                               | [0, 1]     | 0     | NULL     |                                    |
+| 3 | Productor | Interesado[0] = 1                      | [1, 1]     | 0     | NULL     |                                    |
+|   |           | Interesado[1] = 1                      | [1, 1]     | 0     | NULL     |                                    |
+|   |           | Sleep(1)                               | [1, 1]     | 0     | NULL     |                                    |
+|   |           | Turno = 1                              | [1, 1]     | 1     | NULL     |                                    |
+| C |           | Interesado[1] = 1                      | [1, 1]     | 1     | NULL     |                                    |
+|   |           | Espera                                 | [1, 1]     | 1     | NULL     |                                    |
+| P |           | Turno = 0                              | [1, 1]     | 0     | NULL     |                                    |
+| P |           | GeneraProceso(i+1)                    | [1, 1]     | 0     | [3] -> NULL | Productor generó 3                 |
+ 
