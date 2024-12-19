@@ -28,7 +28,7 @@ ___
   - [Describe cómo un sistema de protección controla el acceso a los recursos](#describe-cómo-un-sistema-de-protección-controla-el-acceso-a-los-recursos)
   - [explica las funciones principales como autenticación, autorización y auditoría.](#explica-las-funciones-principales-como-autenticación-autorización-y-auditoría)
   - [Sub-sección 2.1](#sub-sección-21)
-- [Ejercicio 4 Implantación de matrices de acceso](#ejercicio-4-implantación-de-matrices-de-acceso)
+- [Ejercicio 4 Implantación de matrices de acceso.](#ejercicio-4-implantación-de-matrices-de-acceso)
   - [Diseña una matriz de acceso para un sistema con al menos 3 usuarios y 4 recursos.](#diseña-una-matriz-de-acceso-para-un-sistema-con-al-menos-3-usuarios-y-4-recursos)
   - [Explica cómo esta matriz se utiliza para controlar el acceso en un sistema operativo.](#explica-cómo-esta-matriz-se-utiliza-para-controlar-el-acceso-en-un-sistema-operativo)
   - [Simula un escenario donde un usuario intena acceder a un recurso no permitido y cómo la matriz lo bloquea.](#simula-un-escenario-donde-un-usuario-intena-acceder-a-un-recurso-no-permitido-y-cómo-la-matriz-lo-bloquea)
