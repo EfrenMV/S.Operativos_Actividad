@@ -247,3 +247,18 @@ Estos conocimientos son fundamentales para:
 - Monitorear y optimizar el rendimiento de un sistema.
 - Gestionar y asegurar el acceso a dispositivos y recursos hardware.
 - Realizar tareas de mantenimiento y solución de problemas relacionados con hardware.
+
+
+# Conteo de Islas
+
+# Ejercicio de Recursividad
+
+# Cola prioridad
+
+# Administrador de memoria
+
+# Prueba de escritorio Dekker
+
+# Prueba de escritorio Panaderia
+
+# Prueba de escritorio Peterson
