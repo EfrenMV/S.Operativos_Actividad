@@ -23,7 +23,7 @@ ___
 - [Ejercicio 2 Clasificación aplicada a la seguridad](#ejercicio-2-clasificación-aplicada-a-la-seguridad)
   - [Investiga las clasificaciones comunes de la seguridad, como física, lógica y de red](#investiga-las-clasificaciones-comunes-de-la-seguridad-como-física-lógica-y-de-red)
   - [Explica el papel de cada clasificación en la protección de un sistema operativo](#explica-el-papel-de-cada-clasificación-en-la-protección-de-un-sistema-operativo)
-  - [Proporciona ejemplos prácticos de herramientas o técnicas utilizadas en cada clasificación](#proporciona-ejemplos-prácticos-de-herramientas-o-técnicas-utilizadas-en-cada-clasificación
+  - [Proporciona ejemplos prácticos de herramientas o técnicas utilizadas en cada clasificación](#proporciona-ejemplos-prácticos-de-herramientas-o-técnicas-utilizadas-en-cada-clasificación)
 - [Ejercicio 3 Funciones del sistema de protección](#ejercicio-3-funciones-del-sistema-de-protección)
   - [Describe cómo un sistema de protección controla el acceso a los recursos](#describe-cómo-un-sistema-de-protección-controla-el-acceso-a-los-recursos)
   - [explica las funciones principales como autenticación, autorización y auditoría.](#explica-las-funciones-principales-como-autenticación-autorización-y-auditoría)
