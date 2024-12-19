@@ -251,10 +251,249 @@ Estos conocimientos son fundamentales para:
 
 # Conteo de Islas
 
-# Ejercicio de Recursividad
+  ```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <time.h>
+#include <stdbool.h>
 
+#define FILAS 8
+#define COLUMNAS 8
+
+int mapa[FILAS][COLUMNAS];
+bool visitados[FILAS][COLUMNAS];
+
+int direccionX[4] = {-1, 1, 0, 0}; // Movimiento vertical (arriba y abajo)
+int direccionY[4] = {0, 0, -1, 1}; // Movimiento horizontal (izquierda y derecha)
+
+void inicializarVisitados() {
+    for (int i = 0; i < FILAS; i++) {
+        for (int j = 0; j < COLUMNAS; j++) {
+            visitados[i][j] = false;
+        }
+    }
+}
+
+int obtenerNumeroAleatorio() {
+    return rand() % 2; // Genera un número aleatorio entre 0 y 1
+}
+
+void imprimirMapa() {
+    for (int i = 0; i < FILAS; i++) {
+        for (int j = 0; j < COLUMNAS; j++) {
+            printf("%d ", mapa[i][j]);
+        }
+        printf("\n");
+    }
+}
+
+void llenarMapa() {
+    for (int i = 0; i < FILAS; i++) {
+        for (int j = 0; j < COLUMNAS; j++) {
+            mapa[i][j] = obtenerNumeroAleatorio();
+        }
+    }
+}
+
+void realizarDFS(int x, int y) {
+    visitados[x][y] = true;
+    for (int i = 0; i < 4; i++) {
+        int nuevoX = x + direccionX[i];
+        int nuevoY = y + direccionY[i];
+
+        if (nuevoX >= 0 && nuevoX < FILAS && nuevoY >= 0 && nuevoY < COLUMNAS && !visitados[nuevoX][nuevoY] && mapa[nuevoX][nuevoY] == 1) {
+            realizarDFS(nuevoX, nuevoY);
+        }
+    }
+}
+
+int contarIslas() {
+    int cantidadIslas = 0;
+    inicializarVisitados();
+    for (int i = 0; i < FILAS; i++) {
+        for (int j = 0; j < COLUMNAS; j++) {
+            if (mapa[i][j] == 1 && !visitados[i][j]) {
+                realizarDFS(i, j);
+                cantidadIslas++;
+            }
+        }
+    }
+    return cantidadIslas;
+}
+
+int main() {
+    srand(time(NULL)); // Inicializa la semilla aleatoria
+    llenarMapa(); // Llena el mapa con 0s y 1s aleatorios
+    imprimirMapa(); // Muestra el mapa en la consola
+    printf("Número de islas: %d\n", contarIslas()); // Muestra el total de islas
+    return 0;
+}
+
+
+```
+# Ejercicio de Recursividad
+```C
+
+#include <stdio.h>
+#include <unistd.h>
+
+int agregar(int x, int y);  
+int expo(int x, int y) {
+    if (y == 1) {
+        return x;
+    }
+    if (y == 0) {
+        return 1;
+    }
+    return agregar(x, expo(x, y - 1));  
+}
+
+int agregar(int x, int y) {
+    if (y == 0) {
+        return 0;
+    }
+    return x + agregar(x, y - 1);  
+}
+
+double divide(double n, double d) {
+    double result = 0;
+
+    if (d == 0) {
+        printf("Error: no puedes dividir entre 0 tilin\n");
+        return 0;
+    }
+    if (n == 0) {
+        return 0;
+    } else {
+        result++;
+    }
+    return result + divide(n - d, d);  
+}
+
+int main(int argc, char **argv) {
+
+    pid_t pid = fork();  
+
+    if (pid < 0) {
+        perror("El proceso no se creo correctamente");
+
+    } else if (pid == 0) {
+        printf("\nRecursive Division\n");
+        double dvr = divide(500, 5);
+        printf("%f\n", dvr);
+        printf("Proceos hijito ID: %d\n", getpid());
+    } else {
+        printf("Recursive Exponentiation\n");
+        int resultado = expo(5, 3);
+        printf("%d\n", resultado);
+        printf("Proceso padre ID: %d\n", getpid());
+        printf("\n ------------------------------\n");
+    }
+
+    return 0;
+}
+```
 # Cola prioridad
 
+```C
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+struct NodoTarea {  
+    char descripcion[50];
+    int prioridad;
+    struct NodoTarea* siguiente;
+};
+
+typedef struct ColaDePrioridades {  
+    struct NodoTarea* cabeza;  
+} ColaDePrioridades;
+
+ColaDePrioridades* crearCola() {  
+    ColaDePrioridades* cola = (ColaDePrioridades*)malloc(sizeof(ColaDePrioridades)); // 
+    cola->cabeza = NULL;
+    return cola;
+}
+
+ void agregarTarea(ColaDePrioridades* cola, char* descripcion, int prioridad) {
+    struct NodoTarea* nuevaTarea = (struct NodoTarea*)malloc(sizeof(struct NodoTarea));
+    strcpy(nuevaTarea->descripcion, descripcion);
+    nuevaTarea->prioridad = prioridad;
+    nuevaTarea->siguiente = NULL;
+
+     if (cola->cabeza == NULL || cola->cabeza->prioridad < prioridad) {
+        nuevaTarea->siguiente = cola->cabeza;
+        cola->cabeza = nuevaTarea;
+    } else {
+        struct NodoTarea* actual = cola->cabeza;
+         while (actual->siguiente != NULL && actual->siguiente->prioridad >= prioridad) {
+            actual = actual->siguiente;
+        }
+        nuevaTarea->siguiente = actual->siguiente;
+        actual->siguiente = nuevaTarea;
+    }
+}
+
+char* eliminarTarea(ColaDePrioridades* cola, int* prioridad) {
+    if (cola->cabeza == NULL) { 
+        return NULL;
+    }
+    struct NodoTarea* temp = cola->cabeza;
+    cola->cabeza = cola->cabeza->siguiente;
+
+    *prioridad = temp->prioridad;
+    char* descripcion = strdup(temp->descripcion);  
+     free(temp);
+    return descripcion;
+}
+
+char* obtenerTareaAlta(ColaDePrioridades* cola) {
+     if (cola->cabeza == NULL) {
+        return NULL;
+    }
+     return cola->cabeza->descripcion;
+}
+
+ int estaVacia(ColaDePrioridades* cola) {
+    return cola->cabeza == NULL;
+}
+
+ void liberarCola(ColaDePrioridades* cola) {
+    struct NodoTarea* actual = cola->cabeza;
+    struct NodoTarea* siguiente;
+    while (actual != NULL) {
+        siguiente = actual->siguiente;
+        free(actual);
+        actual = siguiente;
+    }
+    free(cola);
+}
+
+int main() {
+    ColaDePrioridades* cola = crearCola();
+
+    agregarTarea(cola, "Tarea 1", 1);
+    agregarTarea(cola, "Tarea 3", 5);
+    agregarTarea(cola, "Tarea 2", 2);
+
+    printf("Tarea de mayor prioridad: %s\n", obtenerTareaAlta(cola));
+
+    int prioridad;
+     while (!estaVacia(cola)) {
+        
+        char* tarea = eliminarTarea(cola, &prioridad);
+        printf("Ejecutando: %s (Prioridad: %d)\n", tarea, prioridad);
+         
+        free(tarea);
+    }
+
+    liberarCola(cola);
+
+    return 0;
+}
+
+```
 # Administrador de memoria
 
 # Prueba de escritorio Dekker
