@@ -35,7 +35,7 @@ ___
 - [Ejercicio 5 Protección basada en el lenguaje](#ejercicio-5-protección-basada-en-el-lenguaje)
   - [Explica el concepto de protección basado en el lenguaje.](#explica-el-concepto-de-protección-basado-en-el-lenguaje)
   - [Proporciona un ejemplo de cómo un lenguaje como Java o Rust asegura la memoria y evita de acceso no autorizados.](#proporciona-un-ejemplo-de-cómo-un-lenguaje-como-java-o-rust-asegura-la-memoria-y-evita-de-acceso-no-autorizados)
-  - [Compara este enfoque con otros mecanismos de protección en sistemas operativos](#compara-este-enfoque-con-otros-mecanismos-de-protección-en-sistemas-operativos)
+  - [Compara este enfoque con otros mecanismos de protección en sistemas operativos.](#compara-este-enfoque-con-otros-mecanismos-de-protección-en-sistemas-operativos)
 - [Ejercicio 6](#ejercicio-6-validación-y-amenazas-al-sitema)
   - [Investiga y describe al menos tres tipos de amenazas comunes ( por ejemplo, malware, ataques de fuerza bruta, inyección de código).](#investiga-y-describe-al-menos-tres-tipos-de-amenazas-comunes--por-ejemplo-malware-ataques-de-fuerza-bruta-inyección-de-código)
   - [Explica los mecanismos de validación como autenticación multifacor y control de integridad.](#explica-los-mecanismos-de-validación-como-autenticación-multifacor-y-control-de-integridad)
