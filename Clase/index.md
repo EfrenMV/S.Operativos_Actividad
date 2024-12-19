@@ -687,6 +687,38 @@ int main() {
 
 # Prueba de escritorio Dekker
 
+# Algoritmo de Dekker - Prueba de escritorio
+
+| C | Hilo      | Acción                               | Interesado  | Turno | Cabeza   | Output                            |
+|---|-----------|--------------------------------------|-------------|-------|----------|-----------------------------------|
+| 0 | Productor | Interesado[0] = 1                   | [1, 0]      | 0     | NULL     |                                   |
+|   |           | While (Interesado[1] == False)      | [1, 0]      | 0     | NULL     |                                   |
+|   |           | InsertarFinal(i+1)                  | [1, 0]      | 0     | [1] -> NULL | Productor produjo 1              |
+|   |           | Interesado[0] = 0                   | [0, 0]      | 0     | [1] -> NULL |                                   |
+|   |           | Sleep(1)                            | [0, 0]      | 0     | [1] -> NULL |                                   |
+|   | Consumidor| Interesado[1] = 1                   | [0, 1]      | 0     | [1] -> NULL |                                   |
+|   |           | While (Interesado[0] == False)      | [0, 1]      | 0     | [1] -> NULL |                                   |
+|   |           | AtenderProceso(i = Free(temp))      | [0, 1]      | 0     | NULL     | Consumidor atendió 1             |
+|   |           | Turno = 0                           | [0, 1]      | 0     | NULL     |                                   |
+|   |           | Interesado[1] = 0                   | [0, 0]      | 0     | NULL     |                                   |
+|   |           | Sleep(1)                            | [0, 0]      | 0     | NULL     |                                   |
+| 1 | Productor | Interesado[1] = 1                   | [0, 1]      | 0     | NULL     |                                   |
+|   | Consumidor| Interesado[0] = 1                   | [1, 1]      | 0     | NULL     |                                   |
+|   |           | While (Interesado[1] == True)       | [1, 1]      | 0     | NULL     |                                   |
+|   |           | If(Turno != 0)                      | [1, 1]      | 0     | NULL     |                                   |
+|   |           | Espera                              | [1, 1]      | 0     | NULL     |                                   |
+|   |           | Interesado[1] = 0                   | [1, 0]      | 0     | NULL     |                                   |
+|   |           | InsertarFinal(i+1)                  | [1, 0]      | 0     | [2] -> NULL | Productor produjo 2              |
+|   |           | While (Turno == True) (ciclo)       | [1, 0]      | 0     | [2] -> NULL |                                   |
+|   |           | Turno = 1                           | [1, 0]      | 1     | [2] -> NULL |                                   |
+|   |           | Interesado[1] = 1                   | [1, 1]      | 1     | [2] -> NULL |                                   |
+|   |           | Interesado[0] = 0                   | [0, 1]      | 1     | [2] -> NULL |                                   |
+|   |           | AtenderProceso / salir ciclo        | [0, 1]      | 1     | NULL     | Consumidor atendió 2             |
+|   |           | Sleep(1)                            | [0, 1]      | 1     | NULL     |                                   |
+|   |           | Turno = 0                           | [0, 1]      | 0     | NULL     |                                   |
+|   |           | Interesado[0] = 1                   | [1, 1]      | 0     | NULL     |                                   |
+|   |           | Interesado[1] = 1                   | [1, 1]      | 0     | NULL     |                                   |
+ 
 # Prueba de escritorio Panaderia
 
 # Prueba de escritorio Peterson
