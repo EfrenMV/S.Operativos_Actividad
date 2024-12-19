@@ -496,6 +496,195 @@ int main() {
 ```
 # Administrador de memoria
 
+```C
+#include <stdio.h>
+#include <stdbool.h>
+
+#define TAM_MEM 10
+bool hayProcesos = true;
+
+int tamañoParticiones = 0;
+typedef struct bloqueMemoria {
+    int PID;
+    int tamaño;
+} bloqueMemoria;
+
+bloqueMemoria memoria[TAM_MEM];
+
+void crearParticiones() {
+    int sumaParticiones = 0;
+    int tamañoTemp = 0;
+    int contador = -1;
+    
+    if (tamañoParticiones > TAM_MEM) {
+        printf("Las particiones exceden el espacio total de memoria disponible.\n");
+        return;
+    }
+
+    for (int i = 0; i < tamañoParticiones; i++) {
+        contador++;
+
+        if (sumaParticiones >= TAM_MEM) {
+            printf("Memoria llena, no se pueden asignar más particiones.\n");
+            tamañoParticiones = contador;
+            break;
+        }
+
+        do {
+            printf("Ingrese el tamaño de la partición %d (MB): ", (i + 1));
+            scanf("%d", &tamañoTemp);
+
+            if (sumaParticiones + tamañoTemp > TAM_MEM) {
+                printf("Error: La partición excede el tamaño total de memoria (%d MB).\n", TAM_MEM);
+                printf("Espacio restante disponible: %d MB.\n", TAM_MEM - sumaParticiones);
+            } else {
+                memoria[i].PID = -1;
+                memoria[i].tamaño = tamañoTemp;
+                sumaParticiones += tamañoTemp;
+                break;
+            }
+        } while (true);
+    }
+    printf("\n");
+}
+
+bool estaMemoriaLlenada() {
+    for (int i = 0; i < tamañoParticiones; i++) {
+        if (memoria[i].PID == -1) {
+            return false;
+        }
+    }
+    return true;
+}
+
+bool verificarPID(int pid) {
+    for (int i = 0; i < tamañoParticiones; i++) {
+        if (memoria[i].PID == pid && pid >= 0) {
+            return true;
+        }
+    }
+    return false;
+}
+
+void asignarMemoria() {
+    int pid;
+    int tamañoProceso;
+    int espacioRestante;
+    int asignado = 0;
+    
+    printf("Ingrese el ID de proceso: ");
+    scanf("%d", &pid);
+
+    if (verificarPID(pid)) {
+        printf("Este PID ya está en uso o no es válido.\n");
+        return;
+    }
+
+    printf("Ingrese el tamaño del proceso (MB): ");
+    scanf("%d", &tamañoProceso);
+
+    for (int i = 0; i < tamañoParticiones; i++) {
+        if (estaMemoriaLlenada()) {
+            printf("Memoria llena, no hay más particiones disponibles.\n");
+            return;
+        }
+
+        if (memoria[i].PID == -1 && memoria[i].tamaño >= tamañoProceso) {
+            memoria[i].PID = pid;
+            printf("\nProceso %d asignado a la partición %d\n", pid, i + 1);
+            espacioRestante = memoria[i].tamaño - tamañoProceso;
+            printf("Espacio desperdiciado: %d MB\n", espacioRestante);
+            asignado = 1;
+            break;
+        }
+    }
+    if (asignado == 0) {
+        printf("No se encontró una partición adecuada para este proceso.\n");
+    }
+    printf("\n");
+}
+
+void liberarMemoria() {
+    int pidEliminado = 0;
+    bool encontrado = false;
+    
+    printf("Seleccione el proceso a eliminar (PID): ");
+    scanf("%d", &pidEliminado);
+
+    for (int i = 0; i < tamañoParticiones; i++) {
+        if (pidEliminado == memoria[i].PID) {
+            memoria[i].PID = -1;
+            printf("Proceso con PID %d eliminado de la partición %d.\n", pidEliminado, i + 1);
+            encontrado = true;
+            break;
+        }
+    }
+    if (!encontrado) {
+        printf("No se encontró un proceso con PID %d.\n", pidEliminado);
+    }
+}
+
+void mostrarMemoria() {
+    bool procesosMostrados = true;
+    for (int i = 0; i < tamañoParticiones; i++) {
+        if (memoria[i].PID != -1) {
+            printf("PID: %d  Partición: %d  Tamaño de partición: (%d MB)\n", memoria[i].PID, i + 1, memoria[i].tamaño);
+            procesosMostrados = false;
+        } else if (memoria[i].tamaño > 0) {
+            printf("Partición %d libre\n", i + 1);
+        }
+    }
+
+    if (procesosMostrados) {
+        printf("No hay procesos para mostrar.\n");
+        hayProcesos = false;
+    }
+}
+
+int main() {
+    int opcion = 0;
+    do {
+        printf("1.- Crear particiones\n");
+        printf("2.- Asignar espacio de memoria\n");
+        printf("3.- Liberar espacio de memoria\n");
+        printf("4.- Mostrar particiones y procesos\n");
+        printf("5.- Salir\n");
+        scanf("%d", &opcion);
+        
+        switch (opcion) {
+            case 1:
+                printf("Ingrese el número máximo de particiones: ");
+                scanf("%d", &tamañoParticiones);
+                crearParticiones();
+                break;
+
+            case 2:
+                asignarMemoria();
+                break;
+
+            case 3:
+                mostrarMemoria();
+                if (hayProcesos) {
+                    liberarMemoria();
+                }
+                break;
+
+            case 4:
+                mostrarMemoria();
+                break;
+
+            case 5:
+                return 0;
+
+            default:
+                printf("Opción no válida.\n");
+        }
+    } while (true);
+    
+    return 0;
+}
+```
+
 # Prueba de escritorio Dekker
 
 # Prueba de escritorio Panaderia
